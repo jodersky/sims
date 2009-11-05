@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait GraphicalShape in graphyx.graphics</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">SiMS</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../graphyx/graphics$package.html" target="_self">graphyx.graphics</a>
+        <br></br>
+        <span class="entity">trait  GraphicalShape</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="graphyx/graphics/GraphicalShape"><code>graphyx/graphics/GraphicalShape.scala</code></a>]
+      </div><hr></hr>
+      <a name="GraphicalShape"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>GraphicalShape</em>
+      </dt>
+      <dd><code> extends </code><a href="../../sims/dynamics/Shape.html" target="_self">Shape</a><code> with </code><a href="../../graphyx/graphics/GraphicalObject.html" target="_self">GraphicalObject</a></dd>
+    </dl><dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../graphyx/graphics/GraphicalCircle.html" target="_self">GraphicalCircle</a>, <a href="../../graphyx/graphics/GraphicalRectangle.html" target="_self">GraphicalRectangle</a>, <a href="../../graphyx/graphics/GraphicalRegularPolygon.html" target="_self">GraphicalRegularPolygon</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/graphics/GraphicalShape.html#real" target="_self">real</a></em>
+         : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
+        
+        <div>Pointer to real object.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/graphics/GraphicalShape.html#uid" target="_self">uid</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div>Einzigartige Identifikationsnummer.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../graphyx/graphics/Drawable.html" target="_self">Drawable</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../graphyx/graphics/Drawable.html#g" target="_self">g</a>, <a href="../../graphyx/graphics/Drawable.html#ppm" target="_self">ppm</a>, <a href="../../graphyx/graphics/Drawable.html#scale" target="_self">scale</a>, <a href="../../graphyx/graphics/Drawable.html#windowHeight" target="_self">windowHeight</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../sims/dynamics/Shape.html#density" target="_self">density</a> (abstract), <a href="../../sims/dynamics/Shape.html#volume" target="_self">volume</a> (abstract), <a href="../../sims/dynamics/Shape.html#I" target="_self">I</a> (abstract), <a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a>, <a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a>, <a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a>, <a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a>, <a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a>, <a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a>, <a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a>, <a href="../../sims/dynamics/Shape.html#body" target="_self">body</a>, <a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../graphyx/graphics/Drawable.html" target="_self">Drawable</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../graphyx/graphics/Drawable.html#correctY%28Double%29" target="_self">correctY</a>, <a href="../../graphyx/graphics/Drawable.html#drawLine%28sims.geometry.Vector2D%2Csims.geometry.Vector2D%29" target="_self">drawLine</a>, <a href="../../graphyx/graphics/Drawable.html#fillPolygon%28Seq%5Bsims.geometry.Vector2D%5D%29" target="_self">fillPolygon</a>, <a href="../../graphyx/graphics/Drawable.html#drawPolygon%28Seq%5Bsims.geometry.Vector2D%5D%29" target="_self">drawPolygon</a>, <a href="../../graphyx/graphics/Drawable.html#fillCircle%28sims.geometry.Vector2D%2CDouble%29" target="_self">fillCircle</a>, <a href="../../graphyx/graphics/Drawable.html#drawCircle%28sims.geometry.Vector2D%2CDouble%29" target="_self">drawCircle</a>, <a href="../../graphyx/graphics/Drawable.html#drawPoint%28sims.geometry.Vector2D%29" target="_self">drawPoint</a>, <a href="../../graphyx/graphics/Drawable.html#drawVector%28sims.geometry.Vector2D%2Csims.geometry.Vector2D%29" target="_self">drawVector</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../sims/dynamics/Shape.html#AABB" target="_self">AABB</a> (abstract), <a href="../../sims/dynamics/Shape.html#project%28sims.geometry.Vector2D%29" target="_self">project</a> (abstract), <a href="../../sims/dynamics/Shape.html#contains%28sims.geometry.Vector2D%29" target="_self">contains</a> (abstract), <a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a>, <a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a>, <a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Shape%29" target="_self">^</a>, <a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Body%29" target="_self">^</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../graphyx/graphics/GraphicalObject.html" target="_self">GraphicalObject</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../graphyx/graphics/GraphicalObject.html#draw%28%29" target="_self">draw</a> (abstract)
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="real"></a><dl>
+      <dt>
+        
+        <code>abstract</code>
+        <code>val</code>
+        <em>real</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Pointer to real object.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../graphyx/graphics/GraphicalObject.html" target="_self">GraphicalObject</a>.<a href="../../graphyx/graphics/GraphicalObject.html#real" target="_self">real</a>
+        </dd>
+      </dl><hr></hr>
+<a name="uid"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>val</code>
+        <em>uid</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Einzigartige Identifikationsnummer.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>.<a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+
+    <hr></hr>
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">SiMS</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

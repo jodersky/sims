@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait ConvexPolygon in sims.geometry</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">SiMS</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../sims/geometry$package.html" target="_self">sims.geometry</a>
+        <br></br>
+        <span class="entity">trait  ConvexPolygon</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="sims/geometry/ConvexPolygon"><code>sims/geometry/ConvexPolygon.scala</code></a>]
+      </div><hr></hr>
+      <a name="ConvexPolygon"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>ConvexPolygon</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>Gemeinsame Eigenschaften aller konvexen Polygone.</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../sims/dynamics/Rectangle.html" target="_self">Rectangle</a>, <a href="../../sims/dynamics/RegularPolygon.html" target="_self">RegularPolygon</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/geometry/ConvexPolygon.html#AABB" target="_self">AABB</a></em>
+         : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>
+        
+        <div>Errechnet das AABB dieses Polygons</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/geometry/ConvexPolygon.html#contains%28sims.geometry.Vector2D%29" target="_self">contains</a></em>
+        (<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>Ueberprueft ob sich der gegebene Punkt <code>point</code> in diesem Polygon befindet.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/geometry/ConvexPolygon.html#project%28sims.geometry.Vector2D%29" target="_self">project</a></em>
+        (<em>axis</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>
+        
+        <div>Ergibt die Projektion dieses Polygons auf eine Gerade gegeben durch den
+   Richtungsvektor <code>axis</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/geometry/ConvexPolygon.html#sides" target="_self">sides</a></em>
+         : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="../../sims/geometry/Segment.html" target="_self">Segment</a>]
+        
+        <div>Ergibt alle Seiten dieses Polygons.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/geometry/ConvexPolygon.html#vertices" target="_self">vertices</a></em>
+         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
+        
+        <div>Ergibt Position aller Ecken dieses Polygons. Die Ecken sind gegen den Uhrzeigersinn folgend.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="vertices"></a><dl>
+      <dt>
+        
+        <code>abstract</code>
+        <code>def</code>
+        <em>vertices</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Ergibt Position aller Ecken dieses Polygons. Die Ecken sind gegen den Uhrzeigersinn folgend.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>Ortsvektoren der Ecken</dd></dl>
+    <hr></hr>
+<a name="sides"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>sides</em> : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="../../sims/geometry/Segment.html" target="_self">Segment</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Ergibt alle Seiten dieses Polygons.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>Seiten dieses Polygons</dd></dl>
+    <hr></hr>
+<a name="project%28sims.geometry.Vector2D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>project</em>(<em>axis</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Ergibt die Projektion dieses Polygons auf eine Gerade gegeben durch den
+   Richtungsvektor <code>axis</code></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>axis - </code>Richtungsvektor der Geraden</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>Projektion dieses Polygons</dd></dl>
+    <hr></hr>
+<a name="AABB"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>AABB</em> : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Errechnet das AABB dieses Polygons</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>umfassendes AABB</dd><dt style="margin:10px 0 0 20px;">
+        <b>See Also</b></dt><dd>collision.AABB</dd></dl>
+    <hr></hr>
+<a name="contains%28sims.geometry.Vector2D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>contains</em>(<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Ueberprueft ob sich der gegebene Punkt <code>point</code> in diesem Polygon befindet.
+   <p>
+   Hierzu wird eine Halbgerade von dem Punkt in Richtung der X-Achse gezogen (koennte aber auch beliebig sein).
+   Dann wird die Anzahl der Ueberschneidungen der Halbgeraden mit den Seiten und Ecken des Polygons ermittelt.
+   Ist die Anzahl der Ueberschneidungen ungerade, so befindet sich der Punkt in dem Polygon.
+   Es gibt jedoch Ausnahmen, und zwar wenn die Halbgerade eine Ecke ueberschneidet, ueberschneidet sie sowohl auch zwei Seiten.
+   Daher wird eine generelle Anzahl von Uerberschneidungen errechnet, gegeben durch die Anzahl der Ueberschneidungen mit den Seiten minus
+   die mit den Ecken.
+   Diese Zahl wird dann wie oben geschildert geprueft.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">SiMS</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

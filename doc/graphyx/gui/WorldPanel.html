@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class WorldPanel in graphyx.gui</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">SiMS</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../graphyx/gui$package.html" target="_self">graphyx.gui</a>
+        <br></br>
+        <span class="entity">class  WorldPanel</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="graphyx/gui/WorldPanel"><code>graphyx/gui/WorldPanel.scala</code></a>]
+      </div><hr></hr>
+      <a name="WorldPanel"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>WorldPanel</em>(<em>container</em> : <a href="../../graphyx/gui/Container.html" target="_self">Container</a>)
+      </dt>
+      <dd><code> extends </code><a href="" target="contentFrame" class="scala/swing/BoxPanel">scala.swing.BoxPanel</a></dd>
+    </dl>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#drawAABBs" target="_self">drawAABBs</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#drawBodies" target="_self">drawBodies</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#drawCollisions" target="_self">drawCollisions</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#drawJoints" target="_self">drawJoints</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#drawPairs" target="_self">drawPairs</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#drawShapes" target="_self">drawShapes</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#endPoint" target="_self">endPoint</a></em>
+         : <a href="" target="contentFrame" class="java/awt/Point">java.awt.Point</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#grabbedBody" target="_self">grabbedBody</a></em>
+         : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../graphyx/gui/GrabbedBody.html" target="_self">GrabbedBody</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#lblBody" target="_self">lblBody</a></em>
+         : <a href="" target="contentFrame" class="scala/swing/Label">scala.swing.Label</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#mousePressed" target="_self">mousePressed</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#offset" target="_self">offset</a></em>
+         : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#popup" target="_self">popup</a></em>
+         : <a href="../../graphyx/gui/BodyPopup.html" target="_self">BodyPopup</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#ppm" target="_self">ppm</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#scale" target="_self">scale</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#startPoint" target="_self">startPoint</a></em>
+         : <a href="" target="contentFrame" class="java/awt/Point">java.awt.Point</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="" target="contentFrame" class="scala/swing/BoxPanel">scala.swing.BoxPanel</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#peer" target="contentFrame" class="scala/swing/BoxPanel">scala.swing.BoxPanel.peer</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="" target="contentFrame" class="scala/swing/SequentialContainer/Wrapper">scala.swing.SequentialContainer.Wrapper</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#contents" target="contentFrame" class="scala/swing/SequentialContainer/Wrapper">scala.swing.SequentialContainer.Wrapper.contents</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="" target="contentFrame" class="scala/swing/Container/Wrapper">scala.swing.Container.Wrapper</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#_contents" target="contentFrame" class="scala/swing/Container/Wrapper">scala.swing.Container.Wrapper._contents</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="" target="contentFrame" class="scala/swing/Component">scala.swing.Component</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#initP" target="contentFrame" class="scala/swing/Component">scala.swing.Component.initP</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="" target="contentFrame" class="scala/swing/Publisher">scala.swing.Publisher</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#listeners" target="contentFrame" class="scala/swing/Publisher">scala.swing.Publisher.listeners</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="" target="contentFrame" class="scala/swing/Reactor">scala.swing.Reactor</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#reactions" target="contentFrame" class="scala/swing/Reactor">scala.swing.Reactor.reactions</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#drawAxes%28java.awt.Graphics%29" target="_self">drawAxes</a></em>
+        (<em>g</em> : <a href="" target="contentFrame" class="java/awt/Graphics">java.awt.Graphics</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#drawParts%28Iterable%5Bgraphyx.graphics.Drawable%5D%2Cjava.awt.Graphics%29" target="_self">drawParts</a></em>
+        (<em>parts</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../graphyx/graphics/Drawable.html" target="_self">Drawable</a>], <em>g</em> : <a href="" target="contentFrame" class="java/awt/Graphics">java.awt.Graphics</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#getBody%28sims.geometry.Vector2D%29" target="_self">getBody</a></em>
+        (<em>p</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#grab%28sims.dynamics.Body%2Csims.geometry.Vector2D%29" target="_self">grab</a></em>
+        (<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>, <em>p</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#paintComponent%28java.awt.Graphics%29" target="_self">paintComponent</a></em>
+        (<em>g</em> : <a href="" target="contentFrame" class="java/awt/Graphics">java.awt.Graphics</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#point2Vector%28java.awt.Point%29" target="_self">point2Vector</a></em>
+        (<em>p</em> : <a href="" target="contentFrame" class="java/awt/Point">java.awt.Point</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#release%28%29" target="_self">release</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#scene" target="_self">scene</a></em>
+         : <a href="../../graphyx/graphics/Scene.html" target="_self">Scene</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/gui/WorldPanel.html#update%28%29" target="_self">update</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="scala/swing/Component">scala.swing.Component</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#xLayoutAlignment" target="contentFrame" class="scala/swing/Component">scala.swing.Component.xLayoutAlignment</a>, <a href="#xLayoutAlignment_=" target="contentFrame" class="scala/swing/Component">scala.swing.Component.xLayoutAlignment_=</a>, <a href="#yLayoutAlignment" target="contentFrame" class="scala/swing/Component">scala.swing.Component.yLayoutAlignment</a>, <a href="#yLayoutAlignment_=" target="contentFrame" class="scala/swing/Component">scala.swing.Component.yLayoutAlignment_=</a>, <a href="#border" target="contentFrame" class="scala/swing/Component">scala.swing.Component.border</a>, <a href="#border_=" target="contentFrame" class="scala/swing/Component">scala.swing.Component.border_=</a>, <a href="#opaque" target="contentFrame" class="scala/swing/Component">scala.swing.Component.opaque</a>, <a href="#opaque_=" target="contentFrame" class="scala/swing/Component">scala.swing.Component.opaque_=</a>, <a href="#enabled" target="contentFrame" class="scala/swing/Component">scala.swing.Component.enabled</a>, <a href="#enabled_=" target="contentFrame" class="scala/swing/Component">scala.swing.Component.enabled_=</a>, <a href="#tooltip" target="contentFrame" class="scala/swing/Component">scala.swing.Component.tooltip</a>, <a href="#tooltip_=" target="contentFrame" class="scala/swing/Component">scala.swing.Component.tooltip_=</a>, <a href="#inputVerifier" target="contentFrame" class="scala/swing/Component">scala.swing.Component.inputVerifier</a>, <a href="#inputVerifier_=" target="contentFrame" class="scala/swing/Component">scala.swing.Component.inputVerifier_=</a>, <a href="#revalidate" target="contentFrame" class="scala/swing/Component">scala.swing.Component.revalidate</a>, <a href="#requestFocus" target="contentFrame" class="scala/swing/Component">scala.swing.Component.requestFocus</a>, <a href="#paint" target="contentFrame" class="scala/swing/Component">scala.swing.Component.paint</a>, <a href="#toString" target="contentFrame" class="scala/swing/Component">scala.swing.Component.toString</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="scala/swing/Publisher">scala.swing.Publisher</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#subscribe" target="contentFrame" class="scala/swing/Publisher">scala.swing.Publisher.subscribe</a>, <a href="#unsubscribe" target="contentFrame" class="scala/swing/Publisher">scala.swing.Publisher.unsubscribe</a>, <a href="#publish" target="contentFrame" class="scala/swing/Publisher">scala.swing.Publisher.publish</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="scala/swing/Reactor">scala.swing.Reactor</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#listenTo" target="contentFrame" class="scala/swing/Reactor">scala.swing.Reactor.listenTo</a>, <a href="#deafTo" target="contentFrame" class="scala/swing/Reactor">scala.swing.Reactor.deafTo</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#self" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.self</a>, <a href="#foreground" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.foreground</a>, <a href="#foreground_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.foreground_=</a>, <a href="#background" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.background</a>, <a href="#background_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.background_=</a>, <a href="#minimumSize" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.minimumSize</a>, <a href="#minimumSize_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.minimumSize_=</a>, <a href="#maximumSize" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.maximumSize</a>, <a href="#maximumSize_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.maximumSize_=</a>, <a href="#preferredSize" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.preferredSize</a>, <a href="#preferredSize_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.preferredSize_=</a>, <a href="#preferredSize_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.preferredSize_=</a>, <a href="#font" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.font</a>, <a href="#font_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.font_=</a>, <a href="#locationOnScreen" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.locationOnScreen</a>, <a href="#location" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.location</a>, <a href="#bounds" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.bounds</a>, <a href="#size" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.size</a>, <a href="#size_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.size_=</a>, <a href="#size_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.size_=</a>, <a href="#locale" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.locale</a>, <a href="#toolkit" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.toolkit</a>, <a href="#cursor" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.cursor</a>, <a href="#cursor_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.cursor_=</a>, <a href="#visible" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.visible</a>, <a href="#visible_=" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.visible_=</a>, <a href="#showing" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.showing</a>, <a href="#repaint" target="contentFrame" class="scala/swing/UIElement">scala.swing.UIElement.repaint</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="scala/Proxy">scala.Proxy</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#hashCode" target="contentFrame" class="scala/Proxy">scala.Proxy.hashCode</a>, <a href="#equals" target="contentFrame" class="scala/Proxy">scala.Proxy.equals</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="lblBody"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>lblBody</em> : <a href="" target="contentFrame" class="scala/swing/Label">scala.swing.Label</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="popup"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>popup</em> : <a href="../../graphyx/gui/BodyPopup.html" target="_self">BodyPopup</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="ppm"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>ppm</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="scale"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>scale</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="offset"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>offset</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="drawBodies"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>drawBodies</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="drawShapes"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>drawShapes</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="drawJoints"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>drawJoints</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="drawAABBs"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>drawAABBs</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="drawPairs"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>drawPairs</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="drawCollisions"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>drawCollisions</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="mousePressed"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>mousePressed</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="startPoint"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>startPoint</em> : <a href="" target="contentFrame" class="java/awt/Point">java.awt.Point</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="endPoint"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>endPoint</em> : <a href="" target="contentFrame" class="java/awt/Point">java.awt.Point</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="grabbedBody"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>grabbedBody</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../graphyx/gui/GrabbedBody.html" target="_self">GrabbedBody</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="point2Vector%28java.awt.Point%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>point2Vector</em>(<em>p</em> : <a href="" target="contentFrame" class="java/awt/Point">java.awt.Point</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="scene"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>scene</em> : <a href="../../graphyx/graphics/Scene.html" target="_self">Scene</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="update%28%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>update</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="paintComponent%28java.awt.Graphics%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>paintComponent</em>(<em>g</em> : <a href="" target="contentFrame" class="java/awt/Graphics">java.awt.Graphics</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="drawAxes%28java.awt.Graphics%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>drawAxes</em>(<em>g</em> : <a href="" target="contentFrame" class="java/awt/Graphics">java.awt.Graphics</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="drawParts%28Iterable%5Bgraphyx.graphics.Drawable%5D%2Cjava.awt.Graphics%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>drawParts</em>(<em>parts</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../graphyx/graphics/Drawable.html" target="_self">Drawable</a>], <em>g</em> : <a href="" target="contentFrame" class="java/awt/Graphics">java.awt.Graphics</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="getBody%28sims.geometry.Vector2D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getBody</em>(<em>p</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="grab%28sims.dynamics.Body%2Csims.geometry.Vector2D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>grab</em>(<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>, <em>p</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="release%28%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>release</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">SiMS</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

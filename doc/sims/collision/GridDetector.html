@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class GridDetector in sims.collision</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">SiMS</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../sims/collision$package.html" target="_self">sims.collision</a>
+        <br></br>
+        <span class="entity">class  GridDetector</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="sims/collision/GridDetector"><code>sims/collision/GridDetector.scala</code></a>]
+      </div><hr></hr>
+      <a name="GridDetector"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>GridDetector</em>(<code>val override </code><em>world</em> : <a href="../../sims/dynamics/World.html" target="_self">World</a>)
+      </dt>
+      <dd><code> extends </code><a href="../../sims/collision/Detector.html" target="_self">Detector</a></dd>
+    </dl>
+      <dl><dd>Eine konkrete Implementierung von <code>Detector</code>. <code>GridDetector</code> ermittelt
+ alle Kollisionen mit einem Gittersystem.</dd></dl>
+      <dl></dl>
+    
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#collisionMethods" target="_self">collisionMethods</a></em>
+         : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="../../sims/collision/Collision.html" target="_self">Collision</a>]]
+        
+        <div>Array von Kollisionsmethoden fuer Formenpaare.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#detectionMethods" target="_self">detectionMethods</a></em>
+         : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>]]
+        
+        <div>Array von Kollisionserkennungsmethoden fuer Formenpaare.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#gridSide" target="_self">gridSide</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
+        
+        <div>Breite und Hoehe einer Gitterzelle.</div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#colliding%28sims.collision.Pair%29" target="_self">colliding</a></em>
+        (<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>Gibt an, ob das Formenpaar <code>p</code> kollidiert.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#collidingPairs" target="_self">collidingPairs</a></em>
+         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
+        
+        <div>Ergibt alle kollidierenden Paare.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#collision%28sims.collision.Pair%29" target="_self">collision</a></em>
+        (<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="../../sims/collision/Collision.html" target="_self">Collision</a>
+        
+        <div>Gibt die Kollision des Formenpaares <code>p</code> zurueck.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#collisions" target="_self">collisions</a></em>
+         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Collision.html" target="_self">Collision</a>]
+        
+        <div>Ergibt alle Kollisionen.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#getPairs" target="_self">getPairs</a></em>
+         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
+        
+        <div>Ergibt potenzielle Kollisionspaare der Welt <code>world</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/collision/GridDetector.html#pairs" target="_self">pairs</a></em>
+         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
+        
+        <div>Alle potentiellen Kollisionspaare der Welt.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="detectionMethods"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>detectionMethods</em> : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>]]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Array von Kollisionserkennungsmethoden fuer Formenpaare.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="collisionMethods"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>collisionMethods</em> : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="../../sims/collision/Collision.html" target="_self">Collision</a>]]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Array von Kollisionsmethoden fuer Formenpaare.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="gridSide"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>gridSide</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Breite und Hoehe einer Gitterzelle.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="colliding%28sims.collision.Pair%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>colliding</em>(<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Gibt an, ob das Formenpaar <code>p</code> kollidiert.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>p - </code>Formenpaar.</dd></dl>
+    <hr></hr>
+<a name="collision%28sims.collision.Pair%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>collision</em>(<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="../../sims/collision/Collision.html" target="_self">Collision</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Gibt die Kollision des Formenpaares <code>p</code> zurueck.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>p - </code>Formenpaar.</dd></dl>
+    <hr></hr>
+<a name="getPairs"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getPairs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Ergibt potenzielle Kollisionspaare der Welt <code>world</code>.
+   <p>
+   Ein Kollisionspaar ist ein Paar aus zwei verschiedenen Formen, das folgenden Bedingungen unterliegt:
+   <ul>
+   <li>Die Formen muessen sich in der gleichen Gitterzelle befinden.</li>
+   <li>Ihre AABBs muessen sich ueberlappen.</li>
+   <li>Die Formen duerfen nicht von dem gleichen Koerper sein.</li>
+   <li>Mindestens eine Form darf nicht Fixiert sein.</li>
+   <li>Beide muessen {@link dynamics.Shape#collidable collidierbar} sein.</li>
+   </ul></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="pairs"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>pairs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alle potentiellen Kollisionspaare der Welt.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>See Also</b></dt><dd>getPairs</dd></dl>
+    <hr></hr>
+<a name="collidingPairs"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>collidingPairs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Ergibt alle kollidierenden Paare.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="collisions"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>collisions</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Collision.html" target="_self">Collision</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Ergibt alle Kollisionen.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../sims/collision/Detector.html" target="_self">Detector</a>.<a href="../../sims/collision/Detector.html#collisions" target="_self">collisions</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">SiMS</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

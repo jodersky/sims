@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in sims.dynamics</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>Simple Mechanics Simulator (SiMS) API</div></div><p><div>This document is the API specification for SiMS</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Body.html" target="_self">Body</a></em>
+        (<em>shps</em> : <a href="../sims/dynamics/Shape.html" target="_self">Shape</a>*)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Ein 2-Dimensionaler Koerper besteht aus mehreren Formen. Im gegensatz zu letzteren, enthaelt ein Koerper dynamische Informationen (v, F, etc...).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Circle.html" target="_self">Circle</a></em>
+        (<code>val </code><em>radius</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <code>val </code><em>density</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>)<code> extends </code><a href="../sims/dynamics/Shape.html" target="_self">Shape</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Circle ist die Definition eines Kreises.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Constraint.html" target="_self">Constraint</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Randbedingungen erben von dem Trait <code>Constraint</code>.
+ Fuer jeden Constraint koennen Position und Geschwindigkeit korrigiert werden.
+ Ihre Implementierung wurde von Erin Catto's box2d inspiriert.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Rectangle.html" target="_self">Rectangle</a></em>
+        (<code>val </code><em>halfWidth</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <code>val </code><em>halfHeight</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <code>val </code><em>density</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>)<code> extends </code><a href="../sims/dynamics/Shape.html" target="_self">Shape</a><code> with </code><a href="../sims/geometry/ConvexPolygon.html" target="_self">ConvexPolygon</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Rechteck ist eine Art Polygon.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/RegularPolygon.html" target="_self">RegularPolygon</a></em>
+        (<code>val </code><em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>, <code>val </code><em>radius</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <code>val </code><em>density</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>)<code> extends </code><a href="../sims/dynamics/Shape.html" target="_self">Shape</a><code> with </code><a href="../sims/geometry/ConvexPolygon.html" target="_self">ConvexPolygon</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Ein regelmaessiges Polygon mit <code>n</code> Seiten, dass der Kreis mit radius <code>radius</code> umschreibt.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Shape.html" target="_self">Shape</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Eine abstrakte Form.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/World.html" target="_self">World</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Eine Welt enthaelt und Simuliert ein System aus Koerpern und Verbindungen.</div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Body$object.html" target="_self">Body</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Circle$object.html" target="_self">Circle</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) =&gt; <a href="../sims/dynamics/Circle.html" target="_self">Circle</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Rectangle$object.html" target="_self">Rectangle</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) =&gt; <a href="../sims/dynamics/Rectangle.html" target="_self">Rectangle</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/RegularPolygon$object.html" target="_self">RegularPolygon</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) =&gt; <a href="../sims/dynamics/RegularPolygon.html" target="_self">RegularPolygon</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../sims/dynamics/Shape$object.html" target="_self">Shape</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>
