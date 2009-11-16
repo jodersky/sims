@@ -27,6 +27,7 @@ object Graphyx{
     Friction2,
     Restitution,
     RagdollTest,
+    Carriage,
     General1,
     General2,
     EmptyTest

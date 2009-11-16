@@ -11,5 +11,4 @@ object EmptyTest extends Test{
   override val title = "Empty Test"
   val world = new World
   def init = {}
-
 }

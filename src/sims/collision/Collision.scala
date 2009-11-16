@@ -69,7 +69,6 @@ abstract class Collision extends Constraint {
     val cr2 = r2 cross tangent
     val invMass = 1/b1.mass * (tangent dot tangent) + 1/b1.I * cr1 * cr1 + 1/b2.mass * (tangent dot tangent) + 1/b2.I * cr2 * cr2
     val m = if (invMass == 0.0) 0.0 else 1/invMass
-    val mu = shape1.friction * shape2.friction
     val lambda = -m * Cdot
     val cf = shape1.friction * shape2.friction
     val cl = Math.min(Math.max(-normalForce * cf * h, lambda), normalForce * cf * h)

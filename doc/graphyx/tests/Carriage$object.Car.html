@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-        <head><title>object Parser in graphyx.graphics</title>
+        <head><title>class Car in graphyx.tests.Carriage</title>
         <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
         </head>
         <body onload="init()">
@@ -17,21 +17,21 @@
       </table>
         
       <div class="entity">
-        <a href="../../graphyx/graphics$package.html" target="_self">graphyx.graphics</a>
+        <a href="../../graphyx/tests/Carriage$object.html" target="_self">graphyx.tests.Carriage</a>
         <br></br>
-        <span class="entity">object  Parser</span>
+        <span class="entity">class  Car</span>
       </div><hr></hr>
       <div class="source">
-        [source: <a href="" class="graphyx/graphics/Parser"><code>graphyx/graphics/Parser.scala</code></a>]
+        [source: <a href="" class="graphyx/tests/Carriage"><code>graphyx/tests/Carriage.scala</code></a>]
       </div><hr></hr>
-      <a name="Parser"></a><dl>
+      <a name="Car"></a><dl>
       <dt>
         
         <code></code>
-        <code>object</code>
-        <em>Parser</em>
+        <code>class</code>
+        <em>Car</em>
       </dt>
-      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+      <dd><code> extends </code><a href="../../sims/prefabs/Prefab.html" target="_self">Prefab</a></dd>
     </dl>
       
 
@@ -39,85 +39,105 @@
       <tr><td class="title" colspan="2">Value Summary</td></tr>
       <tr>
       <td class="modifiers" valign="top"> 
+        <code>override val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#bodies" target="_self">bodies</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
         <code> val</code>
       </td>
       <td class="signature">
-        <em><a href="../../graphyx/graphics/Parser$object.html#throwOnUnknown" target="_self">throwOnUnknown</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#chassis" target="_self">chassis</a></em>
+         : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#joints" target="_self">joints</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#leftDamper" target="_self">leftDamper</a></em>
+         : <a href="../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#leftStabelizer" target="_self">leftStabelizer</a></em>
+         : <a href="../../sims/dynamics/joints/DistanceJoint.html" target="_self">DistanceJoint</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#leftWheel" target="_self">leftWheel</a></em>
+         : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#rightDamper" target="_self">rightDamper</a></em>
+         : <a href="../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#rightStabelizer" target="_self">rightStabelizer</a></em>
+         : <a href="../../sims/dynamics/joints/DistanceJoint.html" target="_self">DistanceJoint</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../graphyx/tests/Carriage$object.Car.html#rightWheel" target="_self">rightWheel</a></em>
+         : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
         
         
       </td>
     </tr>
       </table>
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Method Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/Parser$object.html#toGraphical%28sims.dynamics.Body%29" target="_self">toGraphical</a></em>
-        (<em>real</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../graphyx/graphics/GraphicalBody.html" target="_self">GraphicalBody</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/Parser$object.html#toGraphical%28sims.collision.Pair%29" target="_self">toGraphical</a></em>
-        (<em>real</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="../../graphyx/graphics/GraphicalPair.html" target="_self">GraphicalPair</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/Parser$object.html#toGraphical%28sims.dynamics.Shape%29" target="_self">toGraphical</a></em>
-        (<em>real</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../graphyx/graphics/GraphicalShape.html" target="_self">GraphicalShape</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/Parser$object.html#toGraphical%28sims.dynamics.joints.Joint%29" target="_self">toGraphical</a></em>
-        (<em>real</em> : <a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>) : <a href="../../graphyx/graphics/GraphicalJoint.html" target="_self">GraphicalJoint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/Parser$object.html#toGraphical%28sims.collision.AABB%29" target="_self">toGraphical</a></em>
-        (<em>real</em> : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>) : <a href="../../graphyx/graphics/GraphicalAABB.html" target="_self">GraphicalAABB</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/Parser$object.html#toGraphical%28sims.collision.Collision%29" target="_self">toGraphical</a></em>
-        (<em>real</em> : <a href="../../sims/collision/Collision.html" target="_self">Collision</a>) : <a href="../../graphyx/graphics/GraphicalCollision.html" target="_self">GraphicalCollision</a>
-        
-        
-      </td>
-    </tr>
-      </table><table summary="" cellpadding="3" class="inherited">
+<table summary="" cellpadding="3" class="inherited">
         <tr><td class="title" colspan="2">
           Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
         </td></tr>
@@ -138,71 +158,102 @@
 
 <table summary="" cellpadding="3" class="member-detail">
           <tr><td class="title">Value Details</td></tr>
-        </table><div><a name="throwOnUnknown"></a><dl>
+        </table><div><a name="chassis"></a><dl>
       <dt>
         
         <code></code>
         <code>val</code>
-        <em>throwOnUnknown</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr></div>
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Method Details</td></tr>
-        </table><div><a name="toGraphical%28sims.dynamics.Shape%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>toGraphical</em>(<em>real</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../graphyx/graphics/GraphicalShape.html" target="_self">GraphicalShape</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        <em>chassis</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl><hr></hr>
-<a name="toGraphical%28sims.dynamics.joints.Joint%29"></a><dl>
+<a name="rightWheel"></a><dl>
       <dt>
         
         <code></code>
-        <code>def</code>
-        <em>toGraphical</em>(<em>real</em> : <a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>) : <a href="../../graphyx/graphics/GraphicalJoint.html" target="_self">GraphicalJoint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        <code>val</code>
+        <em>rightWheel</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl><hr></hr>
-<a name="toGraphical%28sims.collision.Collision%29"></a><dl>
+<a name="leftWheel"></a><dl>
       <dt>
         
         <code></code>
-        <code>def</code>
-        <em>toGraphical</em>(<em>real</em> : <a href="../../sims/collision/Collision.html" target="_self">Collision</a>) : <a href="../../graphyx/graphics/GraphicalCollision.html" target="_self">GraphicalCollision</a>
+        <code>val</code>
+        <em>leftWheel</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl><hr></hr>
-<a name="toGraphical%28sims.collision.Pair%29"></a><dl>
+<a name="bodies"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>val</code>
+        <em>bodies</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../sims/prefabs/Prefab.html" target="_self">Prefab</a>.<a href="../../sims/prefabs/Prefab.html#bodies" target="_self">bodies</a>
+        </dd>
+      </dl><hr></hr>
+<a name="rightStabelizer"></a><dl>
       <dt>
         
         <code></code>
-        <code>def</code>
-        <em>toGraphical</em>(<em>real</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="../../graphyx/graphics/GraphicalPair.html" target="_self">GraphicalPair</a>
+        <code>val</code>
+        <em>rightStabelizer</em> : <a href="../../sims/dynamics/joints/DistanceJoint.html" target="_self">DistanceJoint</a>
       </dt>
       <dd></dd>
     </dl><hr></hr>
-<a name="toGraphical%28sims.collision.AABB%29"></a><dl>
+<a name="rightDamper"></a><dl>
       <dt>
         
         <code></code>
-        <code>def</code>
-        <em>toGraphical</em>(<em>real</em> : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>) : <a href="../../graphyx/graphics/GraphicalAABB.html" target="_self">GraphicalAABB</a>
+        <code>val</code>
+        <em>rightDamper</em> : <a href="../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>
       </dt>
       <dd></dd>
     </dl><hr></hr>
-<a name="toGraphical%28sims.dynamics.Body%29"></a><dl>
+<a name="leftStabelizer"></a><dl>
       <dt>
         
         <code></code>
-        <code>def</code>
-        <em>toGraphical</em>(<em>real</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../graphyx/graphics/GraphicalBody.html" target="_self">GraphicalBody</a>
+        <code>val</code>
+        <em>leftStabelizer</em> : <a href="../../sims/dynamics/joints/DistanceJoint.html" target="_self">DistanceJoint</a>
       </dt>
       <dd></dd>
-    </dl><hr></hr></div>
+    </dl><hr></hr>
+<a name="leftDamper"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>leftDamper</em> : <a href="../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="joints"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>val</code>
+        <em>joints</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>]
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../sims/prefabs/Prefab.html" target="_self">Prefab</a>.<a href="../../sims/prefabs/Prefab.html#joints" target="_self">joints</a>
+        </dd>
+      </dl><hr></hr></div>
+
 
 
     <hr></hr>
