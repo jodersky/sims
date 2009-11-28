@@ -42,6 +42,7 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
   var drawAABBs = false
   var drawPairs = false
   var drawCollisions = false
+  var trace = false
   
   override def paintComponent(g: java.awt.Graphics) = {
     var parts: Seq[graphyx.graphics.Drawable] = Seq()
@@ -55,6 +56,7 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
     drawAxes(g)
     g.translate(offset.x.toInt, -offset.y.toInt)
     drawParts(parts, g)
+    if (trace) trace(scene.shapes, g)
     g.translate(-offset.x.toInt, offset.y.toInt)
   }
   
@@ -77,6 +79,30 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
       p.ppm = ppm
       p.scale = this.scale
       p.draw()
+    }
+  }
+  
+  import collection.mutable._
+  val prevPos: collection.mutable.Map[Int, collection.mutable.Queue[Vector2D]] = Map()
+  def trace(shapes: Iterable[graphics.GraphicalShape], g: java.awt.Graphics) = {
+    for (s <- shapes) {
+      s.g = g
+      s.windowHeight = super.size.height
+      s.ppm = ppm
+      s.scale = this.scale
+      
+      
+      if (!prevPos.contains(s.uid)) prevPos += (s.uid -> new Queue[Vector2D])
+      else {
+        prevPos(s.uid).enqueue(s.pos)
+        for(i <- 0 until prevPos(s.uid).length - 1) {
+          val sp = prevPos(s.uid)(i)
+          val ep = prevPos(s.uid)(i + 1)
+          s.g.setColor(java.awt.Color.cyan)
+          s.drawLine(sp, ep)
+        }
+        if (prevPos(s.uid).length == 50) prevPos(s.uid).dequeue
+      }
     }
   }
   
@@ -106,8 +132,10 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
     case MousePressed(c,p,x,y,b) => {
       mousePressed = true; startPoint = p; endPoint = p
       x match {
-        case 1024  if (getBody(p) != None) => grab(getBody(p).get, p)
+        case 1024 if (getBody(p) != None) => grab(getBody(p).get, p)
+        case 1152 if (getBody(p) != None) => {grabbedBody = Some(new GrabbedBody(getBody(p).get, p)); popup.body = grabbedBody.get.body; popup.peer.setLocation(p); popup.visible = true}
         case 4096 if (getBody(p) != None) => {grabbedBody = Some(new GrabbedBody(getBody(p).get, p)); popup.body = grabbedBody.get.body; popup.peer.setLocation(p); popup.visible = true}
+        case _ => ()
       }
     }
                                                                          

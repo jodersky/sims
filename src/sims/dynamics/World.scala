@@ -67,7 +67,7 @@ class World {
     for (j <- p.joints) this += j
   }
   
-  def ++=(bs: Seq[Body]) = for(b <- bs) this += b
+  def ++=(bs: Seq[Body]): Unit = for(b <- bs) this += b
   
   /**Entfernt den gegebenen Koerper aus dieser Welt.*/
   def -=(body: Body): Unit = bodies -= body

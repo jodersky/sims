@@ -38,6 +38,6 @@ class Ragdoll(position: Vector2D) extends Prefab {
   
   val shoulder1 = RevoluteJoint(headTorso, upperArm1, position + Vector2D(0, -0.16))
   val shoulder2 = RevoluteJoint(headTorso, upperArm2, position + Vector2D(0, -0.16))
-  override val joints = List(shoulder1, shoulder2)
+  override val joints = Nil //List(shoulder1, shoulder2)
 
 }

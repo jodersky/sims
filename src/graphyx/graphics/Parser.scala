@@ -24,7 +24,8 @@ object Parser {
     case j: DistanceJoint => GraphicalDistanceJoint(j)
     case j: SpringJoint => GraphicalSpringJoint(j)
     case j: RevoluteJoint => GraphicalRevoluteJoint(j)
-    case _ => throw new IllegalArgumentException("Cannot cast '" + real.getClass + "' to a graphical object.")
+    case j: Joint => if (!throwOnUnknown) new GraphicalJoint{override val real = j; def draw = ()}
+                     else throw new IllegalArgumentException("Cannot cast '" + real.getClass + "' to a graphical object.")
   }
   
   def toGraphical(real: Collision) = GraphicalCollision(real)

@@ -40,11 +40,15 @@ case class PolyCollision(p1: ConvexPolygon, p2: ConvexPolygon) extends Collision
   lazy val shape2 = incPoly.asInstanceOf[Shape]
   
   lazy val normal = refPoly.sides(minOverlap.sideNum).n0
-  lazy val points = (for (v <- incPoly.vertices; if refPoly.contains(v)) yield v) ++
+  lazy val points = (for (v <- incPoly.vertices; if refPoly.contains(v)) yield v)++
+    (for (v <- refPoly.vertices; if incPoly.contains(v)) yield v)
+  
+  /* ++
     (for (s <- incPoly.sides;
     val clip = s.clipToSegment(refPoly.sides((refPoly.sides.length - (minOverlap.sideNum + 1)) % refPoly.sides.length));
     if (clip != None)) yield clip.get) ++ 
     (for (s <- incPoly.sides;
     val clip = s.clipToSegment(refPoly.sides((refPoly.sides.length - (minOverlap.sideNum - 1)) % refPoly.sides.length));
     if (clip != None)) yield clip.get)
+  */
 }

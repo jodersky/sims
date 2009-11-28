@@ -14,7 +14,7 @@ class AboutHelpFrame extends Frame {
      	|SiMS and Graphyx are made available under the MIT License
      	|
      	|http://sourceforge.net/projects/simplemechanics/""".stripMargin
-  )
+  ) {editable = false}
 }
 
 object AboutHelpFrame {

@@ -13,7 +13,7 @@ import scala.swing._
 import scala.swing.event._
 import GridBagPanel._
 
-class OptionsPanel(container: Container) extends GridPanel(11,2){
+class OptionsPanel(container: Container) extends GridPanel(12,2){
   /*
   val c = new Constraints
   c.anchor = Anchor.West
@@ -55,6 +55,9 @@ class OptionsPanel(container: Container) extends GridPanel(11,2){
   val lblDrawCollisions = new Label("Collisions")
   val chckDrawCollisions = new CheckBox {selected = false}
   
+  val lblTrace = new Label("Trace")
+  val chckTrace = new CheckBox {selected = false}
+  
   val components = List(
     lblTimeStep, txtTimeStep,
     lblIterations, txtIterations,
@@ -66,7 +69,8 @@ class OptionsPanel(container: Container) extends GridPanel(11,2){
     lblDrawJoints, chckDrawJoints,
     lblDrawAABBs, chckDrawAABBs,
     lblDrawPairs, chckDrawPairs,
-    lblDrawCollisions, chckDrawCollisions
+    lblDrawCollisions, chckDrawCollisions,
+    lblTrace, chckTrace
   )
   contents ++= components
   listenTo(components: _*)
@@ -82,6 +86,7 @@ class OptionsPanel(container: Container) extends GridPanel(11,2){
     case ButtonClicked(`chckDrawAABBs`) => container.mainFrame.mainPanel.worldPanel.drawAABBs = chckDrawAABBs.selected
     case ButtonClicked(`chckDrawPairs`) => container.mainFrame.mainPanel.worldPanel.drawPairs = chckDrawPairs.selected
     case ButtonClicked(`chckDrawCollisions`) => container.mainFrame.mainPanel.worldPanel.drawCollisions = chckDrawCollisions.selected
+    case ButtonClicked(`chckTrace`) => container.mainFrame.mainPanel.worldPanel.trace = chckTrace.selected
   }
   
   def update() = {
@@ -97,6 +102,7 @@ class OptionsPanel(container: Container) extends GridPanel(11,2){
       chckDrawAABBs.selected = container.mainFrame.mainPanel.worldPanel.drawAABBs
       chckDrawPairs.selected = container.mainFrame.mainPanel.worldPanel.drawPairs
       chckDrawCollisions.selected = container.mainFrame.mainPanel.worldPanel.drawCollisions
+      chckTrace.selected = container.mainFrame.mainPanel.worldPanel.trace
   }
   
   

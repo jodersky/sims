@@ -46,15 +46,39 @@ case class SpringJoint(node1: Body, anchor1: Vector2D, node2: Body, anchor2: Vec
   /**Relative Position der Bindungspunkte.*/
   def x = connection2 - connection1
   
+  /**Relative Geschwindigkeit der Bindungspunkte.*/
+  def v = node2.velocityOfPoint(connection2) - node1.velocityOfPoint(connection1)
+  
   /**Ergibt die Federkraft nach dem Hookschen Gesetz.*/
   def force = (x.length - initialLength) * springConstant
   
   /**Uebt die Federkraft auf die Bindungspunkte aus.*/
   def applyForce() = {
-    node1.applyForce(x.unit * force - ((node1 velocityOfPoint connection1) * damping) project x, connection1)
-    node2.applyForce(-x.unit * force - ((node2 velocityOfPoint connection2) * damping) project x, connection2)
+    node1.applyForce(x.unit * force - (v * damping) project x, connection1)
+    node2.applyForce(-x.unit * force - (v * damping) project x, connection2)
+    //println("this should not happen")
   }
   
-  def correctPosition(h: Double) = ()
-  def correctVelocity(h: Double) = ()
+  def correctVelocity(h: Double) = {
+    /*
+    val x = this.x	//relativer Abstand
+    val v = this.v	//relative Geschwindigkeit
+    val r1 = (connection1 - node1.pos)	//Abstand Punkt-Schwerpunkt, Koerper 1
+    val r2 = (connection2 - node2.pos)	//Abstand Punkt-Schwerpunkt, Koerper 2
+    val cr1 = r1 cross x.unit	//Kreuzprodukt
+    val cr2 = r2 cross x.unit	//Kreuzprodukt
+    val Cdot = x.unit dot v	//Velocity-Constraint
+    val invMass = 1/node1.mass + 1/node1.I * cr1 * cr1 + 1/node2.mass + 1/node2.I * cr2 * cr2	//=J M^-1 JT
+    val m = if (invMass == 0.0) 0.0 else 1/invMass	//Test um Nulldivision zu vermeiden
+    val lambda = Math.min(Math.max(-this.force * h, (-m * Cdot)), this.force * h)
+    println (force * h, -m * Cdot)
+    val impulse = x.unit * lambda
+    node1.applyImpulse(-impulse, connection1)
+    node2.applyImpulse(impulse, connection2)
+    */
+  }
+
+  def correctPosition(h: Double) = {
+    
+  }
 }

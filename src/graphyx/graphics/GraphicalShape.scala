@@ -7,8 +7,8 @@
 package graphyx.graphics
 
 import sims.dynamics._
-trait GraphicalShape extends Shape  with GraphicalObject{
-  val real: Shape
+trait GraphicalShape extends Shape with GraphicalObject{
+  val real:  Shape
   override val uid: Int = real.uid
   pos = real.pos
   rotation = real.rotation
