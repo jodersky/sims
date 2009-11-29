@@ -13,9 +13,8 @@
         <em><a href="../sims/collision/AABB.html" target="_self">AABB</a></em>
         (<code>val </code><em>minVertex</em> : <a href="../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <code>val </code><em>maxVertex</em> : <a href="../sims/geometry/Vector2D.html" target="_self">Vector2D</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
         
-        <div>Axis Aligned Bounding Boxes, kurz AABBs, sind Rechtecke die eine bestimmte Form umhuellen.
- Da AABBs nach den X- und Y-Achsen orientiert sind, ermoeglichen sie eine schnelle
- und einfache Feststellung ob zwei AABBs sich ueberschneiden.</div>
+        <div>Axis Aligned Bounding Boxes (AABBs) are rectangles that frame a shape.
+ Their X-Axis and Y-Axis orientation makes it easy to test two AABBs for overlap.</div>
       </td>
     </tr>
 <tr>
@@ -26,7 +25,7 @@
         <em><a href="../sims/collision/CircleCollision.html" target="_self">CircleCollision</a></em>
         (<code>val </code><em>c1</em> : <a href="../sims/dynamics/Circle.html" target="_self">Circle</a>, <code>val </code><em>c2</em> : <a href="../sims/dynamics/Circle.html" target="_self">Circle</a>)<code> extends </code><a href="../sims/collision/Collision.html" target="_self">Collision</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
         
-        <div>Kollision zwischen zwei Kreisen.</div>
+        <div>Collision between two circles.</div>
       </td>
     </tr>
 <tr>
@@ -37,7 +36,7 @@
         <em><a href="../sims/collision/Collision.html" target="_self">Collision</a></em>
         <code> extends </code><a href="../sims/dynamics/Constraint.html" target="_self">Constraint</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
         
-        <div>Kollisionen zwischen zwei Formen enthalten Methoden zur Berrechnen der Kollisionsreaktion.</div>
+        <div>Collision between two shapes. Contains methods to compute the collision response.</div>
       </td>
     </tr>
 <tr>
@@ -48,7 +47,7 @@
         <em><a href="../sims/collision/Detector.html" target="_self">Detector</a></em>
         <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
         
-        <div>Eine Welt ermittelt ihre Kollisionen durch konkrete Implementierungen dieser Klasse.</div>
+        <div>A world detects its collisions through concrete implementations of this class.</div>
       </td>
     </tr>
 <tr>
@@ -59,8 +58,8 @@
         <em><a href="../sims/collision/GridDetector.html" target="_self">GridDetector</a></em>
         (<code>val override </code><em>world</em> : <a href="../sims/dynamics/World.html" target="_self">World</a>)<code> extends </code><a href="../sims/collision/Detector.html" target="_self">Detector</a>
         
-        <div>Eine konkrete Implementierung von <code>Detector</code>. <code>GridDetector</code> ermittelt
- alle Kollisionen mit einem Gittersystem.</div>
+        <div>A conrete implementation of <code>Detector</code>. <code>GridDetector</code> divides the world into a grid
+ for faster collision detection.</div>
       </td>
     </tr>
 <tr>
@@ -82,7 +81,7 @@
         <em><a href="../sims/collision/Pair.html" target="_self">Pair</a></em>
         (<code>val </code><em>s1</em> : <a href="../sims/dynamics/Shape.html" target="_self">Shape</a>, <code>val </code><em>s2</em> : <a href="../sims/dynamics/Shape.html" target="_self">Shape</a>)<code> extends </code>(<a href="../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../sims/dynamics/Shape.html" target="_self">Shape</a>)
         
-        <div>Formenpaar.</div>
+        <div>Pair of shapes.</div>
       </td>
     </tr>
 <tr>
@@ -93,7 +92,7 @@
         <em><a href="../sims/collision/PolyCircleCollision.html" target="_self">PolyCircleCollision</a></em>
         (<code>val </code><em>p</em> : <a href="../sims/geometry/ConvexPolygon.html" target="_self">ConvexPolygon</a>, <code>val </code><em>c</em> : <a href="../sims/dynamics/Circle.html" target="_self">Circle</a>)<code> extends </code><a href="../sims/collision/Collision.html" target="_self">Collision</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
         
-        <div>Kollision zwischen einem konvexen Polygon und einem Kreis.</div>
+        <div>Collision between a convex polygon and a circle.</div>
       </td>
     </tr>
 <tr>
@@ -104,7 +103,7 @@
         <em><a href="../sims/collision/PolyCollision.html" target="_self">PolyCollision</a></em>
         (<code>val </code><em>p1</em> : <a href="../sims/geometry/ConvexPolygon.html" target="_self">ConvexPolygon</a>, <code>val </code><em>p2</em> : <a href="../sims/geometry/ConvexPolygon.html" target="_self">ConvexPolygon</a>)<code> extends </code><a href="../sims/collision/Collision.html" target="_self">Collision</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
         
-        <div>Kollision zwischen zwei konvexen Polygonen.</div>
+        <div>Collision between two convex polygons.</div>
       </td>
     </tr>        
         </table>

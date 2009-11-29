@@ -9,17 +9,17 @@ package sims.dynamics
 import Math._
 import sims.geometry._
 
-/**Ein regelmaessiges Polygon mit <code>n</code> Seiten, dass der Kreis mit radius <code>radius</code> umschreibt.
- * @param n Anzahl der Seiten.
- * @param radius Radius des umschreibenden Kreises.
- * @param density Dichte.
- */
+/**A regular polygon with <code>n</code> sides whose excircle has a radius <code>radius</code>.
+ * @param n nmber of sides.
+ * @param radius radius of the excircle
+ * @param density density of this regular polygon
+ * @throws IllegalArgumentException if <code>n</code> is smaller than 3 */
 case class RegularPolygon(n: Int, radius: Double, density: Double) extends Shape with ConvexPolygon{
-  require(n >= 3, "Polygon must have at least 3 sides.")
+  require(n >= 3, "A polygon must have at least 3 sides.")
   
-  /**Hoehe eines der konstituierneden Dreiecke des Polygons.*/
+  /**Height of one of the constituting triangles.*/
   private val h: Double = radius * cos(Pi / n)
-  /**Halbe Breite eines der konstituierneden Dreiecke des Polygons.*/
+  /**Half width of one of the constituting triangles.*/
   private val b: Double = radius * sin(Pi / n)
   
   def halfDiags = (for (i: Int <- (0 until n).toArray) yield (Vector2D(0, radius) rotate (2 * Pi * i / n))) map (_ rotate rotation)
@@ -28,7 +28,7 @@ case class RegularPolygon(n: Int, radius: Double, density: Double) extends Shape
   
   val volume = n * h * b
   
-  /**Traegheitsmoment eines der konstituierneden Dreiecke im Zentrum des Polygons.*/
+  /**Moment of inertia of one of the constituting triangles about the center of this polygon.*/
   private val Ic: Double = density * b * (3 * b + 16) * h * h * h * h / 54
   
   val I = n * Ic

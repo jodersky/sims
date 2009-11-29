@@ -10,78 +10,82 @@ import sims.geometry._
 import sims.collision._
 
 /**
-* Eine abstrakte Form.
+* An abstract shape.
 */
 abstract class Shape{
   
-  /**Einzigartige Identifikationsnummer.*/
+  /**Unique identification number.*/
   val uid: Int = Shape.nextUid
   
-  /**Kollisionsfaehigkeit.*/
+  /**Flag determining this shapes ability to collide with other shapes.*/
   var collidable: Boolean = true
   
-  /**Teil der Stosszahl bei einer Kollision zwischen dieser Form und einer anderen.
-   * Die Stosszahl wird aus dem Produkt der beiden Teile der Formen errechnet.*/
+  /**Part of the coefficient of restitution for a collision between this shape and another.
+   * The coefficient of restitution is calculated out of the product of this part and the other shape's part.*/
   var restitution: Double = 0.7
   
-  /**Teil des Reibungskoeffizienten bei einer Kollision zwischen dieser Form und einer anderen.
-   * Der Reibungskoeffizient wird aus dem Produkt der beiden Teile der Formen errechnet.*/
+  /**Part of the coefficient of friction for a collision between this shape and another.
+   * The coefficient of friction is calculated out of the product of this part and the other shape's part.*/
   var friction: Double = 0.707
   
-  /**Position des Schwerpunktes in Welt.*/
+  /**Position of this shape's COM (in world coordinates).*/
   var pos: Vector2D = Vector2D.Null
   
-  /**Rotation. Entspricht Laenge des Rotationsvektors.*/
+  /**Rotation of this shape about its COM.*/
   var rotation: Double = 0
   
-  /**Initiale Rotation. (Rotation ohne Koerper)*/
+  /**Initial rotation. Rotation of this shape before it was added to a body.*/
   var rotation0 = 0.0
   
-  /**Referenzposition in Koerper. Wird zur Rotation von Formen in Koerpern verwendet.*/
+  /**Local position of this shape's body COM to its COM at a body rotation of zero.*/
   var refLocalPos: Vector2D = Vector2D.Null
   
-  /**Dichte. (Masse pro Flaeche)*/
+  /**Density. (Mass per area)*/
   val density: Double
   
-  /**Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.*/
+  /**Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   * and is used with this shape's density to calculate its mass.*/
   val volume: Double
   
-  /**Errechnet die Masse dieser Form. Masse ist gleich Volumen mal Dichte.
-   @return Masse der Form*/
+  /**Returns the mass of this shape. The mass is given by volume times density.
+   @return mass of this shape*/
   def mass = volume * density
   
-  /**Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.
-   @return Traegheitsmoment zum Schwerpunkt*/
+  /**Moment of inertia for a rotation about this shape's COM.*/
   val I: Double
   
-  /**Beinhaltender Koerper.	Sollte nicht selbst bei Initialisierung definiert werden.*/
-  var body: Body = _
+  /**Containing body.*/
+  private var _body: Body = _
   
-  /**Gibt das umfassende AABB dieser Form zurueck.
-   @return umfassendes AABB*/
+  /**Returns this shape's containing body.*/
+  def body = _body
+  
+  /**Sets this shape's containing body.*/
+  private[dynamics] def body_=(b: Body) = _body = b
+  
+  /**Returns this shape's axis aligned bounding box.*/
   def AABB: AABB
   
-  /**Ergibt die Projektion dieser Form auf eine Gerade gegeben durch den
-   * Richtungsvektor <code>axis</code>.
-   * @param axis Richtungsvektor der Geraden
-   * @return Projektion dieser Form*/
+  /**Returns the projection of this shape onto the line given by the directional vector <code>axis</code>.
+   * @param axis directional vector of the line
+   * @return projection of this shape*/
   def project(axis: Vector2D): Projection
   
-  /**Ermittelt ob der gebene Punkt <code>point</code> in dieser Form enthalten ist.*/
+  /**Checks if the point <code>point</code> is contained in this shape.*/
   def contains(point: Vector2D): Boolean
   
-  /**Baut einen Koerper aus dieser Form.
-   @return ein Koerper bestehend aus dieser Form. */
+  /**Creates a new body made out of tis shape.
+   @return a body made out of tis shape*/
   def asBody = new Body(this)
   
-  /**Formen mit denen diese Form nicht Kollidiert.*/
+  /**Shapes with which this shape cannot collide.*/
   val transientShapes: collection.mutable.Set[Shape] = collection.mutable.Set()
   
-  /**Erstellt einen Koerper aus dieser Form und der Form <code>s</code>.*/
-  def ^(s: Shape) = new Body(this, s)
+  /**Creates a new body out of this shape and the shape <code>s</code>.*/
+  def ~(s: Shape) = new Body(this, s)
   
-  /**Erstellt einen Koerper aus dieser Form und den Formen des Koerpers <code>b</code>.*/
-  def ^(b: Body) = {
+  /**Creates a new body out of this shape and the shapes of body <code>b</code>.*/
+  def ~(b: Body) = {
     val shapes = this :: b.shapes
     new Body(shapes: _*)
   }

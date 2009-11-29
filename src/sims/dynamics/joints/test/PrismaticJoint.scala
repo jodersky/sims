@@ -15,10 +15,8 @@ case class PrismaticJoint(node1: Body, anchor1: Vector2D, node2: Body, anchor2: 
   def connection1 = (a1 rotate (node1.rotation - initRotation1)) + node1.pos
   def connection2 = (a2 rotate (node2.rotation - initRotation2)) + node2.pos
   
-  /**Relative Position der Bindungspunkte.*/
   def x = connection2 - connection1
   
-  /**Relative Geschwindigkeit der Bindungspunkte.*/
   def v = node2.velocityOfPoint(connection2) - node1.velocityOfPoint(connection1)
   
   
@@ -28,13 +26,13 @@ case class PrismaticJoint(node1: Body, anchor1: Vector2D, node2: Body, anchor2: 
   }
   
   def correctLinear(h: Double) = {
-    val x = this.x.unit	//relativer Abstand
+    val x = this.x.unit
     val n0 = x.leftNormal
-    val v = this.v	//relative Geschwindigkeit
-    val r1 = (connection1 - node1.pos)	//Abstand Punkt-Schwerpunkt, Koerper 1
-    val r2 = (connection2 - node2.pos)	//Abstand Punkt-Schwerpunkt, Koerper 2
-    val cr1 = r1 cross n0	//Kreuzprodukt
-    val cr2 = r2 cross n0	//Kreuzprodukt
+    val v = this.v
+    val r1 = (connection1 - node1.pos)
+    val r2 = (connection2 - node2.pos)
+    val cr1 = r1 cross n0
+    val cr2 = r2 cross n0
     val Cdot = n0 dot v
     val invMass = 1/node1.mass + 1/node1.I * cr1 * cr1 + 1/node2.mass + 1/node2.I * cr2 * cr2
     val m = if (invMass == 0.0) 0.0 else 1/invMass
@@ -57,13 +55,13 @@ case class PrismaticJoint(node1: Body, anchor1: Vector2D, node2: Body, anchor2: 
   
   def correctPosition(h: Double) = {
     /*
-    val x = this.x.unit	//relativer Abstand
+    val x = this.x.unit
     val n0 = x.leftNormal
-    val v = this.v	//relative Geschwindigkeit
-    val r1 = (connection1 - node1.pos)	//Abstand Punkt-Schwerpunkt, Koerper 1
-    val r2 = (connection2 - node2.pos)	//Abstand Punkt-Schwerpunkt, Koerper 2
-    val cr1 = r1 cross n0	//Kreuzprodukt
-    val cr2 = r2 cross n0	//Kreuzprodukt
+    val v = this.v
+    val r1 = (connection1 - node1.pos)
+    val r2 = (connection2 - node2.pos)
+    val cr1 = r1 cross n0
+    val cr2 = r2 cross n0
     val C = n0 dot x
     val invMass = 1/node1.mass + 1/node1.I * cr1 * cr1 + 1/node2.mass + 1/node2.I * cr2 * cr2
     val m = if (invMass == 0.0) 0.0 else 1/invMass

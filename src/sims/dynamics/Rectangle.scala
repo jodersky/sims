@@ -9,10 +9,10 @@ package sims.dynamics
 import sims.geometry._
 import sims.collision._
 
-/**Rechteck ist eine Art Polygon.
- * @param halfWidth halbe Breite dieses Rechtecks
- * @param halfHeight halbe Hoehe dieses Rechtecks
- * @param density dichte dieses Rechtecks
+/**A rectangle is a polygon.
+ * @param halfWidth this rectangle's half width
+ * @param halfHeight this rectangle's half height
+ * @param density density of this rectangle
  */
 case class Rectangle(halfWidth: Double,
                      halfHeight : Double,
@@ -22,19 +22,17 @@ case class Rectangle(halfWidth: Double,
   
   val I = 1.0 / 12.0  * mass * ((2 * halfWidth) * (2 * halfWidth) + (2 * halfHeight) * (2 * halfHeight))
   
-  /**Ergibt Vektoren vom Zentrum dieses Rectecks bis zu den Ecken.
-   * Erste Ecke entspricht der Ecke oben rechts bei einer Rotation von 0.
-   * Folgende Ecken sind gegen den Uhrzeigersinn geordnet.
-   * @return Vektoren vom Zentrum dieses Rectecks bis zu den Ecken*/
+  /**Returns the vectors from the center to the vertices of this rectangle.
+   * The first vertex is the upper-right vertex at a rotation of 0.
+   * Vertices are ordered counter-clockwise.*/
   def halfDiags: Array[Vector2D] = Array(Vector2D(halfWidth, halfHeight),
                                          Vector2D(-halfWidth, halfHeight),
                                          Vector2D(-halfWidth, -halfHeight),
                                          Vector2D(halfWidth, -halfHeight)) map (_ rotate rotation)
   
-  /**Ergibt die Ortsvektoren der Ecken dieses Rechtecks. 
-   * Erste Ecke entspricht der Ecke oben rechts bei einer Rotation von 0.
-   * Folgende Ecken sind gegen den Uhrzeigersinn geordnet.
-   * @return Ortsvektoren der Ecken dieses Rechtecks*/
+  /**Returns the position vectors of this rectangle's vertices.
+   * The first vertex is the upper-right vertex at a rotation of 0.
+   * Vertices are ordered counter-clockwise.*/
   def vertices = for (h <- halfDiags) yield pos + h
   
 } 

@@ -33,9 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="../../sims/dynamics/Shape.html" target="_self">Shape</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Circle ist die Definition eines Kreises.</dd></dl>
+      <dl><dd>A circle.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>radius - </code>Radius dieses Kreises</dd><dd><code>density - </code>Dichte dieses Kreises</dd></dl>
+        <b>Parameters</b></dt><dd><code>radius - </code>radius of this circle</dd><dd><code>density - </code>density of this circle</dd></dl>
     <dl>
       <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
       <dd><a href="../../graphyx/graphics/GraphicalCircle.html" target="_self">GraphicalCircle</a></dd>
@@ -52,7 +52,7 @@
         <em><a href="../../sims/dynamics/Circle.html#I" target="_self">I</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.</div>
+        <div>Moment of inertia for a rotation about this shape's COM.</div>
       </td>
     </tr>
 <tr>
@@ -63,7 +63,8 @@
         <em><a href="../../sims/dynamics/Circle.html#volume" target="_self">volume</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.</div>
+        <div>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   and is used with this shape's density to calculate its mass.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -71,7 +72,7 @@
           Values and Variables inherited from <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
         </td></tr>
         <tr><td class="signature" colspan="2">
-          <a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a>, <a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a>, <a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a>, <a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a>, <a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a>, <a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a>, <a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a>, <a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a>, <a href="../../sims/dynamics/Shape.html#body" target="_self">body</a>, <a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a>
+          <a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a>, <a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a>, <a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a>, <a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a>, <a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a>, <a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a>, <a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a>, <a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a>, <a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a>
         </td></tr>
       </table>
 <table summary="" cellpadding="3" class="member">
@@ -84,7 +85,7 @@
         <em><a href="../../sims/dynamics/Circle.html#AABB" target="_self">AABB</a></em>
          : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>
         
-        <div>Gibt das umfassende AABB dieser Form zurueck.</div>
+        <div>Returns this shape's axis aligned bounding box.</div>
       </td>
     </tr>
 <tr>
@@ -95,7 +96,7 @@
         <em><a href="../../sims/dynamics/Circle.html#contains%28sims.geometry.Vector2D%29" target="_self">contains</a></em>
         (<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ermittelt ob der gebene Punkt <code>point</code> in dieser Form enthalten ist.</div>
+        <div>Checks if the point <code>point</code> is contained in this shape.</div>
       </td>
     </tr>
 <tr>
@@ -162,8 +163,7 @@
         <em><a href="../../sims/dynamics/Circle.html#project%28sims.geometry.Vector2D%29" target="_self">project</a></em>
         (<em>axis</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>
         
-        <div>Ergibt die Projektion dieser Form auf eine Gerade gegeben durch den
-   Richtungsvektor <code>axis</code>.</div>
+        <div>Returns the projection of this shape onto the line given by the directional vector <code>axis</code>.</div>
       </td>
     </tr>
 <tr>
@@ -182,7 +182,7 @@
           Methods inherited from <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
         </td></tr>
         <tr><td class="signature" colspan="2">
-          <a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a>, <a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a>, <a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Shape%29" target="_self">^</a>, <a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Body%29" target="_self">^</a>
+          <a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a>, <a href="../../sims/dynamics/Shape.html#body" target="_self">body</a>, <a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a>, <a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Shape%29" target="_self">~</a>, <a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Body%29" target="_self">~</a>
         </td></tr>
       </table><table summary="" cellpadding="3" class="inherited">
         <tr><td class="title" colspan="2">
@@ -214,7 +214,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.</dd></dl>
+      <dl><dd>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   and is used with this shape's density to calculate its mass.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
@@ -233,9 +234,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Traegheitsmoment zum Schwerpunkt</dd></dl>
+      <dl><dd>Moment of inertia for a rotation about this shape's COM.</dd></dl>
+      <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>
@@ -255,9 +255,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Gibt das umfassende AABB dieser Form zurueck.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>umfassendes AABB</dd></dl>
+      <dl><dd>Returns this shape's axis aligned bounding box.</dd></dl>
+      <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>
@@ -275,11 +274,10 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die Projektion dieser Form auf eine Gerade gegeben durch den
-   Richtungsvektor <code>axis</code>.</dd></dl>
+      <dl><dd>Returns the projection of this shape onto the line given by the directional vector <code>axis</code>.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>axis - </code>Richtungsvektor der Geraden</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Projektion dieser Form</dd></dl>
+        <b>Parameters</b></dt><dd><code>axis - </code>directional vector of the line</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>projection of this shape</dd></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>
@@ -297,7 +295,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ermittelt ob der gebene Punkt <code>point</code> in dieser Form enthalten ist.</dd></dl>
+      <dl><dd>Checks if the point <code>point</code> is contained in this shape.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">

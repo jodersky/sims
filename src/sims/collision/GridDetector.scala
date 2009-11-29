@@ -11,11 +11,11 @@ import sims.geometry._
 import scala.collection._
 import scala.collection.mutable._
 
-/**Eine konkrete Implementierung von <code>Detector</code>. <code>GridDetector</code> ermittelt
- * alle Kollisionen mit einem Gittersystem.*/
+/**A conrete implementation of <code>Detector</code>. <code>GridDetector</code> divides the world into a grid
+ * for faster collision detection.*/
 class GridDetector(override val world: World) extends Detector {
   
-  /**Array von Kollisionserkennungsmethoden fuer Formenpaare.*/
+  /**Array of collision detection methods. These methods return <code>true</code> if two shapes are colliding.*/
   val detectionMethods = new ArrayBuffer[PartialFunction[(Shape, Shape), Boolean]]
   detectionMethods += {
     case (c1: Circle, c2: Circle) => {	//Kollision wenn Distanz <= Summe der Radien
@@ -41,7 +41,7 @@ class GridDetector(override val world: World) extends Detector {
       }
   }
   
-   /**Array von Kollisionsmethoden fuer Formenpaare.*/
+   /**Array of methods returning collisions. It is assumed that both shapes are colliding.*/
   val collisionMethods = new ArrayBuffer[PartialFunction[(Shape, Shape), Collision]]
   collisionMethods += {
     case (c1: Circle, c2: Circle) => CircleCollision(c1, c2)
@@ -50,34 +50,34 @@ class GridDetector(override val world: World) extends Detector {
     case (c: Circle, p: ConvexPolygon) => PolyCircleCollision(p, c)
   }
   
-  /**Gibt an, ob das Formenpaar <code>p</code> kollidiert.
-   * @param p Formenpaar.*/
+  /**Checks the pair of shapes <code>p</code> for collision.
+   * @param p Pair of shapes.*/
   def colliding(p: Pair) = {
    if (detectionMethods.exists(_.isDefinedAt(p))) 
      detectionMethods.find(_.isDefinedAt(p)).get.apply(p)
     else throw new IllegalArgumentException("No collision method for colliding pair!")
   }
   
-  /**Gibt die Kollision des Formenpaares <code>p</code> zurueck.
-   * @param p Formenpaar.*/
+  /**Returns the collision between both shapes of the pair <code>p</code>.
+   * @param p Pair of shapes.*/
   def collision(p: Pair): Collision = {
     if (collisionMethods.exists(_.isDefinedAt(p)))
       collisionMethods.find(_.isDefinedAt(p)).get.apply(p)
     else throw new IllegalArgumentException("No collision found in colliding pair!")
   }
   
-  /**Breite und Hoehe einer Gitterzelle.*/
+  /**Width and height of a grid cell.*/
   var gridSide: Double = 2
   
-  /**Ergibt potenzielle Kollisionspaare der Welt <code>world</code>.
+  /**Returns potential colliding pairs of shapes of the world <code>world</code>.
    * <p>
-   * Ein Kollisionspaar ist ein Paar aus zwei verschiedenen Formen, das folgenden Bedingungen unterliegt:
+   * A potential colliding pair is a pair of two shapes that comply with the following criteria:
    * <ul>
-   * <li>Die Formen muessen sich in der gleichen Gitterzelle befinden.</li>
-   * <li>Ihre AABBs muessen sich ueberlappen.</li>
-   * <li>Die Formen duerfen nicht von dem gleichen Koerper sein.</li>
-   * <li>Mindestens eine Form darf nicht Fixiert sein.</li>
-   * <li>Beide muessen {@link dynamics.Shape#collidable collidierbar} sein.</li>
+   * <li>The shapes are situated in the same grid cell.</li>
+   * <li>Their AABBs overlap.</li>
+   * <li>The shapes do not belong to the same body.</li>
+   * <li>At least one shape is not fixed.</li>
+   * <li>Both shapes are {@link dynamics.Shape#collidable}.</li>
    * </ul>*/
   def getPairs = {
     val grid = new HashMap[(Int, Int), List[Shape]]
@@ -110,13 +110,13 @@ class GridDetector(override val world: World) extends Detector {
   
   private var cache = (world.time, getPairs)
   
-  /**Alle potentiellen Kollisionspaare der Welt.
+  /**All potential colliding pairs of the world.
    * @see getPairs*/
   def pairs = {if (world.time != cache._1) cache = (world.time, getPairs); cache._2}
   
-  /**Ergibt alle kollidierenden Paare.*/
+  /**Returns all colliding pairs.*/
   def collidingPairs: Seq[Pair] = for(p <- pairs; if (colliding(p))) yield p
   
-  /**Ergibt alle Kollisionen.*/
+  /**Returns all collisions.*/
   def collisions: Seq[Collision] = for(p <- pairs; if (colliding(p))) yield collision(p)
 }

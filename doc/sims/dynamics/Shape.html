@@ -33,7 +33,7 @@
       </dt>
       <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
     </dl>
-      <dl><dd>Eine abstrakte Form.</dd></dl>
+      <dl><dd>An abstract shape.</dd></dl>
       <dl></dl>
     <dl>
       <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
@@ -51,18 +51,7 @@
         <em><a href="../../sims/dynamics/Shape.html#I" target="_self">I</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#body" target="_self">body</a></em>
-         : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Beinhaltender Koerper.	Sollte nicht selbst bei Initialisierung definiert werden.</div>
+        <div>Moment of inertia for a rotation about this shape's COM.</div>
       </td>
     </tr>
 <tr>
@@ -73,7 +62,7 @@
         <em><a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Kollisionsfaehigkeit.</div>
+        <div>Flag determining this shapes ability to collide with other shapes.</div>
       </td>
     </tr>
 <tr>
@@ -84,7 +73,7 @@
         <em><a href="../../sims/dynamics/Shape.html#density" target="_self">density</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Dichte. (Masse pro Flaeche)</div>
+        <div>Density. (Mass per area)</div>
       </td>
     </tr>
 <tr>
@@ -95,8 +84,8 @@
         <em><a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Teil des Reibungskoeffizienten bei einer Kollision zwischen dieser Form und einer anderen.
-   Der Reibungskoeffizient wird aus dem Produkt der beiden Teile der Formen errechnet.</div>
+        <div>Part of the coefficient of friction for a collision between this shape and another.
+   The coefficient of friction is calculated out of the product of this part and the other shape's part.</div>
       </td>
     </tr>
 <tr>
@@ -107,7 +96,7 @@
         <em><a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Position des Schwerpunktes in Welt.</div>
+        <div>Position of this shape's COM (in world coordinates).</div>
       </td>
     </tr>
 <tr>
@@ -118,7 +107,7 @@
         <em><a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Referenzposition in Koerper. Wird zur Rotation von Formen in Koerpern verwendet.</div>
+        <div>Local position of this shape's body COM to its COM at a body rotation of zero.</div>
       </td>
     </tr>
 <tr>
@@ -129,8 +118,8 @@
         <em><a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Teil der Stosszahl bei einer Kollision zwischen dieser Form und einer anderen.
-   Die Stosszahl wird aus dem Produkt der beiden Teile der Formen errechnet.</div>
+        <div>Part of the coefficient of restitution for a collision between this shape and another.
+   The coefficient of restitution is calculated out of the product of this part and the other shape's part.</div>
       </td>
     </tr>
 <tr>
@@ -141,7 +130,7 @@
         <em><a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Rotation. Entspricht Laenge des Rotationsvektors.</div>
+        <div>Rotation of this shape about its COM.</div>
       </td>
     </tr>
 <tr>
@@ -152,7 +141,7 @@
         <em><a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Initiale Rotation. (Rotation ohne Koerper)</div>
+        <div>Initial rotation. Rotation of this shape before it was added to a body.</div>
       </td>
     </tr>
 <tr>
@@ -163,7 +152,7 @@
         <em><a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a></em>
          : <a href="" target="contentFrame" class="scala/collection/mutable/Set">scala.collection.mutable.Set</a>[<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>]
         
-        <div>Formen mit denen diese Form nicht Kollidiert.</div>
+        <div>Shapes with which this shape cannot collide.</div>
       </td>
     </tr>
 <tr>
@@ -174,7 +163,7 @@
         <em><a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
         
-        <div>Einzigartige Identifikationsnummer.</div>
+        <div>Unique identification number.</div>
       </td>
     </tr>
 <tr>
@@ -185,7 +174,8 @@
         <em><a href="../../sims/dynamics/Shape.html#volume" target="_self">volume</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.</div>
+        <div>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   and is used with this shape's density to calculate its mass.</div>
       </td>
     </tr>
       </table>
@@ -199,29 +189,7 @@
         <em><a href="../../sims/dynamics/Shape.html#AABB" target="_self">AABB</a></em>
          : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>
         
-        <div>Gibt das umfassende AABB dieser Form zurueck.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Body%29" target="_self">^</a></em>
-        (<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Erstellt einen Koerper aus dieser Form und den Formen des Koerpers <code>b</code>.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Shape%29" target="_self">^</a></em>
-        (<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Erstellt einen Koerper aus dieser Form und der Form <code>s</code>.</div>
+        <div>Returns this shape's axis aligned bounding box.</div>
       </td>
     </tr>
 <tr>
@@ -232,7 +200,18 @@
         <em><a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a></em>
          : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
         
-        <div>Baut einen Koerper aus dieser Form.</div>
+        <div>Creates a new body made out of tis shape.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/dynamics/Shape.html#body" target="_self">body</a></em>
+         : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        
+        <div>Returns this shape's containing body.</div>
       </td>
     </tr>
 <tr>
@@ -243,7 +222,7 @@
         <em><a href="../../sims/dynamics/Shape.html#contains%28sims.geometry.Vector2D%29" target="_self">contains</a></em>
         (<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ermittelt ob der gebene Punkt <code>point</code> in dieser Form enthalten ist.</div>
+        <div>Checks if the point <code>point</code> is contained in this shape.</div>
       </td>
     </tr>
 <tr>
@@ -254,7 +233,7 @@
         <em><a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Errechnet die Masse dieser Form. Masse ist gleich Volumen mal Dichte.</div>
+        <div>Returns the mass of this shape. The mass is given by volume times density.</div>
       </td>
     </tr>
 <tr>
@@ -265,8 +244,29 @@
         <em><a href="../../sims/dynamics/Shape.html#project%28sims.geometry.Vector2D%29" target="_self">project</a></em>
         (<em>axis</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>
         
-        <div>Ergibt die Projektion dieser Form auf eine Gerade gegeben durch den
-   Richtungsvektor <code>axis</code>.</div>
+        <div>Returns the projection of this shape onto the line given by the directional vector <code>axis</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Body%29" target="_self">~</a></em>
+        (<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        
+        <div>Creates a new body out of this shape and the shapes of body <code>b</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Shape%29" target="_self">~</a></em>
+        (<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        
+        <div>Creates a new body out of this shape and the shape <code>s</code>.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -299,7 +299,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Einzigartige Identifikationsnummer.</dd></dl>
+      <dl><dd>Unique identification number.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="collidable"></a><dl>
@@ -311,7 +311,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Kollisionsfaehigkeit.</dd></dl>
+      <dl><dd>Flag determining this shapes ability to collide with other shapes.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="restitution"></a><dl>
@@ -323,8 +323,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Teil der Stosszahl bei einer Kollision zwischen dieser Form und einer anderen.
-   Die Stosszahl wird aus dem Produkt der beiden Teile der Formen errechnet.</dd></dl>
+      <dl><dd>Part of the coefficient of restitution for a collision between this shape and another.
+   The coefficient of restitution is calculated out of the product of this part and the other shape's part.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="friction"></a><dl>
@@ -336,8 +336,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Teil des Reibungskoeffizienten bei einer Kollision zwischen dieser Form und einer anderen.
-   Der Reibungskoeffizient wird aus dem Produkt der beiden Teile der Formen errechnet.</dd></dl>
+      <dl><dd>Part of the coefficient of friction for a collision between this shape and another.
+   The coefficient of friction is calculated out of the product of this part and the other shape's part.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="pos"></a><dl>
@@ -349,7 +349,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Position des Schwerpunktes in Welt.</dd></dl>
+      <dl><dd>Position of this shape's COM (in world coordinates).</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="rotation"></a><dl>
@@ -361,7 +361,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Rotation. Entspricht Laenge des Rotationsvektors.</dd></dl>
+      <dl><dd>Rotation of this shape about its COM.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="rotation0"></a><dl>
@@ -373,7 +373,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Initiale Rotation. (Rotation ohne Koerper)</dd></dl>
+      <dl><dd>Initial rotation. Rotation of this shape before it was added to a body.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="refLocalPos"></a><dl>
@@ -385,7 +385,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Referenzposition in Koerper. Wird zur Rotation von Formen in Koerpern verwendet.</dd></dl>
+      <dl><dd>Local position of this shape's body COM to its COM at a body rotation of zero.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="density"></a><dl>
@@ -397,7 +397,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Dichte. (Masse pro Flaeche)</dd></dl>
+      <dl><dd>Density. (Mass per area)</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="volume"></a><dl>
@@ -409,7 +409,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.</dd></dl>
+      <dl><dd>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   and is used with this shape's density to calculate its mass.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="I"></a><dl>
@@ -421,20 +422,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Traegheitsmoment zum Schwerpunkt</dd></dl>
-    <hr></hr>
-<a name="body"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>var</code>
-        <em>body</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Beinhaltender Koerper.	Sollte nicht selbst bei Initialisierung definiert werden.</dd></dl>
+      <dl><dd>Moment of inertia for a rotation about this shape's COM.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="transientShapes"></a><dl>
@@ -446,7 +434,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Formen mit denen diese Form nicht Kollidiert.</dd></dl>
+      <dl><dd>Shapes with which this shape cannot collide.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
@@ -460,9 +448,21 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Errechnet die Masse dieser Form. Masse ist gleich Volumen mal Dichte.</dd></dl>
+      <dl><dd>Returns the mass of this shape. The mass is given by volume times density.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Masse der Form</dd></dl>
+        <b>Returns</b></dt><dd>mass of this shape</dd></dl>
+    <hr></hr>
+<a name="body"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>body</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns this shape's containing body.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="AABB"></a><dl>
       <dt>
@@ -473,9 +473,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Gibt das umfassende AABB dieser Form zurueck.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>umfassendes AABB</dd></dl>
+      <dl><dd>Returns this shape's axis aligned bounding box.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="project%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -486,11 +485,10 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die Projektion dieser Form auf eine Gerade gegeben durch den
-   Richtungsvektor <code>axis</code>.</dd></dl>
+      <dl><dd>Returns the projection of this shape onto the line given by the directional vector <code>axis</code>.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>axis - </code>Richtungsvektor der Geraden</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Projektion dieser Form</dd></dl>
+        <b>Parameters</b></dt><dd><code>axis - </code>directional vector of the line</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>projection of this shape</dd></dl>
     <hr></hr>
 <a name="contains%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -501,7 +499,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ermittelt ob der gebene Punkt <code>point</code> in dieser Form enthalten ist.</dd></dl>
+      <dl><dd>Checks if the point <code>point</code> is contained in this shape.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="asBody"></a><dl>
@@ -513,32 +511,32 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Baut einen Koerper aus dieser Form.</dd></dl>
+      <dl><dd>Creates a new body made out of tis shape.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>ein Koerper bestehend aus dieser Form.</dd></dl>
+        <b>Returns</b></dt><dd>a body made out of tis shape</dd></dl>
     <hr></hr>
-<a name="%5E%28sims.dynamics.Shape%29"></a><dl>
+<a name="%7E%28sims.dynamics.Shape%29"></a><dl>
       <dt>
         
         <code></code>
         <code>def</code>
-        <em>^</em>(<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        <em>~</em>(<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Erstellt einen Koerper aus dieser Form und der Form <code>s</code>.</dd></dl>
+      <dl><dd>Creates a new body out of this shape and the shape <code>s</code>.</dd></dl>
       <dl></dl>
     <hr></hr>
-<a name="%5E%28sims.dynamics.Body%29"></a><dl>
+<a name="%7E%28sims.dynamics.Body%29"></a><dl>
       <dt>
         
         <code></code>
         <code>def</code>
-        <em>^</em>(<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        <em>~</em>(<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Erstellt einen Koerper aus dieser Form und den Formen des Koerpers <code>b</code>.</dd></dl>
+      <dl><dd>Creates a new body out of this shape and the shapes of body <code>b</code>.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 

@@ -13,7 +13,7 @@
         <em><a href="../../sims/dynamics/joints/DistanceJoint.html" target="_self">DistanceJoint</a></em>
         (<code>val </code><em>node1</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>, <code>val </code><em>anchor1</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <code>val </code><em>node2</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>, <code>val </code><em>anchor2</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>)<code> extends </code><a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
         
-        <div>DistanceJoints halten die Bindungspunkte auf ihren Bindungskoerpern bei einem konstanten Abstand.</div>
+        <div>DistanceJoints keep their connection points at a constant distance.</div>
       </td>
     </tr>
 <tr>
@@ -24,7 +24,7 @@
         <em><a href="../../sims/dynamics/joints/ForceJoint.html" target="_self">ForceJoint</a></em>
         <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
         
-        <div>Eine Verbindung die Kraft auf ihre Bindungskoerper ausueben kann.</div>
+        <div>A joint which can apply a force to its anchor bodies, thus adding or removing energy to the system.</div>
       </td>
     </tr>
 <tr>
@@ -35,8 +35,8 @@
         <em><a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a></em>
         <code> extends </code><a href="../../sims/dynamics/Constraint.html" target="_self">Constraint</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
         
-        <div>Joints sind Verbindungen die die Bewegung zwischen zwei Koerpern einschraenken.
- Ihre Implementierung wurde von Erin Catto's box2d inspiriert.</div>
+        <div>Joints constrain the movement of two bodies.
+ Their implementation was inspired by Erin Catto's box2d.</div>
       </td>
     </tr>
 <tr>
@@ -47,7 +47,9 @@
         <em><a href="../../sims/dynamics/joints/RevoluteJoint.html" target="_self">RevoluteJoint</a></em>
         (<code>val </code><em>node1</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>, <code>val </code><em>node2</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>, <code>val </code><em>anchor</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>)<code> extends </code><a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
         
-        <div>Ein Gelenk, dass zwei Koerper an einem Punkt verbindet. Inspiriert von JBox2D.</div>
+        <div>A revolute joint that connects two bodies at a singe point. Inspired from JBox2D.
+ <b>Warning:</b> there are still several bugs with revolute joints, if they are between two free
+ bodies and not connected at their respective COMs.</div>
       </td>
     </tr>
 <tr>
@@ -58,7 +60,7 @@
         <em><a href="../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a></em>
         (<code>val </code><em>node1</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>, <code>val </code><em>anchor1</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <code>val </code><em>node2</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>, <code>val </code><em>anchor2</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <code>val </code><em>springConstant</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <code>val </code><em>initialLength</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>)<code> extends </code><a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="../../sims/dynamics/joints/ForceJoint.html" target="_self">ForceJoint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
         
-        <div>Eine Hooksche Feder.</div>
+        <div>A spring obeying Hooke's law.</div>
       </td>
     </tr>        
         </table>

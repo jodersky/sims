@@ -6,14 +6,16 @@
 
 package sims.dynamics
 
-/**Randbedingungen erben von dem Trait <code>Constraint</code>.
- * Fuer jeden Constraint koennen Position und Geschwindigkeit korrigiert werden.
- * Ihre Implementierung wurde von Erin Catto's box2d inspiriert.*/
+/**All constraints in SiMS implement this trait.
+ * Position and velocity can be corrected for each constraint.
+ * The implementation of constraints was inspired by Erin Catto's box2d.*/
 trait Constraint {
   
-  /**Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen entsprechen.*/
+  /**Corrects the velocities of bodies according to this constraint.
+   * @param h a time interval, used for converting forces and impulses*/
   def correctVelocity(h: Double): Unit
   
-  /**Korrigiert die Position der Koerper damit diese den Randbedingungen entsprechen.*/
+  /**Corrects the positions of bodies according to this constraint.
+   * @param h a time interval, used for converting forces and impulses*/
   def correctPosition(h: Double): Unit
 }

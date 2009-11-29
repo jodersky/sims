@@ -8,25 +8,26 @@ package sims.geometry
 
 import sims.math._
 
-/**Projektion auf eine Achse.
+/**Projection on an axis.
  * <p>
- * Ueblicherweise werden Projektionen in SiMS fuer Kollisionserkennung benutzt.
- * @param axis Achse der Projektion
- * @param lower unterer Wert der Projektion
- * @param upper oberer Wert der Projektion*/
+ * Projections are commonly used in SiMS for collision detection.
+ * @param axis directional vector of the axis of the projection
+ * @param lower lower value of the projection
+ * @param upper upper value of the projection*/
 case class Projection(axis: Vector2D,
                       lower: Double,
                       upper: Double) {
-  require(axis != Vector2D.Null)
+  require(axis != Vector2D.Null, "A projection's axis cannot be given by a null vector!")
   
-  /**Ueberprueft ob sich diese Projektion mit der Projektion <code>other</code> ueberschneidet.*/
+  /**Checks this projection for overlap with another projection <code>other</code>.
+   * @throws IllegalArgumentExcepion if both projections axes aren't the same*/
   def overlaps(other: Projection): Boolean = {
     require(axis == other.axis, "Cannot compare two projections on different axes!")
       !((other.lower - this.upper) > 0 || (this.lower - other.upper) > 0)
   }
   
-  
-  /**Ergibt die Ueberlappung dieser Projektion und der Projektion <code>other</code>.*/
+  /**Returns the overlap between this projection and another projection <code>other</code>.
+  * @throws IllegalArgumentExcepion if both projections axes aren't the same*/
   def overlap(other: Projection): Double = {
     require(axis == other.axis, "Cannot compare two projections on different axes!")
         (Math.max(lower, other.lower) - Math.min(upper, other.upper)).abs

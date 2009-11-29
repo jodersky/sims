@@ -33,7 +33,7 @@
       </dt>
       <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
     </dl>
-      <dl><dd>Gemeinsame Eigenschaften aller konvexen Polygone.</dd></dl>
+      <dl><dd>Common properties of all convex polygons.</dd></dl>
       <dl></dl>
     <dl>
       <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
@@ -52,7 +52,7 @@
         <em><a href="../../sims/geometry/ConvexPolygon.html#AABB" target="_self">AABB</a></em>
          : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>
         
-        <div>Errechnet das AABB dieses Polygons</div>
+        <div>Returns this polygon's axis aligned bounding box.</div>
       </td>
     </tr>
 <tr>
@@ -63,7 +63,7 @@
         <em><a href="../../sims/geometry/ConvexPolygon.html#contains%28sims.geometry.Vector2D%29" target="_self">contains</a></em>
         (<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ueberprueft ob sich der gegebene Punkt <code>point</code> in diesem Polygon befindet.</div>
+        <div>Checks if the point <code>point</code> is contained in this polygon.</div>
       </td>
     </tr>
 <tr>
@@ -74,8 +74,7 @@
         <em><a href="../../sims/geometry/ConvexPolygon.html#project%28sims.geometry.Vector2D%29" target="_self">project</a></em>
         (<em>axis</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>
         
-        <div>Ergibt die Projektion dieses Polygons auf eine Gerade gegeben durch den
-   Richtungsvektor <code>axis</code></div>
+        <div>Returns the projection of this polygon onto the line given by the directional vector <code>axis</code>.</div>
       </td>
     </tr>
 <tr>
@@ -86,7 +85,8 @@
         <em><a href="../../sims/geometry/ConvexPolygon.html#sides" target="_self">sides</a></em>
          : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="../../sims/geometry/Segment.html" target="_self">Segment</a>]
         
-        <div>Ergibt alle Seiten dieses Polygons.</div>
+        <div>Returns all sides of this polygon. The sides are ordered counter-clockwise, the first vertex of the side
+   giving the side index.</div>
       </td>
     </tr>
 <tr>
@@ -97,7 +97,7 @@
         <em><a href="../../sims/geometry/ConvexPolygon.html#vertices" target="_self">vertices</a></em>
          : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
         
-        <div>Ergibt Position aller Ecken dieses Polygons. Die Ecken sind gegen den Uhrzeigersinn folgend.</div>
+        <div>Returns positions of all vertices of this Polygon. Vertices are ordered counter-clockwise.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -131,9 +131,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt Position aller Ecken dieses Polygons. Die Ecken sind gegen den Uhrzeigersinn folgend.</dd></dl>
+      <dl><dd>Returns positions of all vertices of this Polygon. Vertices are ordered counter-clockwise.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Ortsvektoren der Ecken</dd></dl>
+        <b>Returns</b></dt><dd>position vectors of the vertices</dd></dl>
     <hr></hr>
 <a name="sides"></a><dl>
       <dt>
@@ -144,9 +144,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt alle Seiten dieses Polygons.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Seiten dieses Polygons</dd></dl>
+      <dl><dd>Returns all sides of this polygon. The sides are ordered counter-clockwise, the first vertex of the side
+   giving the side index.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="project%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -157,11 +157,10 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die Projektion dieses Polygons auf eine Gerade gegeben durch den
-   Richtungsvektor <code>axis</code></dd></dl>
+      <dl><dd>Returns the projection of this polygon onto the line given by the directional vector <code>axis</code>.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>axis - </code>Richtungsvektor der Geraden</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Projektion dieses Polygons</dd></dl>
+        <b>Parameters</b></dt><dd><code>axis - </code>directional vector of the line</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>projection of this polygon</dd></dl>
     <hr></hr>
 <a name="AABB"></a><dl>
       <dt>
@@ -172,9 +171,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Errechnet das AABB dieses Polygons</dd></dl>
+      <dl><dd>Returns this polygon's axis aligned bounding box.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>umfassendes AABB</dd><dt style="margin:10px 0 0 20px;">
         <b>See Also</b></dt><dd>collision.AABB</dd></dl>
     <hr></hr>
 <a name="contains%28sims.geometry.Vector2D%29"></a><dl>
@@ -186,15 +184,12 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ueberprueft ob sich der gegebene Punkt <code>point</code> in diesem Polygon befindet.
+      <dl><dd>Checks if the point <code>point</code> is contained in this polygon.
    <p>
-   Hierzu wird eine Halbgerade von dem Punkt in Richtung der X-Achse gezogen (koennte aber auch beliebig sein).
-   Dann wird die Anzahl der Ueberschneidungen der Halbgeraden mit den Seiten und Ecken des Polygons ermittelt.
-   Ist die Anzahl der Ueberschneidungen ungerade, so befindet sich der Punkt in dem Polygon.
-   Es gibt jedoch Ausnahmen, und zwar wenn die Halbgerade eine Ecke ueberschneidet, ueberschneidet sie sowohl auch zwei Seiten.
-   Daher wird eine generelle Anzahl von Uerberschneidungen errechnet, gegeben durch die Anzahl der Ueberschneidungen mit den Seiten minus
-   die mit den Ecken.
-   Diese Zahl wird dann wie oben geschildert geprueft.</dd></dl>
+   A ray is created, originating from the point and following an arbitrary direction (X-Axis was chosen).
+   The number of intersections between the ray and this polygon's sides (including vertices) is counted.
+   The amount of intersections with vertices is substracted form the previuos number.
+   If the latter number is odd, the point is contained in the polygon.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 

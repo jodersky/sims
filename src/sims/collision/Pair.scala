@@ -8,7 +8,7 @@ package sims.collision
 
 import sims.dynamics._
 
-/**Formenpaar.*/
+/**Pair of shapes.*/
 case class Pair(s1: Shape, s2: Shape) extends Tuple2(s1, s2){
   def this(t: Tuple2[Shape, Shape]) = this(t._1, t._2)
   

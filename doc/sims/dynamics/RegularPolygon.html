@@ -33,9 +33,10 @@
       </dt>
       <dd><code> extends </code><a href="../../sims/dynamics/Shape.html" target="_self">Shape</a><code> with </code><a href="../../sims/geometry/ConvexPolygon.html" target="_self">ConvexPolygon</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Ein regelmaessiges Polygon mit <code>n</code> Seiten, dass der Kreis mit radius <code>radius</code> umschreibt.</dd></dl>
+      <dl><dd>A regular polygon with <code>n</code> sides whose excircle has a radius <code>radius</code>.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>n - </code>Anzahl der Seiten.</dd><dd><code>radius - </code>Radius des umschreibenden Kreises.</dd><dd><code>density - </code>Dichte.</dd></dl>
+        <b>Parameters</b></dt><dd><code>n - </code>nmber of sides.</dd><dd><code>radius - </code>radius of the excircle</dd><dd><code>density - </code>density of this regular polygon</dd><dt style="margin:10px 0 0 20px;">
+        <b>Throws</b></dt><dd><code>IllegalArgumentException - </code>if <code>n</code> is smaller than 3</dd></dl>
     <dl>
       <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
       <dd><a href="../../graphyx/graphics/GraphicalRegularPolygon.html" target="_self">GraphicalRegularPolygon</a></dd>
@@ -52,7 +53,7 @@
         <em><a href="../../sims/dynamics/RegularPolygon.html#I" target="_self">I</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.</div>
+        <div>Moment of inertia for a rotation about this shape's COM.</div>
       </td>
     </tr>
 <tr>
@@ -63,7 +64,8 @@
         <em><a href="../../sims/dynamics/RegularPolygon.html#volume" target="_self">volume</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.</div>
+        <div>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   and is used with this shape's density to calculate its mass.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -71,7 +73,7 @@
           Values and Variables inherited from <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
         </td></tr>
         <tr><td class="signature" colspan="2">
-          <a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a>, <a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a>, <a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a>, <a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a>, <a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a>, <a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a>, <a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a>, <a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a>, <a href="../../sims/dynamics/Shape.html#body" target="_self">body</a>, <a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a>
+          <a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a>, <a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a>, <a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a>, <a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a>, <a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a>, <a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a>, <a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a>, <a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a>, <a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a>
         </td></tr>
       </table>
 <table summary="" cellpadding="3" class="member">
@@ -162,7 +164,7 @@
         <em><a href="../../sims/dynamics/RegularPolygon.html#vertices" target="_self">vertices</a></em>
          : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
         
-        <div>Ergibt Position aller Ecken dieses Polygons. Die Ecken sind gegen den Uhrzeigersinn folgend.</div>
+        <div>Returns positions of all vertices of this Polygon. Vertices are ordered counter-clockwise.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -177,7 +179,7 @@
           Methods inherited from <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
         </td></tr>
         <tr><td class="signature" colspan="2">
-          <a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a>, <a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a>, <a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Shape%29" target="_self">^</a>, <a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Body%29" target="_self">^</a>
+          <a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a>, <a href="../../sims/dynamics/Shape.html#body" target="_self">body</a>, <a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a>, <a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Shape%29" target="_self">~</a>, <a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Body%29" target="_self">~</a>
         </td></tr>
       </table><table summary="" cellpadding="3" class="inherited">
         <tr><td class="title" colspan="2">
@@ -209,7 +211,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.</dd></dl>
+      <dl><dd>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   and is used with this shape's density to calculate its mass.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
@@ -228,9 +231,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Traegheitsmoment zum Schwerpunkt</dd></dl>
+      <dl><dd>Moment of inertia for a rotation about this shape's COM.</dd></dl>
+      <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>
@@ -259,9 +261,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt Position aller Ecken dieses Polygons. Die Ecken sind gegen den Uhrzeigersinn folgend.</dd></dl>
+      <dl><dd>Returns positions of all vertices of this Polygon. Vertices are ordered counter-clockwise.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Ortsvektoren der Ecken</dd></dl>
+        <b>Returns</b></dt><dd>position vectors of the vertices</dd></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>

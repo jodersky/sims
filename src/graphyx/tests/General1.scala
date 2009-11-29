@@ -103,7 +103,7 @@ object General1 extends Test{
     ground.fixed = true
     world += ground
     
-    world += (new Circle(0.1,1) {pos = Vector2D(2,2)}) ^ (new Circle(0.1,1) {pos = Vector2D(2,2.2)}) 
+    world += (new Circle(0.1,1) {pos = Vector2D(2,2)}) ~ (new Circle(0.1,1) {pos = Vector2D(2,2.2)}) 
   }
   
   override def fireEvent() = blastBomb

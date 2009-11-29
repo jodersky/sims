@@ -9,16 +9,16 @@ package sims.geometry
 import sims.math._
 import Math._
 
-/**Eine Halbgerade wird definiert durch:
- * @param point ein Aufpunkt
- * @param direction ein Richtungsvektor*/
+/**A ray.
+ * @param point a point on the ray
+ * @param direction this ray's directional vector
+ * @throws IllegalArgumentException if the directional vector is the null vector*/
 case class Ray(point: Vector2D, direction: Vector2D) {
   
-  //Ein Nullvektor hat keine Richtung
-  require(direction != Vector2D.Null)
+  require(direction != Vector2D.Null, "A ray's direction cannot be given by a null vector!")
   
-  /**Ueberprueft ob diese Halbgerade das gegebene Segment ueberschneidet.
-   * @param das auf Ueberschneidung zu uerberpruefende Segment*/
+  /**Checks this ray and the given segment for intersection.
+   * @param s the segment to test for intersection*/
   def intersects(s: Segment) = {
     val p1 = point
     val p2 = point + direction
@@ -38,11 +38,7 @@ case class Ray(point: Vector2D, direction: Vector2D) {
     }
   }
   
-  /**Ueberprueft ob diese Halbgerade den gegebenen Punkt enthaelt.
-   * <br>
-   * Hierzu wird der Vektor von dem Ursprungspunkt zu dem zu ueberpruefenden Punkt gebildet. Dieser wird dann mit dem Richtungsvektor
-   * auf Kolinearitaet geprueft.
-   * @param p Ortsvektor des oben genannten Punkt*/
+  /**Checks if this ray contains the point <code>p</code>.*/
   def contains(p: Vector2D) = {
     val v = p - point
     p == point ||

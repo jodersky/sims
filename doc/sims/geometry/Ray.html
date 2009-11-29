@@ -33,9 +33,10 @@
       </dt>
       <dd><code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Eine Halbgerade wird definiert durch:</dd></dl>
+      <dl><dd>A ray.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>point - </code>ein Aufpunkt</dd><dd><code>direction - </code>ein Richtungsvektor</dd></dl>
+        <b>Parameters</b></dt><dd><code>point - </code>a point on the ray</dd><dd><code>direction - </code>this ray's directional vector</dd><dt style="margin:10px 0 0 20px;">
+        <b>Throws</b></dt><dd><code>IllegalArgumentException - </code>if the directional vector is the null vector</dd></dl>
     
       
 
@@ -50,10 +51,7 @@
         <em><a href="../../sims/geometry/Ray.html#contains%28sims.geometry.Vector2D%29" target="_self">contains</a></em>
         (<em>p</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ueberprueft ob diese Halbgerade den gegebenen Punkt enthaelt.
-   <br>
-   Hierzu wird der Vektor von dem Ursprungspunkt zu dem zu ueberpruefenden Punkt gebildet. Dieser wird dann mit dem Richtungsvektor
-   auf Kolinearitaet geprueft.</div>
+        <div>Checks if this ray contains the point <code>p</code>.</div>
       </td>
     </tr>
 <tr>
@@ -87,7 +85,7 @@
         <em><a href="../../sims/geometry/Ray.html#intersects%28sims.geometry.Segment%29" target="_self">intersects</a></em>
         (<em>s</em> : <a href="../../sims/geometry/Segment.html" target="_self">Segment</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ueberprueft ob diese Halbgerade das gegebene Segment ueberschneidet.</div>
+        <div>Checks this ray and the given segment for intersection.</div>
       </td>
     </tr>
 <tr>
@@ -165,9 +163,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ueberprueft ob diese Halbgerade das gegebene Segment ueberschneidet.</dd></dl>
+      <dl><dd>Checks this ray and the given segment for intersection.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>das - </code>auf Ueberschneidung zu uerberpruefende Segment</dd></dl>
+        <b>Parameters</b></dt><dd><code>s - </code>the segment to test for intersection</dd></dl>
     <hr></hr>
 <a name="contains%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -178,12 +176,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ueberprueft ob diese Halbgerade den gegebenen Punkt enthaelt.
-   <br>
-   Hierzu wird der Vektor von dem Ursprungspunkt zu dem zu ueberpruefenden Punkt gebildet. Dieser wird dann mit dem Richtungsvektor
-   auf Kolinearitaet geprueft.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>p - </code>Ortsvektor des oben genannten Punkt</dd></dl>
+      <dl><dd>Checks if this ray contains the point <code>p</code>.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="hashCode%28%29"></a><dl>
       <dt>

@@ -33,9 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
     </dl>
-      <dl><dd>Randbedingungen erben von dem Trait <code>Constraint</code>.
- Fuer jeden Constraint koennen Position und Geschwindigkeit korrigiert werden.
- Ihre Implementierung wurde von Erin Catto's box2d inspiriert.</dd></dl>
+      <dl><dd>All constraints in SiMS implement this trait.
+ Position and velocity can be corrected for each constraint.
+ The implementation of constraints was inspired by Erin Catto's box2d.</dd></dl>
       <dl></dl>
     <dl>
       <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
@@ -54,7 +54,7 @@
         <em><a href="../../sims/dynamics/Constraint.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Position der Koerper damit diese den Randbedingungen entsprechen.</div>
+        <div>Corrects the positions of bodies according to this constraint.</div>
       </td>
     </tr>
 <tr>
@@ -65,7 +65,7 @@
         <em><a href="../../sims/dynamics/Constraint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen entsprechen.</div>
+        <div>Corrects the velocities of bodies according to this constraint.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -99,8 +99,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen entsprechen.</dd></dl>
-      <dl></dl>
+      <dl><dd>Corrects the velocities of bodies according to this constraint.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>h - </code>a time interval, used for converting forces and impulses</dd></dl>
     <hr></hr>
 <a name="correctPosition%28Double%29"></a><dl>
       <dt>
@@ -111,8 +112,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Position der Koerper damit diese den Randbedingungen entsprechen.</dd></dl>
-      <dl></dl>
+      <dl><dd>Corrects the positions of bodies according to this constraint.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>h - </code>a time interval, used for converting forces and impulses</dd></dl>
     <hr></hr></div>
 
 

@@ -33,9 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Eine 2x2, quadratische Matrix.</dd></dl>
+      <dl><dd>A 2x2 matrix.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>c11 - </code>Komponente 1,1</dd><dd><code>c12 - </code>Komponente 1,2</dd><dd><code>c21 - </code>Komponente 2,1</dd><dd><code>c22 - </code>Komponente 2,2</dd></dl>
+        <b>Parameters</b></dt><dd><code>c11 - </code>component 1,1</dd><dd><code>c12 - </code>component 1,2</dd><dd><code>c21 - </code>component 2,1</dd><dd><code>c22 - </code>component 2,2</dd></dl>
     
       <table summary="" cellpadding="3" class="member">
       <tr><td class="title" colspan="2">Additional Constructor Summary</td></tr>
@@ -47,8 +47,7 @@
         <em><a href="../../sims/math/Matrix22.html#this%28sims.geometry.Vector2D%2Csims.geometry.Vector2D%29" target="_self">this</a></em>
         (<em>c1</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <em>c2</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/math/Matrix22.html" target="_self">Matrix22</a>
         
-        <div>Eine 2x2-dimensionale, quadratische Matrix kann auch mit zwei 2-dimensionalen
-   Vektoren erstellt werden. In diesem Fall repraesentiert jeder Vektor eine Spalte.</div>
+        <div>A 2x2 matrix can be created with two 2D vectors. In this case, each column is represented by a vector.</div>
       </td>
     </tr>
       </table>
@@ -61,21 +60,10 @@
         <code> def</code>
       </td>
       <td class="signature">
-        <em><a href="../../sims/math/Matrix22.html#*%28Double%29" target="_self">*</a></em>
-        (<em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../sims/math/Matrix22.html" target="_self">Matrix22</a>
-        
-        <div>Multiplikation mit einem Skalar.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
         <em><a href="../../sims/math/Matrix22.html#*%28sims.geometry.Vector2D%29" target="_self">*</a></em>
         (<em>v</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Multiplikation mit einer 2x1-Matrix (2-dimensionaler Vektor).</div>
+        <div>Multiplikation with a 2D vector.</div>
       </td>
     </tr>
 <tr>
@@ -86,7 +74,18 @@
         <em><a href="../../sims/math/Matrix22.html#*%28sims.math.Matrix22%29" target="_self">*</a></em>
         (<em>m</em> : <a href="../../sims/math/Matrix22.html" target="_self">Matrix22</a>) : <a href="../../sims/math/Matrix22.html" target="_self">Matrix22</a>
         
-        <div>Multiplikation mit einer anderen 2x2-Matrix.</div>
+        <div>Matrix multiplication.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/math/Matrix22.html#*%28Double%29" target="_self">*</a></em>
+        (<em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../sims/math/Matrix22.html" target="_self">Matrix22</a>
+        
+        <div>Scalar multiplication.</div>
       </td>
     </tr>
 <tr>
@@ -108,7 +107,7 @@
         <em><a href="../../sims/math/Matrix22.html#det" target="_self">det</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Ergibt die Determinante dieser Matrix.</div>
+        <div>Determinant of this matrix.</div>
       </td>
     </tr>
 <tr>
@@ -217,10 +216,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Eine 2x2-dimensionale, quadratische Matrix kann auch mit zwei 2-dimensionalen
-   Vektoren erstellt werden. In diesem Fall repraesentiert jeder Vektor eine Spalte.</dd></dl>
+      <dl><dd>A 2x2 matrix can be created with two 2D vectors. In this case, each column is represented by a vector.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>c1 - </code>erste Spalte</dd><dd><code>c2 - </code>zweite Spalte</dd></dl>
+        <b>Parameters</b></dt><dd><code>c1 - </code>first column</dd><dd><code>c2 - </code>second column</dd></dl>
     <hr></hr></div>
 
 
@@ -235,9 +233,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die Determinante dieser Matrix.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Determinante dieser Matrix</dd></dl>
+      <dl><dd>Determinant of this matrix.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="%2B%28sims.math.Matrix22%29"></a><dl>
       <dt>
@@ -260,7 +257,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Multiplikation mit einem Skalar.</dd></dl>
+      <dl><dd>Scalar multiplication.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="*%28sims.math.Matrix22%29"></a><dl>
@@ -272,7 +269,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Multiplikation mit einer anderen 2x2-Matrix.</dd></dl>
+      <dl><dd>Matrix multiplication.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="*%28sims.geometry.Vector2D%29"></a><dl>
@@ -284,7 +281,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Multiplikation mit einer 2x1-Matrix (2-dimensionaler Vektor).</dd></dl>
+      <dl><dd>Multiplikation with a 2D vector.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="invert"></a><dl>

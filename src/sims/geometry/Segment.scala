@@ -6,37 +6,39 @@
 
 package sims.geometry
 
-/**Ein Segment wird durch seine beiden Extrempunkte gegeben.
- * @param vertex1 Ortsvektor des 1. Extrempunkts
- * @param vertex2 Ortsvektor des 2. Extrempunkts*/
+/**A segment is given by its vertices.
+ * @param vertex1 position vector of the first vertex
+ * @param vertex2 position vector of the second vertex
+ * @throws IllegalArgumentException if both vertices are equal
+ */
 case class Segment(vertex1: Vector2D, vertex2: Vector2D){
   require(vertex1 != vertex2, "A segment must have 2 distinct vertices!")
   
-  /**Laenge dieses Segments.*/
+  /**Length of this segment.*/
   val length = (vertex2 - vertex1).length
   
-  /**Vektor von EP1 zu EP2.*/
+  /**Vector from <code>vertex1</code> to <code>vertex2</code>.*/
   val d = vertex2 - vertex1
   
-  /**Einheitsrichtungsvektor.*/
+  /**Unit directional vector.*/
   val d0 = d.unit
   
-  /**Normalenvektor. Richtung: 90 Grad rechts zu d.*/
+  /**Right normal vector.*/
   val n = d.rightNormal
   
-  /**Normaleneinheitsvektor. Richtung: 90 Grad rechts zu d.*/
+  /**Right normal unit vector.*/
   val n0 = n.unit
   
-  /**Kleinster Abstand zwischen diesem Segment und dem Punkt <code>p</code>.*/
+  /**Smallest distance between this segment and the point <code>point</code>.*/
   def distance(point: Vector2D): Double = {
-    val v = point - vertex1	//Vektor von EP1 zu point
+    val v = point - vertex1	//vector from vertex1 to point
     val projection = v project d
     val alpha = if (d.x != 0) d.x / projection.x else d.y / projection.y
-    if (alpha >= 0 && projection.length <= length)	//Punkt ist naeher zu der Geraden zwischen EP1 und EP2
+    if (alpha >= 0 && projection.length <= length)	//point is closer to line between vertex1 and vertex2
       (v project n0).length
-    else if (alpha < 0)	//Punkt ist naeher zu EP1
+    else if (alpha < 0)	//point is closer to vertex1
       (point - vertex1).length
-    else if (alpha > 0)	//Punkt ist naeher zu EP2
+    else if (alpha > 0)	//point is closer to vertex2
        (point - vertex2).length
        else
          throw new IllegalArgumentException("Error occured trying to compute distance between segment and point.")

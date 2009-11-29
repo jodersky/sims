@@ -6,9 +6,9 @@
 
 package sims.dynamics.joints
 
-/**Eine Verbindung die Kraft auf ihre Bindungskoerper ausueben kann.*/
+/**A joint which can apply a force to its anchor bodies, thus adding or removing energy to the system.*/
 trait ForceJoint {
   
-  /**Uebt eine Kraft auf die Bindungskoerper aus.*/
+  /**Applies a force on the achor bodies.*/
   def applyForce(): Unit
 }

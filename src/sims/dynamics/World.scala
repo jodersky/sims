@@ -11,104 +11,107 @@ import sims.collision._
 import sims.dynamics.joints._
 import scala.collection.mutable._
 
-/**Eine Welt enthaelt und Simuliert ein System aus Koerpern und Verbindungen.*/
+/**A world contains and simulates a system of rigid bodies and joints.*/
 class World {
   
-  /**Zeitschritt in dem diese Welt die Simulation vorranschreiten laesst.*/
+  /**Time intervals in which this world simulates.*/
   var timeStep: Double = 1.0 / 60
   
-  /**Anzahl der Constraint-Korrekturen pro Zeitschritt.*/
+  /**Number of constraint corrections per time step.*/
   var iterations: Int = 10
   
-  /**Schwerkraft die in dieser Welt herrscht.*/
+  /**Gravity in this world.*/
   var gravity = Vector2D(0, -9.81)
   
-  /**Alle Koerper die diese Welt simuliert.*/
+  /**Bodies contained in this world.*/
   val bodies = new ArrayBuffer[Body]
   
-  /**Alle Verbindungen die diese Welt simuliert.*/
+  /**Joints contained in this world.*/
   val joints = new ArrayBuffer[Joint]
   
-  /**Ueberwachungsfunktionen fuer Koerper.
+  /**Monitoring methods for bodies.
    * <p>
-   * Das erste Element des Tuples ist die Ueberschrift und das zweite Element, der Wert.*/
+   * The first element of the tuple is the method's title and the second the method.
+   * Example usage: monitors += ("Y-Position", _.pos.y.toString)
+   * This will calculate all bodies - whose <code>monitor</code> field is set to
+   * <code>true</code> - second position components.*/
   val monitors = new ArrayBuffer[(String, Body => String)]
   
-  /**Kollisionsdetektor dieser Welt.*/
+  /**Collsion detector who manages collision detection in this world.*/
   val detector: Detector = new GridDetector(this)
   
-  /**Warnung wenn Koerper schneller als Lichtgeschwindigkeit.*/
+  /**Warning if a body's velocity exceeds the speed of light.*/
   var overCWarning = false
   
-  /**Kollisionerkennung.*/
+  /**Flag to enable collision detection.*/
   var enableCollisionDetection = true
   
-  /**Positionskorrekturen.*/
+  /**Flag to enable position correction for constraints.*/
   var enablePositionCorrection = true
   
-  /**Die minimale, nicht als null geltende Geschwindigkeit.*/
+  /**Minimal, non-zero linear velocity.*/
   var minLinearVelocity: Double = 0.0001
   
-  /**Die minimale, nicht als null geltende Winkelgeschwindigkeit.*/
+  /**Minimal, non-zero angular velocity.*/
   var minAngularVelocity: Double = 0.0001
   
-  /**Ergibt alle Formen aus allen Koerpern in dieser Welt.*/
+  /**Returns all shapes of all bodies in this world.*/
   def shapes = for (b <- bodies; s <- b.shapes) yield s
   
-  /**Fuegt dieser Welt einen Koerper hinzu.*/
+  /**Adds the given body to this world.*/
   def +=(body: Body) = bodies += body
   
-  /**Fuegt dieser Welt eine Verbindung hinzu.*/
+  /**Adds the given joint to this world.*/
   def +=(joint: Joint): Unit = joints += joint
   
-  /**Fuegt dieser Welt ein vorangefertigtes System vaus Koerpern und Verbindungen hinzu.*/
+  /**Adds the given prefabricated system of bodies and joints to this world.*/
   def +=(p: prefabs.Prefab): Unit = {
     for (b <- p.bodies) this += b
     for (j <- p.joints) this += j
   }
   
+  /**Adds the given sequence of bodies to this world.*/
   def ++=(bs: Seq[Body]): Unit = for(b <- bs) this += b
   
-  /**Entfernt den gegebenen Koerper aus dieser Welt.*/
+  /**Removes the given body from this world.*/
   def -=(body: Body): Unit = bodies -= body
   
-  /**Entfernt die gegebene Verbindung aus dieser Welt.*/
+  /**Removes the given joint from this world.*/
   def -=(joint: Joint): Unit = joints -= joint
   
-  /**Entfernt das gegebene System aus Koerpern und Verbindungen aus dieser Welt.*/
+  /**Removes the given prefabricated system of bodies and joints from this world.*/
   def -=(p: prefabs.Prefab): Unit = {
     for (b <- p.bodies) this -= b
     for (j <- p.joints) this -= j
   }
   
+  /**Removes the given sequence of bodies from this world.*/
   def --=(bs: Seq[Body]) = for(b <- bs) this -= b
   
-  /**Entfernt alle Koerper, Verbindungen und Ueberwachungsfunktionen dieser Welt.*/
+  /**Removes all bodies, joints and monitoring methods from this world.*/
   def clear() = {joints.clear(); bodies.clear(); monitors.clear()}
   
-  /**Aktuelle Zeit in Sekunden dieser Welt. Nach jedem Zeitschritt wird die Zeit erhoeht.*/
+  /**Current time in this world.*/
   var time: Double = 0.0
   
-  /**Simuliert einen von <code>timeStep</code> angegebenen Zeitschritt.
-   * Ihre Aufgabe ist es die Koerper dieser Welt so zu simulieren wie diese sich in einer Welt mit den gegebenen
-   * Bedingungen verhalten wuerden.
+  /**Simulates a time step of the duration <code>timeStep</code>.
    * <p>
-   * Der Zeitschritt wird in folgenden Phasen ausgefuehrt:
+   * The time step is simulated in the following phases:
    * <ol>
-   * <li>Kraefte wirken auf die Koerper (z.B Schwerkraft, andere Kraftfaehige Objekte).</li>
-   * <li>Beschleunigungen werden integriert.</li>
-   * <li>Geschwindigkeiten werden korrigiert.</li>
-   * <li>Geschwindigkeiten werden integriert.</li>
-   * <li>Positionen werden korrigiert.</li>
-   * <li>Die Methode <code>postStep()</code> wird ausgefuehrt.</li>
+   * <li>Forces are applied to bodies.</li>
+   * <li>Accelerations are integrated.</li>
+   * <li>Velocities are corrected.</li>
+   * <li>Velocities are integrated.</li>
+   * <li>Postions are corrected.</li>
+   * <li>The method <code>postStep()</code> is executed.</li>
    * </ol>*/
   def step() = {
     time += timeStep
     
-    //Kraftobjekte
+    //force applying objects
     for (j <- joints) j match {case f: ForceJoint => f.applyForce; case _ => ()}
     
-    //integriert v
+    //integration of acclerations, yields velocities
     for (b <- bodies) {
       val m = b.mass
       b.applyForce(gravity * b.mass)
@@ -118,13 +121,13 @@ class World {
       b.angularVelocity = b.angularVelocity + alpha * timeStep
     }
     
-    //korrigiert v
+    //correction of velocities
     for (i <- 0 until iterations){
       for(c <- joints) c.correctVelocity(timeStep)
       if (enableCollisionDetection) for (c <- detector.collisions) c.correctVelocity(timeStep)
     }
      
-    //integriert pos
+    //integration of velocities, yields positions
     for (b <- bodies) {
       //warning when body gets faster than speed of light
       if (b.linearVelocity.length >= 300000000) overCWarning = true
@@ -136,7 +139,7 @@ class World {
       b.torque = 0.0   
     }
     
-    //korrigiert pos
+    //correction of positions
     if (enablePositionCorrection) for (i <- 0 until iterations){
       for (c <- joints) c.correctPosition(timeStep)
       if (enableCollisionDetection) for (c <- detector.collisions) c.correctPosition(timeStep)
@@ -145,10 +148,11 @@ class World {
     postStep()
   }
   
-  /**Wird nach jedem Zeitschritt ausgefuehrt.*/
+  /**Initially empty method that is executed after each time step. This method
+   * may be overriden to create custom behaviour in a world.*/
   def postStep() = {}
   
-  /**Ergibt Informationen ueber diese Welt.*/
+  /**Returns information about this world.*/
   def info = {
     "Bodies = " + bodies.length + "\n" +
     "Shapes = " + shapes.length + "\n" +

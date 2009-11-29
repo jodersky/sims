@@ -33,9 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>DistanceJoints halten die Bindungspunkte auf ihren Bindungskoerpern bei einem konstanten Abstand.</dd></dl>
+      <dl><dd>DistanceJoints keep their connection points at a constant distance.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>node1 - </code>erster Koerper der Verbindung</dd><dd><code>anchor1 - </code>Bindungspunkt auf Koerper eins</dd><dd><code>node2 - </code>zweiter Koerper der Verbindung</dd><dd><code>anchor2 - </code>Bindungspunkt auf Koerper zwei</dd></dl>
+        <b>Parameters</b></dt><dd><code>node1 - </code>first associated body</dd><dd><code>anchor1 - </code>first connection point</dd><dd><code>node2 - </code>second associated body</dd><dd><code>anchor2 - </code>second connection point</dd></dl>
     
       <table summary="" cellpadding="3" class="member">
       <tr><td class="title" colspan="2">Additional Constructor Summary</td></tr>
@@ -62,7 +62,7 @@
         <em><a href="../../../sims/dynamics/joints/DistanceJoint.html#distance" target="_self">distance</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Abstand der beiden Bindungspunkte bei initialisierung (der gewollte Abstand).</div>
+        <div>Distance between the two connection points at initialisation (the desired distance).</div>
       </td>
     </tr>
       </table>
@@ -76,7 +76,7 @@
         <em><a href="../../../sims/dynamics/joints/DistanceJoint.html#connection1" target="_self">connection1</a></em>
          : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Ergibt den Bindungspunkt auf Koerper eins.</div>
+        <div>Returns the connection point on body one (in world coordinates).</div>
       </td>
     </tr>
 <tr>
@@ -87,7 +87,7 @@
         <em><a href="../../../sims/dynamics/joints/DistanceJoint.html#connection2" target="_self">connection2</a></em>
          : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Ergibt den Bindungspunkt auf Koerper zwei.</div>
+        <div>Returns the connection point on body two (in world coordinates).</div>
       </td>
     </tr>
 <tr>
@@ -98,7 +98,7 @@
         <em><a href="../../../sims/dynamics/joints/DistanceJoint.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Position der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</div>
+        <div>Corrects the positions of this joint's associated bodies.</div>
       </td>
     </tr>
 <tr>
@@ -109,7 +109,7 @@
         <em><a href="../../../sims/dynamics/joints/DistanceJoint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</div>
+        <div>Corrects the velocities of this joint's associated bodies.</div>
       </td>
     </tr>
 <tr>
@@ -187,7 +187,7 @@
         <em><a href="../../../sims/dynamics/joints/DistanceJoint.html#v" target="_self">v</a></em>
          : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Relative Geschwindigkeit der Bindungspunkte.</div>
+        <div>Relative velocity of the connection points.</div>
       </td>
     </tr>
 <tr>
@@ -198,7 +198,7 @@
         <em><a href="../../../sims/dynamics/joints/DistanceJoint.html#x" target="_self">x</a></em>
          : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Relative Position der Bindungspunkte.</div>
+        <div>Relative position of the connection points.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -241,7 +241,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Abstand der beiden Bindungspunkte bei initialisierung (der gewollte Abstand).</dd></dl>
+      <dl><dd>Distance between the two connection points at initialisation (the desired distance).</dd></dl>
       <dl></dl>
     <hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
@@ -255,7 +255,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt den Bindungspunkt auf Koerper eins.</dd></dl>
+      <dl><dd>Returns the connection point on body one (in world coordinates).</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="connection2"></a><dl>
@@ -267,7 +267,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt den Bindungspunkt auf Koerper zwei.</dd></dl>
+      <dl><dd>Returns the connection point on body two (in world coordinates).</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="x"></a><dl>
@@ -279,7 +279,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Relative Position der Bindungspunkte.</dd></dl>
+      <dl><dd>Relative position of the connection points.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="v"></a><dl>
@@ -291,7 +291,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Relative Geschwindigkeit der Bindungspunkte.</dd></dl>
+      <dl><dd>Relative velocity of the connection points.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="correctVelocity%28Double%29"></a><dl>
@@ -303,7 +303,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</dd></dl>
+      <dl><dd>Corrects the velocities of this joint's associated bodies.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
@@ -322,7 +322,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Position der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</dd></dl>
+      <dl><dd>Corrects the positions of this joint's associated bodies.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">

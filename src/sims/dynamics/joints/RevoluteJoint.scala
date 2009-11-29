@@ -11,7 +11,9 @@ import sims.math._
 import sims.dynamics._
 import Math._
 
-/**Ein Gelenk, dass zwei Koerper an einem Punkt verbindet. Inspiriert von JBox2D.*/
+/**A revolute joint that connects two bodies at a singe point. Inspired from JBox2D.
+ * <b>Warning:</b> there are still several bugs with revolute joints, if they are between two free
+ * bodies and not connected at their respective COMs.*/
 case class RevoluteJoint(node1: Body, node2: Body, anchor: Vector2D) extends Joint{
   private val a1 = anchor - node1.pos
   private val a2 = anchor - node2.pos

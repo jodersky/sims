@@ -9,9 +9,9 @@ package sims.util
 import sims.geometry._
 import scala.Math._
 
-/**Polare Koordinaten.*/
+/**Polar coordinates.*/
 case class Polar(distance: Double, angle: Double) {
   
-  /**Ergibt die Vektorrepraesantation dieser polaren Koordinaten.*/
+  /**Returns the vector representation of these polar coordinates.*/
   def toCarthesian = Vector2D(distance * sin(angle), distance * cos(angle))
 }

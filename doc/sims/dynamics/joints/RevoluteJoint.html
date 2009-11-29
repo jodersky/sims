@@ -33,7 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Ein Gelenk, dass zwei Koerper an einem Punkt verbindet. Inspiriert von JBox2D.</dd></dl>
+      <dl><dd>A revolute joint that connects two bodies at a singe point. Inspired from JBox2D.
+ <b>Warning:</b> there are still several bugs with revolute joints, if they are between two free
+ bodies and not connected at their respective COMs.</dd></dl>
       <dl></dl>
     
       
@@ -71,7 +73,7 @@
         <em><a href="../../../sims/dynamics/joints/RevoluteJoint.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Position der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</div>
+        <div>Corrects the positions of this joint's associated bodies.</div>
       </td>
     </tr>
 <tr>
@@ -82,7 +84,7 @@
         <em><a href="../../../sims/dynamics/joints/RevoluteJoint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</div>
+        <div>Corrects the velocities of this joint's associated bodies.</div>
       </td>
     </tr>
 <tr>
@@ -241,7 +243,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</dd></dl>
+      <dl><dd>Corrects the velocities of this joint's associated bodies.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
@@ -260,7 +262,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Position der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</dd></dl>
+      <dl><dd>Corrects the positions of this joint's associated bodies.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">

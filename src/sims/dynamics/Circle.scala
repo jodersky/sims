@@ -10,18 +10,16 @@ import sims.geometry._
 import sims.collision._
 
 /**
- * Circle ist die Definition eines Kreises.
- * @param radius Radius dieses Kreises
- * @param density Dichte dieses Kreises
+ * A circle.
+ * @param radius radius of this circle
+ * @param density density of this circle
  */
-case class Circle(radius: Double,					// Radius
-                  density: Double) extends Shape{	// Dichte
+case class Circle(radius: Double, density: Double) extends Shape{
   
   val volume = Math.Pi * radius * radius
   
   val I = mass * radius * radius / 2
   
-  // AABB(Zentrum - Radius, Zentrum + Radius)
   def AABB = new AABB(pos - Vector2D(radius,radius),
                       pos + Vector2D(radius,radius))
   
@@ -32,6 +30,5 @@ case class Circle(radius: Double,					// Radius
                                                 (pos.project(axis).y / axis.y) - radius,
                                                 (pos.project(axis).y / axis.y) + radius)
   
-  //Ist der gegebene punkt im Radius dieses kreises?
   def contains(point: Vector2D) = (point - pos).length <= radius
 }

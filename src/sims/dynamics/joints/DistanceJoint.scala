@@ -8,15 +8,15 @@ package sims.dynamics.joints
 
 import sims.geometry._
 
-/** DistanceJoints halten die Bindungspunkte auf ihren Bindungskoerpern bei einem konstanten Abstand.
- * @param node1 erster Koerper der Verbindung
- * @param anchor1 Bindungspunkt auf Koerper eins
- * @param node2 zweiter Koerper der Verbindung
- * @param anchor2 Bindungspunkt auf Koerper zwei*/
+/** DistanceJoints keep their connection points at a constant distance.
+ * @param node1 first associated body
+ * @param anchor1 first connection point
+ * @param node2 second associated body
+ * @param anchor2 second connection point*/
 case class DistanceJoint(node1: Body, anchor1: Vector2D, node2: Body, anchor2: Vector2D) extends  Joint{
   def this(node1: Body, node2: Body) = this(node1, node1.pos, node2, node2.pos)
   
-  /**Abstand der beiden Bindungspunkte bei initialisierung (der gewollte Abstand).*/
+  /**Distance between the two connection points at initialisation (the desired distance).*/
   val distance = (anchor2 - anchor1).length
   
   private val a1 = anchor1 - node1.pos
@@ -24,16 +24,16 @@ case class DistanceJoint(node1: Body, anchor1: Vector2D, node2: Body, anchor2: V
   private val initRotation1 = node1.rotation
   private val initRotation2 = node2.rotation
   
-  /**Ergibt den Bindungspunkt auf Koerper eins.*/
+  /**Returns the connection point on body one (in world coordinates).*/
   def connection1 = (a1 rotate (node1.rotation - initRotation1)) + node1.pos
   
-  /**Ergibt den Bindungspunkt auf Koerper zwei.*/
+  /**Returns the connection point on body two (in world coordinates).*/
   def connection2 = (a2 rotate (node2.rotation - initRotation2)) + node2.pos
   
-  /**Relative Position der Bindungspunkte.*/
+  /**Relative position of the connection points.*/
   def x = connection2 - connection1
   
-  /**Relative Geschwindigkeit der Bindungspunkte.*/
+  /**Relative velocity of the connection points.*/
   def v = node2.velocityOfPoint(connection2) - node1.velocityOfPoint(connection1)
   
   /* x = connection2 - connection1
@@ -45,15 +45,15 @@ case class DistanceJoint(node1: Body, anchor1: Vector2D, node2: Body, anchor2: V
      * 1/m = J * M^-1 * JT
      * = 1/m1 * u * u + 1/m2 * u * u + 1/I1 * (r1 cross u)^2 + 1/I2 * (r2 cross u)^2*/
   override def correctVelocity(h: Double) = {
-    val x = this.x	//relativer Abstand
-    val v = this.v	//relative Geschwindigkeit
-    val r1 = (connection1 - node1.pos)	//Abstand Punkt-Schwerpunkt, Koerper 1
-    val r2 = (connection2 - node2.pos)	//Abstand Punkt-Schwerpunkt, Koerper 2
-    val cr1 = r1 cross x.unit	//Kreuzprodukt
-    val cr2 = r2 cross x.unit	//Kreuzprodukt
-    val Cdot = x.unit dot v	//Velocity-Constraint
+    val x = this.x	//relative position
+    val v = this.v	//relative velocity
+    val r1 = (connection1 - node1.pos)
+    val r2 = (connection2 - node2.pos)
+    val cr1 = r1 cross x.unit
+    val cr2 = r2 cross x.unit
+    val Cdot = x.unit dot v	//velocity constraint
     val invMass = 1/node1.mass + 1/node1.I * cr1 * cr1 + 1/node2.mass + 1/node2.I * cr2 * cr2	//=J M^-1 JT
-    val m = if (invMass == 0.0) 0.0 else 1/invMass	//Test um Nulldivision zu vermeiden
+    val m = if (invMass == 0.0) 0.0 else 1/invMass	//avoid division by zero
     val lambda = -m * Cdot	//=-JV/JM^-1JT
     val impulse = x.unit * lambda	//P=J lambda
     node1.applyImpulse(-impulse, connection1)

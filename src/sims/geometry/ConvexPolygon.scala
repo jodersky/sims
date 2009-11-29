@@ -9,21 +9,20 @@ package sims.geometry
 import sims.collision._
 import sims.geometry._
 
-/**Gemeinsame Eigenschaften aller konvexen Polygone.*/
+/**Common properties of all convex polygons.*/
 trait ConvexPolygon {
   
-  /**Ergibt Position aller Ecken dieses Polygons. Die Ecken sind gegen den Uhrzeigersinn folgend.
-   * @return Ortsvektoren der Ecken*/
+  /**Returns positions of all vertices of this Polygon. Vertices are ordered counter-clockwise.
+   * @return position vectors of the vertices*/
   def vertices: Seq[Vector2D]
   
-  /**Ergibt alle Seiten dieses Polygons.
-   * @return Seiten dieses Polygons*/
+  /**Returns all sides of this polygon. The sides are ordered counter-clockwise, the first vertex of the side
+   * giving the side index.*/
   def sides = (for (i <- 0 until vertices.length) yield (new Segment(vertices(i), vertices((i + 1) % vertices.length)))).toArray
   
-  /**Ergibt die Projektion dieses Polygons auf eine Gerade gegeben durch den
-   * Richtungsvektor <code>axis</code>
-   * @param axis Richtungsvektor der Geraden
-   * @return Projektion dieses Polygons*/
+  /**Returns the projection of this polygon onto the line given by the directional vector <code>axis</code>.
+   * @param axis directional vector of the line
+   * @return projection of this polygon*/
   def project(axis: Vector2D) = {
     val points = for (v <- vertices) yield {v project axis}
     val bounds = for (p <- points) yield {if (axis.x != 0) p.x / axis.x else p.y / axis.y}
@@ -32,8 +31,7 @@ trait ConvexPolygon {
               (bounds(0) /: bounds)(Math.max(_,_)))
   }
   
-  /**Errechnet das AABB dieses Polygons
-   * @return umfassendes AABB
+  /**Returns this polygon's axis aligned bounding box.
    * @see collision.AABB*/
   def AABB = {
     val xs = vertices map (_.x)
@@ -42,15 +40,12 @@ trait ConvexPolygon {
              Vector2D(Iterable.max(xs), Iterable.max(ys)))
   }
   
-  /**Ueberprueft ob sich der gegebene Punkt <code>point</code> in diesem Polygon befindet.
+  /**Checks if the point <code>point</code> is contained in this polygon.
    * <p>
-   * Hierzu wird eine Halbgerade von dem Punkt in Richtung der X-Achse gezogen (koennte aber auch beliebig sein).
-   * Dann wird die Anzahl der Ueberschneidungen der Halbgeraden mit den Seiten und Ecken des Polygons ermittelt.
-   * Ist die Anzahl der Ueberschneidungen ungerade, so befindet sich der Punkt in dem Polygon.
-   * Es gibt jedoch Ausnahmen, und zwar wenn die Halbgerade eine Ecke ueberschneidet, ueberschneidet sie sowohl auch zwei Seiten.
-   * Daher wird eine generelle Anzahl von Uerberschneidungen errechnet, gegeben durch die Anzahl der Ueberschneidungen mit den Seiten minus
-   * die mit den Ecken.
-   * Diese Zahl wird dann wie oben geschildert geprueft.*/
+   * A ray is created, originating from the point and following an arbitrary direction (X-Axis was chosen).
+   * The number of intersections between the ray and this polygon's sides (including vertices) is counted.
+   * The amount of intersections with vertices is substracted form the previuos number.
+   * If the latter number is odd, the point is contained in the polygon.*/
   def contains(point: Vector2D) = {
     val r = new Ray(point, Vector2D.i)
     var intersections = 0

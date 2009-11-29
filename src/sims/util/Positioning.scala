@@ -9,7 +9,7 @@ package sims.util
 import sims.geometry._
 import sims.dynamics._
 
-/**Objekt mit Hiflsfunktionen fuer komfortables Positionieren von Koerpern.*/
+/**Utility functions for comfortable positioning of bodies.*/
 object Positioning {
   
   implicit def int2RelativeVector(x: Int): RelativeVector = new RelativeVector(x, 0)

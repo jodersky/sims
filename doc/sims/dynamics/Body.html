@@ -33,9 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
     </dl>
-      <dl><dd>Ein 2-Dimensionaler Koerper besteht aus mehreren Formen. Im gegensatz zu letzteren, enthaelt ein Koerper dynamische Informationen (v, F, etc...).</dd></dl>
+      <dl><dd>A two dimensional rigid body is made out of shapes.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>shps - </code>zu dem Koerper gehoerende Formen.</dd></dl>
+        <b>Parameters</b></dt><dd><code>shps - </code>shapes that belong to this body.</dd></dl>
     
       
 
@@ -49,7 +49,7 @@
         <em><a href="../../sims/dynamics/Body.html#angularVelocity" target="_self">angularVelocity</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Winkelgeschwindigkeit dieses Koerpers.</div>
+        <div>Angular velocity of this body.</div>
       </td>
     </tr>
 <tr>
@@ -60,7 +60,7 @@
         <em><a href="../../sims/dynamics/Body.html#force" target="_self">force</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Resultierende Kraft auf den Schwerpunkt dieses Koerpers.</div>
+        <div>Resulting force on the COM of this body.</div>
       </td>
     </tr>
 <tr>
@@ -71,7 +71,7 @@
         <em><a href="../../sims/dynamics/Body.html#linearVelocity" target="_self">linearVelocity</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Lineargeschwindigkeit dieses Koerpers.</div>
+        <div>Linear velocity of this body.</div>
       </td>
     </tr>
 <tr>
@@ -82,7 +82,7 @@
         <em><a href="../../sims/dynamics/Body.html#monitor" target="_self">monitor</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Gibt an ob die Eigenschaften dieses Koerpers ueberwacht werden sollen.</div>
+        <div>Flag for a world to monitor the properties of this body.</div>
       </td>
     </tr>
 <tr>
@@ -93,7 +93,7 @@
         <em><a href="../../sims/dynamics/Body.html#shapes" target="_self">shapes</a></em>
          : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>]
         
-        <div>Formen aus denen dieser Koerper besteht.</div>
+        <div>Shapes that belong to this body.</div>
       </td>
     </tr>
 <tr>
@@ -104,7 +104,7 @@
         <em><a href="../../sims/dynamics/Body.html#torque" target="_self">torque</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Resultierender Drehmoment zu dem Schwerpunkt dieses Koerpers.</div>
+        <div>Resulting torque on this body.</div>
       </td>
     </tr>
 <tr>
@@ -115,7 +115,7 @@
         <em><a href="../../sims/dynamics/Body.html#uid" target="_self">uid</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
         
-        <div>Einzigartige Identifikationsnummer dieses Koerpers.</div>
+        <div>Unique identification number.</div>
       </td>
     </tr>
       </table>
@@ -129,40 +129,9 @@
         <em><a href="../../sims/dynamics/Body.html#I" target="_self">I</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Ergibt den Traegheitsmoment zu dem Schwerpunkt dieses Koerpers. Der Traegheitsmoment wird mit Hilfe des Steinerschen Satzes errechnet.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Body.html#%5E%28sims.dynamics.Shape%29" target="_self">^</a></em>
-        (<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Erstellt einen neuen Koerper der zusaetzlich die Form <code>s</code> enthaelt.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Body.html#%5E%28sims.dynamics.Body%29" target="_self">^</a></em>
-        (<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Erstellt einen neuen Koerper der zusaetzlich die Formen von dem Koerper <code>b</code> enthaelt.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Body.html#applyForce%28sims.geometry.Vector2D%29" target="_self">applyForce</a></em>
-        (<em>force</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        <div>Wendet eine Kraft auf den Schwerpunkt dieses Koerpers an.</div>
+        <div>Returns the moment of inertia for rotations about the COM of this body.
+   It is calculated using the moments of inertia of this body's shapes and the parallel axis theorem.
+   If the body is fixed, its moment of inertia is infinite (<code>Double.PositiveInfinity</code>).</div>
       </td>
     </tr>
 <tr>
@@ -173,8 +142,7 @@
         <em><a href="../../sims/dynamics/Body.html#applyForce%28sims.geometry.Vector2D%2Csims.geometry.Vector2D%29" target="_self">applyForce</a></em>
         (<em>force</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Wendet eine Kraft auf einen Punkt dieses Koerpers an. Achtung: der gegebene Punkt wird nicht auf angehoerigkeit dieses
-   Koerpers ueberprueft.</div>
+        <div>Applies a force to a point on this body. Warning: the point is considered to be contained within this body.</div>
       </td>
     </tr>
 <tr>
@@ -182,11 +150,10 @@
         <code> def</code>
       </td>
       <td class="signature">
-        <em><a href="../../sims/dynamics/Body.html#applyImpulse%28sims.geometry.Vector2D%2Csims.geometry.Vector2D%29" target="_self">applyImpulse</a></em>
-        (<em>impulse</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        <em><a href="../../sims/dynamics/Body.html#applyForce%28sims.geometry.Vector2D%29" target="_self">applyForce</a></em>
+        (<em>force</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Wendet einen Impuls auf einen Punkt dieses Koerpers an. Achtung: der gegebene Punkt wird nicht auf angehoerigkeit dieses
-   Koerpers ueberprueft.</div>
+        <div>Applies a force to the COM of this body.</div>
       </td>
     </tr>
 <tr>
@@ -197,7 +164,18 @@
         <em><a href="../../sims/dynamics/Body.html#applyImpulse%28sims.geometry.Vector2D%29" target="_self">applyImpulse</a></em>
         (<em>impulse</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Wendet einen Impuls auf den Schwerpunkt dieses Koerpers an.</div>
+        <div>Applies an impulse to the COM of this body.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/dynamics/Body.html#applyImpulse%28sims.geometry.Vector2D%2Csims.geometry.Vector2D%29" target="_self">applyImpulse</a></em>
+        (<em>impulse</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Applies an impulse to a point on this body. Warning: the point is considered to be contained within this body.</div>
       </td>
     </tr>
 <tr>
@@ -208,7 +186,7 @@
         <em><a href="../../sims/dynamics/Body.html#contains%28sims.geometry.Vector2D%29" target="_self">contains</a></em>
         (<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ueberprueft ob der gegebene Punkt <code>point</code> sich in diesem Koerper befindet.</div>
+        <div>Checks if the point <code>point</code> is contained in this body.</div>
       </td>
     </tr>
 <tr>
@@ -219,7 +197,7 @@
         <em><a href="../../sims/dynamics/Body.html#fixed" target="_self">fixed</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Gibt an ob dieser Koerper fixiert ist.</div>
+        <div>Returns whether this body is fixed or not.</div>
       </td>
     </tr>
 <tr>
@@ -230,7 +208,7 @@
         <em><a href="../../sims/dynamics/Body.html#fixed_%3D%28Boolean%29" target="_self">fixed_=</a></em>
         (<em>value</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Fixiert oder unfixiert diesen Koerper.</div>
+        <div>Fixes or frees this body. By fixing, linear and angular velocities are set to zero.</div>
       </td>
     </tr>
 <tr>
@@ -241,7 +219,8 @@
         <em><a href="../../sims/dynamics/Body.html#mass" target="_self">mass</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Ergibt die Masse dieses Koerpers. Die Masse ist gleich die Summe aller Massen seiner Formen.</div>
+        <div>Returns the mass of this body. If the body is free, its mass is the sum of the masses of its shapes.
+   If the body is fixed, its mass is infinite (<code>Double.PositiveInfinity</code>).</div>
       </td>
     </tr>
 <tr>
@@ -252,7 +231,7 @@
         <em><a href="../../sims/dynamics/Body.html#pos" target="_self">pos</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Ermittelt die Position dieses Koerpers. Die Position entspricht dem Schwerpunkt.</div>
+        <div>Returns the position of this body. The position is equivalent to the center of mass.</div>
       </td>
     </tr>
 <tr>
@@ -263,7 +242,7 @@
         <em><a href="../../sims/dynamics/Body.html#pos_%3D%28sims.geometry.Vector2D%29" target="_self">pos_=</a></em>
         (<em>newPos</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Setzt die Position dieses Koerpers und verschiebt dadurch die Positionen seiner Formen.</div>
+        <div>Sets the position of this body. By doing so all its shapes are translated.</div>
       </td>
     </tr>
 <tr>
@@ -274,7 +253,7 @@
         <em><a href="../../sims/dynamics/Body.html#rotation" target="_self">rotation</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Ergibt die aktuelle Rotation dieses Koerpers.</div>
+        <div>Returns the current rotation of this body.</div>
       </td>
     </tr>
 <tr>
@@ -285,7 +264,7 @@
         <em><a href="../../sims/dynamics/Body.html#rotation_%3D%28Double%29" target="_self">rotation_=</a></em>
         (<em>newRotation</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Setzt die Rotation dieses Koerpers. Dazu werden auch die Positionen und Rotationen seiner Formen entsprechend veraendert.</div>
+        <div>Sets the rotation of this body. Position and rotation of shapes are modified accordingly.</div>
       </td>
     </tr>
 <tr>
@@ -307,7 +286,29 @@
         <em><a href="../../sims/dynamics/Body.html#velocityOfPoint%28sims.geometry.Vector2D%29" target="_self">velocityOfPoint</a></em>
         (<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Lineargeschwindigkeit des gegebenen Punktes auf diesem Koerper. In Weltkoordinaten.</div>
+        <div>Linear velocity of the given point on this body (in world coordinates).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/dynamics/Body.html#%7E%28sims.dynamics.Body%29" target="_self">~</a></em>
+        (<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        
+        <div>Creates a new body containing this body's shapes and the shapes of another body <code>b</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/dynamics/Body.html#%7E%28sims.dynamics.Shape%29" target="_self">~</a></em>
+        (<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        
+        <div>Creates a new body containing this body's shapes and the shape <code>s</code>.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -340,7 +341,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Einzigartige Identifikationsnummer dieses Koerpers.</dd></dl>
+      <dl><dd>Unique identification number.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="shapes"></a><dl>
@@ -352,7 +353,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Formen aus denen dieser Koerper besteht.</dd></dl>
+      <dl><dd>Shapes that belong to this body.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="monitor"></a><dl>
@@ -364,7 +365,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Gibt an ob die Eigenschaften dieses Koerpers ueberwacht werden sollen.</dd></dl>
+      <dl><dd>Flag for a world to monitor the properties of this body.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
         <b>See Also</b></dt><dd><a href="../../sims/dynamics/World.html#monitors" target="_self">World#monitors</a></dd></dl>
     <hr></hr>
@@ -377,7 +378,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Lineargeschwindigkeit dieses Koerpers.</dd></dl>
+      <dl><dd>Linear velocity of this body.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="angularVelocity"></a><dl>
@@ -389,7 +390,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Winkelgeschwindigkeit dieses Koerpers.</dd></dl>
+      <dl><dd>Angular velocity of this body.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="force"></a><dl>
@@ -401,7 +402,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Resultierende Kraft auf den Schwerpunkt dieses Koerpers.</dd></dl>
+      <dl><dd>Resulting force on the COM of this body.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="torque"></a><dl>
@@ -413,7 +414,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Resultierender Drehmoment zu dem Schwerpunkt dieses Koerpers.</dd></dl>
+      <dl><dd>Resulting torque on this body.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
@@ -427,7 +428,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Gibt an ob dieser Koerper fixiert ist.</dd></dl>
+      <dl><dd>Returns whether this body is fixed or not.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="fixed_%3D%28Boolean%29"></a><dl>
@@ -439,7 +440,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Fixiert oder unfixiert diesen Koerper.</dd></dl>
+      <dl><dd>Fixes or frees this body. By fixing, linear and angular velocities are set to zero.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="pos"></a><dl>
@@ -451,9 +452,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ermittelt die Position dieses Koerpers. Die Position entspricht dem Schwerpunkt.</dd></dl>
+      <dl><dd>Returns the position of this body. The position is equivalent to the center of mass.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Position dieses Koerpers</dd></dl>
+        <b>Returns</b></dt><dd>position of this body</dd></dl>
     <hr></hr>
 <a name="pos_%3D%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -464,9 +465,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Setzt die Position dieses Koerpers und verschiebt dadurch die Positionen seiner Formen.</dd></dl>
+      <dl><dd>Sets the position of this body. By doing so all its shapes are translated.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>newPos - </code>neue Position</dd></dl>
+        <b>Parameters</b></dt><dd><code>newPos - </code>new position</dd></dl>
     <hr></hr>
 <a name="rotation"></a><dl>
       <dt>
@@ -477,9 +478,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die aktuelle Rotation dieses Koerpers.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>aktuelle Rotation dieses Koerpers</dd></dl>
+      <dl><dd>Returns the current rotation of this body.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="rotation_%3D%28Double%29"></a><dl>
       <dt>
@@ -490,9 +490,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Setzt die Rotation dieses Koerpers. Dazu werden auch die Positionen und Rotationen seiner Formen entsprechend veraendert.</dd></dl>
+      <dl><dd>Sets the rotation of this body. Position and rotation of shapes are modified accordingly.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>r - </code>neue Rotation</dd></dl>
+        <b>Parameters</b></dt><dd><code>r - </code>new rotation</dd></dl>
     <hr></hr>
 <a name="velocityOfPoint%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -503,7 +503,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Lineargeschwindigkeit des gegebenen Punktes auf diesem Koerper. In Weltkoordinaten.</dd></dl>
+      <dl><dd>Linear velocity of the given point on this body (in world coordinates).</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="mass"></a><dl>
@@ -515,9 +515,10 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die Masse dieses Koerpers. Die Masse ist gleich die Summe aller Massen seiner Formen.</dd></dl>
+      <dl><dd>Returns the mass of this body. If the body is free, its mass is the sum of the masses of its shapes.
+   If the body is fixed, its mass is infinite (<code>Double.PositiveInfinity</code>).</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Masse des Koerpers</dd></dl>
+        <b>Returns</b></dt><dd>this body's mass</dd></dl>
     <hr></hr>
 <a name="I"></a><dl>
       <dt>
@@ -528,9 +529,11 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt den Traegheitsmoment zu dem Schwerpunkt dieses Koerpers. Der Traegheitsmoment wird mit Hilfe des Steinerschen Satzes errechnet.</dd></dl>
+      <dl><dd>Returns the moment of inertia for rotations about the COM of this body.
+   It is calculated using the moments of inertia of this body's shapes and the parallel axis theorem.
+   If the body is fixed, its moment of inertia is infinite (<code>Double.PositiveInfinity</code>).</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Traegheitsmoment relativ zu dem Schwerpunkt dieses Koerpers</dd></dl>
+        <b>Returns</b></dt><dd>moment of inertia for rotations about the COM of this body</dd></dl>
     <hr></hr>
 <a name="applyForce%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -541,9 +544,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Wendet eine Kraft auf den Schwerpunkt dieses Koerpers an.</dd></dl>
+      <dl><dd>Applies a force to the COM of this body.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>force - </code>anzuwendender Kraftvektor</dd></dl>
+        <b>Parameters</b></dt><dd><code>force - </code>applied force</dd></dl>
     <hr></hr>
 <a name="applyForce%28sims.geometry.Vector2D%2Csims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -554,10 +557,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Wendet eine Kraft auf einen Punkt dieses Koerpers an. Achtung: der gegebene Punkt wird nicht auf angehoerigkeit dieses
-   Koerpers ueberprueft.</dd></dl>
+      <dl><dd>Applies a force to a point on this body. Warning: the point is considered to be contained within this body.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>force - </code>anzuwendender Kraftvektor</dd><dd><code>point - </code>Ortsvektor des Punktes auf den die Kraft wirken soll (gegeben in Weltkoordinaten).</dd></dl>
+        <b>Parameters</b></dt><dd><code>force - </code>applied force</dd><dd><code>point - </code>position vector of the point (in world coordinates)</dd></dl>
     <hr></hr>
 <a name="applyImpulse%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -568,9 +570,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Wendet einen Impuls auf den Schwerpunkt dieses Koerpers an.</dd></dl>
+      <dl><dd>Applies an impulse to the COM of this body.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>impulse - </code>anzuwendender Impulsvektor</dd></dl>
+        <b>Parameters</b></dt><dd><code>impulse - </code>applied impulse</dd></dl>
     <hr></hr>
 <a name="applyImpulse%28sims.geometry.Vector2D%2Csims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -581,10 +583,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Wendet einen Impuls auf einen Punkt dieses Koerpers an. Achtung: der gegebene Punkt wird nicht auf angehoerigkeit dieses
-   Koerpers ueberprueft.</dd></dl>
+      <dl><dd>Applies an impulse to a point on this body. Warning: the point is considered to be contained within this body.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>impulse - </code>anzuwendender Impulsvektor</dd><dd><code>point - </code>Ortsvektor des Punktes auf den der Impuls wirken soll (gegeben in Weltkoordinaten).</dd></dl>
+        <b>Parameters</b></dt><dd><code>impulse - </code>applied impulse</dd><dd><code>point - </code>position vector of the point (in world coordinates)</dd></dl>
     <hr></hr>
 <a name="contains%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -595,7 +596,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ueberprueft ob der gegebene Punkt <code>point</code> sich in diesem Koerper befindet.</dd></dl>
+      <dl><dd>Checks if the point <code>point</code> is contained in this body.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="toString%28%29"></a><dl>
@@ -613,33 +614,33 @@
       <dl><dt style="margin:10px 0 0 20px;">
         <b>Returns</b></dt><dd>a string representation of the object.     </p></dd></dl>
     <hr></hr>
-<a name="%5E%28sims.dynamics.Shape%29"></a><dl>
+<a name="%7E%28sims.dynamics.Shape%29"></a><dl>
       <dt>
         
         <code></code>
         <code>def</code>
-        <em>^</em>(<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        <em>~</em>(<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Erstellt einen neuen Koerper der zusaetzlich die Form <code>s</code> enthaelt.</dd></dl>
+      <dl><dd>Creates a new body containing this body's shapes and the shape <code>s</code>.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>s - </code>zusaetzliche Form</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>neuer Koerper</dd></dl>
+        <b>Parameters</b></dt><dd><code>s - </code>new shape</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>new body</dd></dl>
     <hr></hr>
-<a name="%5E%28sims.dynamics.Body%29"></a><dl>
+<a name="%7E%28sims.dynamics.Body%29"></a><dl>
       <dt>
         
         <code></code>
         <code>def</code>
-        <em>^</em>(<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
+        <em>~</em>(<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Erstellt einen neuen Koerper der zusaetzlich die Formen von dem Koerper <code>b</code> enthaelt.</dd></dl>
+      <dl><dd>Creates a new body containing this body's shapes and the shapes of another body <code>b</code>.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>b - </code>Koerper mit zusaetzlichen Formen</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>neuer Koerper</dd></dl>
+        <b>Parameters</b></dt><dd><code>b - </code>body with extra shapes</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>new body</dd></dl>
     <hr></hr></div>
 
 

@@ -33,7 +33,7 @@
       </dt>
       <dd><code> extends </code><a href="../../sims/dynamics/Constraint.html" target="_self">Constraint</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
     </dl>
-      <dl><dd>Kollisionen zwischen zwei Formen enthalten Methoden zur Berrechnen der Kollisionsreaktion.</dd></dl>
+      <dl><dd>Collision between two shapes. Contains methods to compute the collision response.</dd></dl>
       <dl></dl>
     <dl>
       <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
@@ -51,7 +51,7 @@
         <em><a href="../../sims/collision/Collision.html#normal" target="_self">normal</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Normalenvektor zu der Kollisionsebene.</div>
+        <div>Normal vector to the collision face.</div>
       </td>
     </tr>
 <tr>
@@ -62,7 +62,7 @@
         <em><a href="../../sims/collision/Collision.html#points" target="_self">points</a></em>
          : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
         
-        <div>Kollisionspunkte.</div>
+        <div>Collision points.</div>
       </td>
     </tr>
 <tr>
@@ -73,7 +73,7 @@
         <em><a href="../../sims/collision/Collision.html#shape1" target="_self">shape1</a></em>
          : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
         
-        <div>Erste Kollisionsform (Referenz).</div>
+        <div>First colliding shape (reference shape).</div>
       </td>
     </tr>
 <tr>
@@ -84,7 +84,7 @@
         <em><a href="../../sims/collision/Collision.html#shape2" target="_self">shape2</a></em>
          : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
         
-        <div>Zweite Kollisionsform (eindringend).</div>
+        <div>Second colliding shape (incident shape).</div>
       </td>
     </tr>
       </table>
@@ -109,7 +109,7 @@
         <em><a href="../../sims/collision/Collision.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Position der Koerper damit diese den Randbedingungen entsprechen.</div>
+        <div>Corrects the positions of bodies according to this constraint.</div>
       </td>
     </tr>
 <tr>
@@ -120,7 +120,7 @@
         <em><a href="../../sims/collision/Collision.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen entsprechen.</div>
+        <div>Corrects the velocities of bodies according to this constraint.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -153,7 +153,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Erste Kollisionsform (Referenz).</dd></dl>
+      <dl><dd>First colliding shape (reference shape).</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="shape2"></a><dl>
@@ -165,7 +165,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Zweite Kollisionsform (eindringend).</dd></dl>
+      <dl><dd>Second colliding shape (incident shape).</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="points"></a><dl>
@@ -177,7 +177,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Kollisionspunkte.</dd></dl>
+      <dl><dd>Collision points.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="normal"></a><dl>
@@ -189,7 +189,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Normalenvektor zu der Kollisionsebene.</dd></dl>
+      <dl><dd>Normal vector to the collision face.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
@@ -203,8 +203,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen entsprechen.</dd></dl>
-      <dl></dl>
+      <dl><dd>Corrects the velocities of bodies according to this constraint.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>h - </code>a time interval, used for converting forces and impulses</dd></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>
@@ -231,8 +232,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Position der Koerper damit diese den Randbedingungen entsprechen.</dd></dl>
-      <dl></dl>
+      <dl><dd>Corrects the positions of bodies according to this constraint.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>h - </code>a time interval, used for converting forces and impulses</dd></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>

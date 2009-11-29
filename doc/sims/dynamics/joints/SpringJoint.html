@@ -33,9 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="../../../sims/dynamics/joints/ForceJoint.html" target="_self">ForceJoint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Eine Hooksche Feder.</dd></dl>
+      <dl><dd>A spring obeying Hooke's law.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>node1 - </code>erster Koerper der Verbindung</dd><dd><code>anchor1 - </code>Bindungspunkt auf Koerper eins</dd><dd><code>node2 - </code>zweiter Koerper der Verbindung</dd><dd><code>anchor2 - </code>Bindungspunkt auf Koerper zwei</dd><dd><code>springConstant - </code>Federkonstante</dd><dd><code>initialLength - </code>Initiallaenge</dd></dl>
+        <b>Parameters</b></dt><dd><code>node1 - </code>first associated body</dd><dd><code>anchor1 - </code>first connection point</dd><dd><code>node2 - </code>second associated body</dd><dd><code>anchor2 - </code>second connection point</dd><dd><code>springConstant - </code>spring constant</dd><dd><code>initialLength - </code>initial length</dd></dl>
     
       <table summary="" cellpadding="3" class="member">
       <tr><td class="title" colspan="2">Additional Constructor Summary</td></tr>
@@ -44,8 +44,8 @@
         <code> def</code>
       </td>
       <td class="signature">
-        <em><a href="../../../sims/dynamics/joints/SpringJoint.html#this%28sims.dynamics.Body%2Csims.dynamics.Body%2CDouble%29" target="_self">this</a></em>
-        (<em>node1</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>node2</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>springConstant</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>
+        <em><a href="../../../sims/dynamics/joints/SpringJoint.html#this%28sims.dynamics.Body%2Csims.dynamics.Body%2CDouble%2CDouble%29" target="_self">this</a></em>
+        (<em>node1</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>node2</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>springConstant</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <em>initialLength</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>
         
         
       </td>
@@ -66,8 +66,8 @@
         <code> def</code>
       </td>
       <td class="signature">
-        <em><a href="../../../sims/dynamics/joints/SpringJoint.html#this%28sims.dynamics.Body%2Csims.dynamics.Body%2CDouble%2CDouble%29" target="_self">this</a></em>
-        (<em>node1</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>node2</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>springConstant</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <em>initialLength</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>
+        <em><a href="../../../sims/dynamics/joints/SpringJoint.html#this%28sims.dynamics.Body%2Csims.dynamics.Body%2CDouble%29" target="_self">this</a></em>
+        (<em>node1</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>node2</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>springConstant</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>
         
         
       </td>
@@ -84,7 +84,7 @@
         <em><a href="../../../sims/dynamics/joints/SpringJoint.html#damping" target="_self">damping</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Daempfung.</div>
+        <div>Damping.</div>
       </td>
     </tr>
       </table>
@@ -98,7 +98,7 @@
         <em><a href="../../../sims/dynamics/joints/SpringJoint.html#applyForce%28%29" target="_self">applyForce</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Uebt die Federkraft auf die Bindungspunkte aus.</div>
+        <div>Applies the spring force to the connection points.</div>
       </td>
     </tr>
 <tr>
@@ -109,7 +109,7 @@
         <em><a href="../../../sims/dynamics/joints/SpringJoint.html#connection1" target="_self">connection1</a></em>
          : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Ergibt den Bindungspunkt auf Koerper eins.</div>
+        <div>Returns the connection point on body one (in world coordinates).</div>
       </td>
     </tr>
 <tr>
@@ -120,7 +120,7 @@
         <em><a href="../../../sims/dynamics/joints/SpringJoint.html#connection2" target="_self">connection2</a></em>
          : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Ergibt den Bindungspunkt auf Koerper zwei.</div>
+        <div>Returns the connection point on body two (in world coordinates).</div>
       </td>
     </tr>
 <tr>
@@ -131,7 +131,7 @@
         <em><a href="../../../sims/dynamics/joints/SpringJoint.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Position der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</div>
+        <div>Corrects the positions of this joint's associated bodies.</div>
       </td>
     </tr>
 <tr>
@@ -142,7 +142,7 @@
         <em><a href="../../../sims/dynamics/joints/SpringJoint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</div>
+        <div>Corrects the velocities of this joint's associated bodies.</div>
       </td>
     </tr>
 <tr>
@@ -165,7 +165,7 @@
         <em><a href="../../../sims/dynamics/joints/SpringJoint.html#force" target="_self">force</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Ergibt die Federkraft nach dem Hookschen Gesetz.</div>
+        <div>Returns the spring force.</div>
       </td>
     </tr>
 <tr>
@@ -228,10 +228,21 @@
         <code> def</code>
       </td>
       <td class="signature">
+        <em><a href="../../../sims/dynamics/joints/SpringJoint.html#v" target="_self">v</a></em>
+         : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+        
+        <div>Relative velocity of the connection points.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
         <em><a href="../../../sims/dynamics/joints/SpringJoint.html#x" target="_self">x</a></em>
          : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Relative Position der Bindungspunkte.</div>
+        <div>Relative position of the connection points.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -292,7 +303,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Daempfung.</dd></dl>
+      <dl><dd>Damping.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
@@ -306,7 +317,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt den Bindungspunkt auf Koerper eins.</dd></dl>
+      <dl><dd>Returns the connection point on body one (in world coordinates).</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="connection2"></a><dl>
@@ -318,7 +329,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt den Bindungspunkt auf Koerper zwei.</dd></dl>
+      <dl><dd>Returns the connection point on body two (in world coordinates).</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="x"></a><dl>
@@ -330,7 +341,19 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Relative Position der Bindungspunkte.</dd></dl>
+      <dl><dd>Relative position of the connection points.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="v"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>v</em> : <a href="../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Relative velocity of the connection points.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="force"></a><dl>
@@ -342,7 +365,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die Federkraft nach dem Hookschen Gesetz.</dd></dl>
+      <dl><dd>Returns the spring force.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="applyForce%28%29"></a><dl>
@@ -354,7 +377,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Uebt die Federkraft auf die Bindungspunkte aus.</dd></dl>
+      <dl><dd>Applies the spring force to the connection points.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
@@ -362,25 +385,6 @@
         </dt>
         <dd>
         <a href="../../../sims/dynamics/joints/ForceJoint.html" target="_self">ForceJoint</a>.<a href="../../../sims/dynamics/joints/ForceJoint.html#applyForce%28%29" target="_self">applyForce</a>
-        </dd>
-      </dl><hr></hr>
-<a name="correctPosition%28Double%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>correctPosition</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Korrigiert die Position der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</dd></dl>
-      <dl></dl>
-    <dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../sims/dynamics/joints/Joint.html#correctPosition%28Double%29" target="_self">correctPosition</a>
         </dd>
       </dl><hr></hr>
 <a name="correctVelocity%28Double%29"></a><dl>
@@ -392,7 +396,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen der Verbindung entsprechen.</dd></dl>
+      <dl><dd>Corrects the velocities of this joint's associated bodies.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
@@ -400,6 +404,25 @@
         </dt>
         <dd>
         <a href="../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../sims/dynamics/joints/Joint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a>
+        </dd>
+      </dl><hr></hr>
+<a name="correctPosition%28Double%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>correctPosition</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Corrects the positions of this joint's associated bodies.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../sims/dynamics/joints/Joint.html#correctPosition%28Double%29" target="_self">correctPosition</a>
         </dd>
       </dl><hr></hr>
 <a name="hashCode%28%29"></a><dl>

@@ -9,18 +9,17 @@ package sims.collision
 import geometry._
 
 /**
- * Axis Aligned Bounding Boxes, kurz AABBs, sind Rechtecke die eine bestimmte Form umhuellen.
- * Da AABBs nach den X- und Y-Achsen orientiert sind, ermoeglichen sie eine schnelle
- * und einfache Feststellung ob zwei AABBs sich ueberschneiden.
- * @param minVertex Ortsvektor der minimalen Ecke des AABBs
- * @param maxVertex Ortsvektor der maximalen Ecke des AABBs
+ * Axis Aligned Bounding Boxes (AABBs) are rectangles that frame a shape.
+ * Their X-Axis and Y-Axis orientation makes it easy to test two AABBs for overlap.
+ * @param minVertex Position vector of the bottom-left vertex
+ * @param maxVertex Position vector of the upper-right vertex
  */
 case class AABB(val minVertex: Vector2D,
                 val maxVertex: Vector2D)
 { 
   /**
-   * Ueberprueft ob dieses AABB sich mit dem AABB <code>box</code> ueberschneidet.
-   * @param box das mit diesem auf Ueberschneidung zu ueberpruefende AABB*/
+   * Checks this AABB with <code>box</code> for overlap.
+   * @param box AABB with which to check for overlap*/
   def overlaps(box: AABB): Boolean = {
     val d1 = box.minVertex - maxVertex
     val d2 = minVertex - box.maxVertex

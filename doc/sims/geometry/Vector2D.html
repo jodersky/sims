@@ -33,9 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Ein 2-dimensionaler Vektor.</dd></dl>
+      <dl><dd>A 2D vector.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>x - </code>1. Komponente</dd><dd><code>y - </code>2. Komponente</dd></dl>
+        <b>Parameters</b></dt><dd><code>x - </code>1st component</dd><dd><code>y - </code>2nd component</dd></dl>
     
       
 
@@ -49,7 +49,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#length" target="_self">length</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Norm dieses Vektors.</div>
+        <div>Norm or length of this vector.</div>
       </td>
     </tr>
       </table>
@@ -63,7 +63,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#*%28Double%29" target="_self">*</a></em>
         (<em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Multiplikation mit einem Skalar.</div>
+        <div>Scalar multiplication.</div>
       </td>
     </tr>
 <tr>
@@ -74,7 +74,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#%2B%28sims.geometry.Vector2D%29" target="_self">+</a></em>
         (<em>v</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Vektoraddition.</div>
+        <div>Vector addition.</div>
       </td>
     </tr>
 <tr>
@@ -85,7 +85,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#-%28sims.geometry.Vector2D%29" target="_self">-</a></em>
         (<em>v</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Vektorsubstraktion.</div>
+        <div>Vector substraction.</div>
       </td>
     </tr>
 <tr>
@@ -96,7 +96,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#%2F%28Double%29" target="_self">/</a></em>
         (<em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Division durch ein Skalar.</div>
+        <div>Scalar division.</div>
       </td>
     </tr>
 <tr>
@@ -107,7 +107,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#components" target="_self">components</a></em>
          : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>]
         
-        <div>Ergibt eine Liste der Komponenten dieses Vektors.</div>
+        <div>Returns a list of this vector's components.</div>
       </td>
     </tr>
 <tr>
@@ -118,7 +118,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#cross%28sims.geometry.Vector2D%29" target="_self">cross</a></em>
         (<em>v</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Kreuzprodukt. (Norm des Kreuzproduktes)</div>
+        <div>Cross product. Length only because in 2D. The direction would be given by the x3-axis.</div>
       </td>
     </tr>
 <tr>
@@ -129,7 +129,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#dot%28sims.geometry.Vector2D%29" target="_self">dot</a></em>
         (<em>v</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Skalarprodukt.</div>
+        <div>Dot product.</div>
       </td>
     </tr>
 <tr>
@@ -163,7 +163,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#isNull" target="_self">isNull</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ueberprueft, ob die Komponenten dieses Vektors gleich Null sind.</div>
+        <div>Checks if this vector is the null vector.</div>
       </td>
     </tr>
 <tr>
@@ -174,7 +174,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#leftNormal" target="_self">leftNormal</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Linker Normalenvektor. (-y, x)</div>
+        <div>Left normal vector. (-y, x)</div>
       </td>
     </tr>
 <tr>
@@ -218,7 +218,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#project%28sims.geometry.Vector2D%29" target="_self">project</a></em>
         (<em>v</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Errechnet die Projektion dieses- auf einen anderen Vektor.</div>
+        <div>Returns the projection of this vector onto the vector <code>v</code>.</div>
       </td>
     </tr>
 <tr>
@@ -229,7 +229,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#rightNormal" target="_self">rightNormal</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Rechter Normalenvektor. (y, -x)</div>
+        <div>Right normal vector. (y, -x)</div>
       </td>
     </tr>
 <tr>
@@ -240,7 +240,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#rotate%28Double%29" target="_self">rotate</a></em>
         (<em>angle</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Errechnet eine Rotation dieses Vektors.</div>
+        <div>Returns a rotation of this vector by <code>angle</code> radian.</div>
       </td>
     </tr>
 <tr>
@@ -262,7 +262,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#unary_-" target="_self">unary_-</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Minusvorzeichen.</div>
+        <div>Unary minus.</div>
       </td>
     </tr>
 <tr>
@@ -273,7 +273,7 @@
         <em><a href="../../sims/geometry/Vector2D.html#unit" target="_self">unit</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Einheitsvektor dieses Vektors.</div>
+        <div>Unit vector.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -306,7 +306,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Norm dieses Vektors.</dd></dl>
+      <dl><dd>Norm or length of this vector.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
@@ -320,10 +320,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Vektoraddition.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>v - </code>zu addierender Vektor</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>dieser Vektor addiert mit <code>v</code></dd></dl>
+      <dl><dd>Vector addition.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="-%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -334,10 +332,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Vektorsubstraktion.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>v - </code>zu substrahierender Vektor</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>dieser Vektor substrahiert mit <code>v</code></dd></dl>
+      <dl><dd>Vector substraction.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="*%28Double%29"></a><dl>
       <dt>
@@ -348,10 +344,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Multiplikation mit einem Skalar.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>n - </code>Faktor</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>dieser Vektor multipliziert mit <code>n</code></dd></dl>
+      <dl><dd>Scalar multiplication.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="%2F%28Double%29"></a><dl>
       <dt>
@@ -362,10 +356,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Division durch ein Skalar.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>n - </code>Nenner</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>dieser Vektor dividiert durch <code>n</code></dd></dl>
+      <dl><dd>Scalar division.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="unary_-"></a><dl>
       <dt>
@@ -376,7 +368,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Minusvorzeichen.</dd></dl>
+      <dl><dd>Unary minus.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="dot%28sims.geometry.Vector2D%29"></a><dl>
@@ -388,10 +380,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Skalarprodukt.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>v - </code>ein anderer Vektor</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Skalarprodukt von diesem Vektor mit <code>v</code></dd></dl>
+      <dl><dd>Dot product.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="cross%28sims.geometry.Vector2D%29"></a><dl>
       <dt>
@@ -402,10 +392,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Kreuzprodukt. (Norm des Kreuzproduktes)</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>v - </code>ein anderer Vektor</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Norm des Kreuzproduktes dieses Vektors mit <code>v</code>. Die Richtung wuerde der x3-Achse entsprechen.</dd></dl>
+      <dl><dd>Cross product. Length only because in 2D. The direction would be given by the x3-axis.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="unit"></a><dl>
       <dt>
@@ -416,7 +404,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Einheitsvektor dieses Vektors.</dd></dl>
+      <dl><dd>Unit vector.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="project%28sims.geometry.Vector2D%29"></a><dl>
@@ -428,10 +416,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Errechnet die Projektion dieses- auf einen anderen Vektor.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>v - </code>oben gennanter Vektor</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Projektion dieses Vektors auf <code>v</code></dd></dl>
+      <dl><dd>Returns the projection of this vector onto the vector <code>v</code>.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="rotate%28Double%29"></a><dl>
       <dt>
@@ -442,10 +428,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Errechnet eine Rotation dieses Vektors.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>angle - </code>Winkel in Radian</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>der um <code>angle</code> rad rotierte Vektor</dd></dl>
+      <dl><dd>Returns a rotation of this vector by <code>angle</code> radian.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="leftNormal"></a><dl>
       <dt>
@@ -456,7 +440,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Linker Normalenvektor. (-y, x)</dd></dl>
+      <dl><dd>Left normal vector. (-y, x)</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="rightNormal"></a><dl>
@@ -468,7 +452,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Rechter Normalenvektor. (y, -x)</dd></dl>
+      <dl><dd>Right normal vector. (y, -x)</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="isNull"></a><dl>
@@ -480,7 +464,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ueberprueft, ob die Komponenten dieses Vektors gleich Null sind.</dd></dl>
+      <dl><dd>Checks if this vector is the null vector.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="components"></a><dl>
@@ -492,7 +476,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt eine Liste der Komponenten dieses Vektors.</dd></dl>
+      <dl><dd>Returns a list of this vector's components.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="hashCode%28%29"></a><dl>

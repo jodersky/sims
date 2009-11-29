@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-        <head><title>class Joint in sims.dynamics.joints</title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        <head><title>class UnitCircleJoint in sims.dynamics.joints.test</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../../script.js"></script>
         </head>
         <body onload="init()">
         <table summary="" class="navigation">
@@ -17,51 +17,44 @@
       </table>
         
       <div class="entity">
-        <a href="../../../sims/dynamics/joints$package.html" target="_self">sims.dynamics.joints</a>
+        <a href="../../../../sims/dynamics/joints/test$package.html" target="_self">sims.dynamics.joints.test</a>
         <br></br>
-        <span class="entity">class  Joint</span>
+        <span class="entity">class  UnitCircleJoint</span>
       </div><hr></hr>
       <div class="source">
-        [source: <a href="" class="sims/dynamics/joints/Joint"><code>sims/dynamics/joints/Joint.scala</code></a>]
+        [source: <a href="" class="sims/dynamics/joints/test/UnitCircleJoint"><code>sims/dynamics/joints/test/UnitCircleJoint.scala</code></a>]
       </div><hr></hr>
-      <a name="Joint"></a><dl>
+      <a name="UnitCircleJoint"></a><dl>
       <dt>
         
-        <code>abstract</code>
+        <code></code>
         <code>class</code>
-        <em>Joint</em>
+        <em>UnitCircleJoint</em>(<em>body</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>anchor</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>)
       </dt>
-      <dd><code> extends </code><a href="../../../sims/dynamics/Constraint.html" target="_self">Constraint</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+      <dd><code> extends </code><a href="../../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a></dd>
     </dl>
-      <dl><dd>Joints constrain the movement of two bodies.
- Their implementation was inspired by Erin Catto's box2d.</dd></dl>
-      <dl></dl>
-    <dl>
-      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
-      <dd><a href="../../../sims/dynamics/joints/DistanceJoint.html" target="_self">DistanceJoint</a>, <a href="../../../sims/dynamics/joints/RevoluteJoint.html" target="_self">RevoluteJoint</a>, <a href="../../../sims/dynamics/joints/SpringJoint.html" target="_self">SpringJoint</a>, <a href="../../../sims/dynamics/joints/test/PrismaticJoint.html" target="_self">PrismaticJoint</a>, <a href="../../../sims/dynamics/joints/test/UnitCircleJoint.html" target="_self">UnitCircleJoint</a></dd>
-      </dl><hr></hr>
       
 
 <table summary="" cellpadding="3" class="member">
       <tr><td class="title" colspan="2">Value Summary</td></tr>
       <tr>
       <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
+        <code> val</code>
       </td>
       <td class="signature">
-        <em><a href="../../../sims/dynamics/joints/Joint.html#node1" target="_self">node1</a></em>
-         : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>
+        <em><a href="../../../../sims/dynamics/joints/test/UnitCircleJoint.html#node1" target="_self">node1</a></em>
+         : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>
         
         <div>First body of the joint.</div>
       </td>
     </tr>
 <tr>
       <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
+        <code> val</code>
       </td>
       <td class="signature">
-        <em><a href="../../../sims/dynamics/joints/Joint.html#node2" target="_self">node2</a></em>
-         : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>
+        <em><a href="../../../../sims/dynamics/joints/test/UnitCircleJoint.html#node2" target="_self">node2</a></em>
+         : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>
         
         <div>Second body of the joint.</div>
       </td>
@@ -71,10 +64,21 @@
       <tr><td class="title" colspan="2">Method Summary</td></tr>
       <tr>
       <td class="modifiers" valign="top"> 
-        <code>abstract def</code>
+        <code> def</code>
       </td>
       <td class="signature">
-        <em><a href="../../../sims/dynamics/joints/Joint.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
+        <em><a href="../../../../sims/dynamics/joints/test/UnitCircleJoint.html#connection" target="_self">connection</a></em>
+         : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../../sims/dynamics/joints/test/UnitCircleJoint.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
         <div>Corrects the positions of this joint's associated bodies.</div>
@@ -82,13 +86,35 @@
     </tr>
 <tr>
       <td class="modifiers" valign="top"> 
-        <code>abstract def</code>
+        <code> def</code>
       </td>
       <td class="signature">
-        <em><a href="../../../sims/dynamics/joints/Joint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
+        <em><a href="../../../../sims/dynamics/joints/test/UnitCircleJoint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
         (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
         <div>Corrects the velocities of this joint's associated bodies.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../../sims/dynamics/joints/test/UnitCircleJoint.html#v" target="_self">v</a></em>
+         : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../../sims/dynamics/joints/test/UnitCircleJoint.html#x" target="_self">x</a></em>
+         : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+        
+        
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -115,33 +141,74 @@
         </table><div><a name="node1"></a><dl>
       <dt>
         
-        <code>abstract</code>
+        <code></code>
         <code>val</code>
-        <em>node1</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>
+        <em>node1</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl>
       <dl><dd>First body of the joint.</dd></dl>
       <dl></dl>
-    <hr></hr>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../../sims/dynamics/joints/Joint.html#node1" target="_self">node1</a>
+        </dd>
+      </dl><hr></hr>
 <a name="node2"></a><dl>
       <dt>
         
-        <code>abstract</code>
+        <code></code>
         <code>val</code>
-        <em>node2</em> : <a href="../../../sims/dynamics/Body.html" target="_self">Body</a>
+        <em>node2</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>
       </dt>
       <dd></dd>
     </dl>
       <dl><dd>Second body of the joint.</dd></dl>
       <dl></dl>
-    <hr></hr></div>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../../sims/dynamics/joints/Joint.html#node2" target="_self">node2</a>
+        </dd>
+      </dl><hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
           <tr><td class="title">Method Details</td></tr>
-        </table><div><a name="correctVelocity%28Double%29"></a><dl>
+        </table><div><a name="connection"></a><dl>
       <dt>
         
-        <code>abstract</code>
+        <code></code>
+        <code>def</code>
+        <em>connection</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="x"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>x</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="v"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>v</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="correctVelocity%28Double%29"></a><dl>
+      <dt>
+        
+        <code></code>
         <code>def</code>
         <em>correctVelocity</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
       </dt>
@@ -154,13 +221,13 @@
           <b>Overrides</b>
         </dt>
         <dd>
-        <a href="../../../sims/dynamics/Constraint.html" target="_self">Constraint</a>.<a href="../../../sims/dynamics/Constraint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a>
+        <a href="../../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../../sims/dynamics/joints/Joint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a>
         </dd>
       </dl><hr></hr>
 <a name="correctPosition%28Double%29"></a><dl>
       <dt>
         
-        <code>abstract</code>
+        <code></code>
         <code>def</code>
         <em>correctPosition</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
       </dt>
@@ -173,7 +240,7 @@
           <b>Overrides</b>
         </dt>
         <dd>
-        <a href="../../../sims/dynamics/Constraint.html" target="_self">Constraint</a>.<a href="../../../sims/dynamics/Constraint.html#correctPosition%28Double%29" target="_self">correctPosition</a>
+        <a href="../../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../../sims/dynamics/joints/Joint.html#correctPosition%28Double%29" target="_self">correctPosition</a>
         </dd>
       </dl><hr></hr></div>
 

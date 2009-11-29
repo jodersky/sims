@@ -33,11 +33,11 @@
       </dt>
       <dd><code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Projektion auf eine Achse.
+      <dl><dd>Projection on an axis.
  <p>
- Ueblicherweise werden Projektionen in SiMS fuer Kollisionserkennung benutzt.</dd></dl>
+ Projections are commonly used in SiMS for collision detection.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>axis - </code>Achse der Projektion</dd><dd><code>lower - </code>unterer Wert der Projektion</dd><dd><code>upper - </code>oberer Wert der Projektion</dd></dl>
+        <b>Parameters</b></dt><dd><code>axis - </code>directional vector of the axis of the projection</dd><dd><code>lower - </code>lower value of the projection</dd><dd><code>upper - </code>upper value of the projection</dd></dl>
     
       
 
@@ -75,7 +75,7 @@
         <em><a href="../../sims/geometry/Projection.html#overlap%28sims.geometry.Projection%29" target="_self">overlap</a></em>
         (<em>other</em> : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Ergibt die Ueberlappung dieser Projektion und der Projektion <code>other</code>.</div>
+        <div>Returns the overlap between this projection and another projection <code>other</code>.</div>
       </td>
     </tr>
 <tr>
@@ -86,7 +86,7 @@
         <em><a href="../../sims/geometry/Projection.html#overlaps%28sims.geometry.Projection%29" target="_self">overlaps</a></em>
         (<em>other</em> : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ueberprueft ob sich diese Projektion mit der Projektion <code>other</code> ueberschneidet.</div>
+        <div>Checks this projection for overlap with another projection <code>other</code>.</div>
       </td>
     </tr>
 <tr>
@@ -164,8 +164,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ueberprueft ob sich diese Projektion mit der Projektion <code>other</code> ueberschneidet.</dd></dl>
-      <dl></dl>
+      <dl><dd>Checks this projection for overlap with another projection <code>other</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Throws</b></dt><dd><code>IllegalArgumentExcepion - </code>if both projections axes aren't the same</dd></dl>
     <hr></hr>
 <a name="overlap%28sims.geometry.Projection%29"></a><dl>
       <dt>
@@ -176,8 +177,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die Ueberlappung dieser Projektion und der Projektion <code>other</code>.</dd></dl>
-      <dl></dl>
+      <dl><dd>Returns the overlap between this projection and another projection <code>other</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Throws</b></dt><dd><code>IllegalArgumentExcepion - </code>if both projections axes aren't the same</dd></dl>
     <hr></hr>
 <a name="hashCode%28%29"></a><dl>
       <dt>

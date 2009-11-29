@@ -33,11 +33,10 @@
       </dt>
       <dd><code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Axis Aligned Bounding Boxes, kurz AABBs, sind Rechtecke die eine bestimmte Form umhuellen.
- Da AABBs nach den X- und Y-Achsen orientiert sind, ermoeglichen sie eine schnelle
- und einfache Feststellung ob zwei AABBs sich ueberschneiden.</dd></dl>
+      <dl><dd>Axis Aligned Bounding Boxes (AABBs) are rectangles that frame a shape.
+ Their X-Axis and Y-Axis orientation makes it easy to test two AABBs for overlap.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>minVertex - </code>Ortsvektor der minimalen Ecke des AABBs</dd><dd><code>maxVertex - </code>Ortsvektor der maximalen Ecke des AABBs</dd></dl>
+        <b>Parameters</b></dt><dd><code>minVertex - </code>Position vector of the bottom-left vertex</dd><dd><code>maxVertex - </code>Position vector of the upper-right vertex</dd></dl>
     <dl>
       <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
       <dd><a href="../../graphyx/graphics/GraphicalAABB.html" target="_self">GraphicalAABB</a></dd>
@@ -78,7 +77,7 @@
         <em><a href="../../sims/collision/AABB.html#overlaps%28sims.collision.AABB%29" target="_self">overlaps</a></em>
         (<em>box</em> : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Ueberprueft ob dieses AABB sich mit dem AABB <code>box</code> ueberschneidet.</div>
+        <div>Checks this AABB with <code>box</code> for overlap.</div>
       </td>
     </tr>
 <tr>
@@ -156,9 +155,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ueberprueft ob dieses AABB sich mit dem AABB <code>box</code> ueberschneidet.</dd></dl>
+      <dl><dd>Checks this AABB with <code>box</code> for overlap.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>box - </code>das mit diesem auf Ueberschneidung zu ueberpruefende AABB</dd></dl>
+        <b>Parameters</b></dt><dd><code>box - </code>AABB with which to check for overlap</dd></dl>
     <hr></hr>
 <a name="hashCode%28%29"></a><dl>
       <dt>

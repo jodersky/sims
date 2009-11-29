@@ -9,19 +9,19 @@ package sims.dynamics.joints
 import sims.geometry._
 import sims.dynamics._
 
-/**Joints sind Verbindungen die die Bewegung zwischen zwei Koerpern einschraenken.
- * Ihre Implementierung wurde von Erin Catto's box2d inspiriert.*/
+/**Joints constrain the movement of two bodies.
+ * Their implementation was inspired by Erin Catto's box2d.*/
 abstract class Joint extends Constraint{
   
-  /**Erster Koerper der Verbindung.*/
+  /**First body of the joint.*/
   val node1: Body
   
-  /**Zweiter Koerper der Verbindung.*/
+  /**Second body of the joint.*/
   val node2: Body
   
-  /**Korrigiert die Geschwindigkeit der Koerper damit diese den Randbedingungen der Verbindung entsprechen.*/
+  /**Corrects the velocities of this joint's associated bodies.*/
   def correctVelocity(h: Double): Unit
   
-  /**Korrigiert die Position der Koerper damit diese den Randbedingungen der Verbindung entsprechen.*/
+  /**Corrects the positions of this joint's associated bodies.*/
   def correctPosition(h: Double): Unit
 }

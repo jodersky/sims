@@ -33,8 +33,8 @@
       </dt>
       <dd><code> extends </code><a href="../../sims/collision/Detector.html" target="_self">Detector</a></dd>
     </dl>
-      <dl><dd>Eine konkrete Implementierung von <code>Detector</code>. <code>GridDetector</code> ermittelt
- alle Kollisionen mit einem Gittersystem.</dd></dl>
+      <dl><dd>A conrete implementation of <code>Detector</code>. <code>GridDetector</code> divides the world into a grid
+ for faster collision detection.</dd></dl>
       <dl></dl>
     
       
@@ -49,7 +49,7 @@
         <em><a href="../../sims/collision/GridDetector.html#collisionMethods" target="_self">collisionMethods</a></em>
          : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="../../sims/collision/Collision.html" target="_self">Collision</a>]]
         
-        <div>Array von Kollisionsmethoden fuer Formenpaare.</div>
+        <div>Array of methods returning collisions. It is assumed that both shapes are colliding.</div>
       </td>
     </tr>
 <tr>
@@ -60,7 +60,7 @@
         <em><a href="../../sims/collision/GridDetector.html#detectionMethods" target="_self">detectionMethods</a></em>
          : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>]]
         
-        <div>Array von Kollisionserkennungsmethoden fuer Formenpaare.</div>
+        <div>Array of collision detection methods. These methods return <code>true</code> if two shapes are colliding.</div>
       </td>
     </tr>
 <tr>
@@ -71,7 +71,7 @@
         <em><a href="../../sims/collision/GridDetector.html#gridSide" target="_self">gridSide</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Breite und Hoehe einer Gitterzelle.</div>
+        <div>Width and height of a grid cell.</div>
       </td>
     </tr>
       </table>
@@ -85,7 +85,7 @@
         <em><a href="../../sims/collision/GridDetector.html#colliding%28sims.collision.Pair%29" target="_self">colliding</a></em>
         (<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Gibt an, ob das Formenpaar <code>p</code> kollidiert.</div>
+        <div>Checks the pair of shapes <code>p</code> for collision.</div>
       </td>
     </tr>
 <tr>
@@ -96,7 +96,7 @@
         <em><a href="../../sims/collision/GridDetector.html#collidingPairs" target="_self">collidingPairs</a></em>
          : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
         
-        <div>Ergibt alle kollidierenden Paare.</div>
+        <div>Returns all colliding pairs.</div>
       </td>
     </tr>
 <tr>
@@ -107,7 +107,7 @@
         <em><a href="../../sims/collision/GridDetector.html#collision%28sims.collision.Pair%29" target="_self">collision</a></em>
         (<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="../../sims/collision/Collision.html" target="_self">Collision</a>
         
-        <div>Gibt die Kollision des Formenpaares <code>p</code> zurueck.</div>
+        <div>Returns the collision between both shapes of the pair <code>p</code>.</div>
       </td>
     </tr>
 <tr>
@@ -118,7 +118,7 @@
         <em><a href="../../sims/collision/GridDetector.html#collisions" target="_self">collisions</a></em>
          : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Collision.html" target="_self">Collision</a>]
         
-        <div>Ergibt alle Kollisionen.</div>
+        <div>Returns all collisions.</div>
       </td>
     </tr>
 <tr>
@@ -129,7 +129,7 @@
         <em><a href="../../sims/collision/GridDetector.html#getPairs" target="_self">getPairs</a></em>
          : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
         
-        <div>Ergibt potenzielle Kollisionspaare der Welt <code>world</code>.</div>
+        <div>Returns potential colliding pairs of shapes of the world <code>world</code>.</div>
       </td>
     </tr>
 <tr>
@@ -140,7 +140,7 @@
         <em><a href="../../sims/collision/GridDetector.html#pairs" target="_self">pairs</a></em>
          : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
         
-        <div>Alle potentiellen Kollisionspaare der Welt.</div>
+        <div>All potential colliding pairs of the world.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -173,7 +173,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Array von Kollisionserkennungsmethoden fuer Formenpaare.</dd></dl>
+      <dl><dd>Array of collision detection methods. These methods return <code>true</code> if two shapes are colliding.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="collisionMethods"></a><dl>
@@ -185,7 +185,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Array von Kollisionsmethoden fuer Formenpaare.</dd></dl>
+      <dl><dd>Array of methods returning collisions. It is assumed that both shapes are colliding.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="gridSide"></a><dl>
@@ -197,7 +197,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Breite und Hoehe einer Gitterzelle.</dd></dl>
+      <dl><dd>Width and height of a grid cell.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
@@ -211,9 +211,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Gibt an, ob das Formenpaar <code>p</code> kollidiert.</dd></dl>
+      <dl><dd>Checks the pair of shapes <code>p</code> for collision.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>p - </code>Formenpaar.</dd></dl>
+        <b>Parameters</b></dt><dd><code>p - </code>Pair of shapes.</dd></dl>
     <hr></hr>
 <a name="collision%28sims.collision.Pair%29"></a><dl>
       <dt>
@@ -224,9 +224,9 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Gibt die Kollision des Formenpaares <code>p</code> zurueck.</dd></dl>
+      <dl><dd>Returns the collision between both shapes of the pair <code>p</code>.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>p - </code>Formenpaar.</dd></dl>
+        <b>Parameters</b></dt><dd><code>p - </code>Pair of shapes.</dd></dl>
     <hr></hr>
 <a name="getPairs"></a><dl>
       <dt>
@@ -237,15 +237,15 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt potenzielle Kollisionspaare der Welt <code>world</code>.
+      <dl><dd>Returns potential colliding pairs of shapes of the world <code>world</code>.
    <p>
-   Ein Kollisionspaar ist ein Paar aus zwei verschiedenen Formen, das folgenden Bedingungen unterliegt:
+   A potential colliding pair is a pair of two shapes that comply with the following criteria:
    <ul>
-   <li>Die Formen muessen sich in der gleichen Gitterzelle befinden.</li>
-   <li>Ihre AABBs muessen sich ueberlappen.</li>
-   <li>Die Formen duerfen nicht von dem gleichen Koerper sein.</li>
-   <li>Mindestens eine Form darf nicht Fixiert sein.</li>
-   <li>Beide muessen {@link dynamics.Shape#collidable collidierbar} sein.</li>
+   <li>The shapes are situated in the same grid cell.</li>
+   <li>Their AABBs overlap.</li>
+   <li>The shapes do not belong to the same body.</li>
+   <li>At least one shape is not fixed.</li>
+   <li>Both shapes are {@link dynamics.Shape#collidable}.</li>
    </ul></dd></dl>
       <dl></dl>
     <hr></hr>
@@ -258,7 +258,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Alle potentiellen Kollisionspaare der Welt.</dd></dl>
+      <dl><dd>All potential colliding pairs of the world.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
         <b>See Also</b></dt><dd>getPairs</dd></dl>
     <hr></hr>
@@ -271,7 +271,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt alle kollidierenden Paare.</dd></dl>
+      <dl><dd>Returns all colliding pairs.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="collisions"></a><dl>
@@ -283,7 +283,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt alle Kollisionen.</dd></dl>
+      <dl><dd>Returns all collisions.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">

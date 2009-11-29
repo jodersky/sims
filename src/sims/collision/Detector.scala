@@ -12,12 +12,12 @@ import sims.dynamics._
 import scala.collection._
 import scala.collection.mutable._
 
-/**Eine Welt ermittelt ihre Kollisionen durch konkrete Implementierungen dieser Klasse.*/
+/**A world detects its collisions through concrete implementations of this class.*/
 abstract class Detector {
   
-  /**Die Welt dessen Formen auf Kollisionen ueberprueft werden sollen.*/
+  /**The world whose shapes are to be checked for collisions.*/
   val world: World
   
-  /**Ergibt alle Kollisionen zwischen Formen der Welt <code>world</code>.*/
+  /**Returns all collisions between shapes in the world <code>world</code>.*/
   def collisions: Seq[Collision]
 }

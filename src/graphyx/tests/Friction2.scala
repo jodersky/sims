@@ -26,7 +26,7 @@ object Friction2 extends Test{
     ground.rotation = -0.2
     world += ground
     
-    val b: Body = (new Circle(0.1,10)) ^ (new Circle(0.1,10) {pos = Vector2D(0.2,0)}) ^ (new Circle(0.1,10) {pos = Vector2D(0.4,0)})
+    val b: Body = (new Circle(0.1,10)) ~ (new Circle(0.1,10) {pos = Vector2D(0.2,0)}) ~ (new Circle(0.1,10) {pos = Vector2D(0.4,0)})
     b.pos = Vector2D(0.1,0.1)
     world += b
   }

@@ -7,8 +7,8 @@ import java.io._
 
 object Spring extends Test{
   val title = "Spring"
-  val fout = new java.io.FileOutputStream("out.csv")
-  val sout = new java.io.PrintStream(fout)
+  //val fout = new java.io.FileOutputStream("out.csv")
+  //val sout = new java.io.PrintStream(fout)
   val world = new World {
     override def postStep = {
       //for (b <- bodies; if (b.monitor)) sout.println(monitors(0)._2(b))

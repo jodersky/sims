@@ -33,7 +33,7 @@
       </dt>
       <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
     </dl>
-      <dl><dd>Eine Welt enthaelt und Simuliert ein System aus Koerpern und Verbindungen.</dd></dl>
+      <dl><dd>A world contains and simulates a system of rigid bodies and joints.</dd></dl>
       <dl></dl>
     
       
@@ -48,7 +48,7 @@
         <em><a href="../../sims/dynamics/World.html#bodies" target="_self">bodies</a></em>
          : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]
         
-        <div>Alle Koerper die diese Welt simuliert.</div>
+        <div>Bodies contained in this world.</div>
       </td>
     </tr>
 <tr>
@@ -59,7 +59,7 @@
         <em><a href="../../sims/dynamics/World.html#detector" target="_self">detector</a></em>
          : <a href="../../sims/collision/Detector.html" target="_self">Detector</a>
         
-        <div>Kollisionsdetektor dieser Welt.</div>
+        <div>Collsion detector who manages collision detection in this world.</div>
       </td>
     </tr>
 <tr>
@@ -70,7 +70,7 @@
         <em><a href="../../sims/dynamics/World.html#enableCollisionDetection" target="_self">enableCollisionDetection</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Kollisionerkennung.</div>
+        <div>Flag to enable collision detection.</div>
       </td>
     </tr>
 <tr>
@@ -81,7 +81,7 @@
         <em><a href="../../sims/dynamics/World.html#enablePositionCorrection" target="_self">enablePositionCorrection</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Positionskorrekturen.</div>
+        <div>Flag to enable position correction for constraints.</div>
       </td>
     </tr>
 <tr>
@@ -92,7 +92,7 @@
         <em><a href="../../sims/dynamics/World.html#gravity" target="_self">gravity</a></em>
          : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
         
-        <div>Schwerkraft die in dieser Welt herrscht.</div>
+        <div>Gravity in this world.</div>
       </td>
     </tr>
 <tr>
@@ -103,7 +103,7 @@
         <em><a href="../../sims/dynamics/World.html#iterations" target="_self">iterations</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
         
-        <div>Anzahl der Constraint-Korrekturen pro Zeitschritt.</div>
+        <div>Number of constraint corrections per time step.</div>
       </td>
     </tr>
 <tr>
@@ -114,7 +114,7 @@
         <em><a href="../../sims/dynamics/World.html#joints" target="_self">joints</a></em>
          : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>]
         
-        <div>Alle Verbindungen die diese Welt simuliert.</div>
+        <div>Joints contained in this world.</div>
       </td>
     </tr>
 <tr>
@@ -125,7 +125,7 @@
         <em><a href="../../sims/dynamics/World.html#minAngularVelocity" target="_self">minAngularVelocity</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Die minimale, nicht als null geltende Winkelgeschwindigkeit.</div>
+        <div>Minimal, non-zero angular velocity.</div>
       </td>
     </tr>
 <tr>
@@ -136,7 +136,7 @@
         <em><a href="../../sims/dynamics/World.html#minLinearVelocity" target="_self">minLinearVelocity</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Die minimale, nicht als null geltende Geschwindigkeit.</div>
+        <div>Minimal, non-zero linear velocity.</div>
       </td>
     </tr>
 <tr>
@@ -147,7 +147,7 @@
         <em><a href="../../sims/dynamics/World.html#monitors" target="_self">monitors</a></em>
          : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, (<a href="../../sims/dynamics/Body.html" target="_self">Body</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)]
         
-        <div>Ueberwachungsfunktionen fuer Koerper.</div>
+        <div>Monitoring methods for bodies.</div>
       </td>
     </tr>
 <tr>
@@ -158,7 +158,7 @@
         <em><a href="../../sims/dynamics/World.html#overCWarning" target="_self">overCWarning</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
         
-        <div>Warnung wenn Koerper schneller als Lichtgeschwindigkeit.</div>
+        <div>Warning if a body's velocity exceeds the speed of light.</div>
       </td>
     </tr>
 <tr>
@@ -169,7 +169,7 @@
         <em><a href="../../sims/dynamics/World.html#time" target="_self">time</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Aktuelle Zeit in Sekunden dieser Welt. Nach jedem Zeitschritt wird die Zeit erhoeht.</div>
+        <div>Current time in this world.</div>
       </td>
     </tr>
 <tr>
@@ -180,7 +180,7 @@
         <em><a href="../../sims/dynamics/World.html#timeStep" target="_self">timeStep</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Zeitschritt in dem diese Welt die Simulation vorranschreiten laesst.</div>
+        <div>Time intervals in which this world simulates.</div>
       </td>
     </tr>
       </table>
@@ -194,29 +194,7 @@
         <em><a href="../../sims/dynamics/World.html#%2B%2B%3D%28Seq%5Bsims.dynamics.Body%5D%29" target="_self">++=</a></em>
         (<em>bs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/World.html#%2B%3D%28sims.prefabs.Prefab%29" target="_self">+=</a></em>
-        (<em>p</em> : <a href="../../sims/prefabs/Prefab.html" target="_self">Prefab</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        <div>Fuegt dieser Welt ein vorangefertigtes System vaus Koerpern und Verbindungen hinzu.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/World.html#%2B%3D%28sims.dynamics.joints.Joint%29" target="_self">+=</a></em>
-        (<em>joint</em> : <a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        <div>Fuegt dieser Welt eine Verbindung hinzu.</div>
+        <div>Adds the given sequence of bodies to this world.</div>
       </td>
     </tr>
 <tr>
@@ -227,7 +205,29 @@
         <em><a href="../../sims/dynamics/World.html#%2B%3D%28sims.dynamics.Body%29" target="_self">+=</a></em>
         (<em>body</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Fuegt dieser Welt einen Koerper hinzu.</div>
+        <div>Adds the given body to this world.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/dynamics/World.html#%2B%3D%28sims.prefabs.Prefab%29" target="_self">+=</a></em>
+        (<em>p</em> : <a href="../../sims/prefabs/Prefab.html" target="_self">Prefab</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Adds the given prefabricated system of bodies and joints to this world.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../sims/dynamics/World.html#%2B%3D%28sims.dynamics.joints.Joint%29" target="_self">+=</a></em>
+        (<em>joint</em> : <a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Adds the given joint to this world.</div>
       </td>
     </tr>
 <tr>
@@ -238,7 +238,7 @@
         <em><a href="../../sims/dynamics/World.html#--%3D%28Seq%5Bsims.dynamics.Body%5D%29" target="_self">--=</a></em>
         (<em>bs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        
+        <div>Removes the given sequence of bodies from this world.</div>
       </td>
     </tr>
 <tr>
@@ -249,7 +249,7 @@
         <em><a href="../../sims/dynamics/World.html#-%3D%28sims.prefabs.Prefab%29" target="_self">-=</a></em>
         (<em>p</em> : <a href="../../sims/prefabs/Prefab.html" target="_self">Prefab</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Entfernt das gegebene System aus Koerpern und Verbindungen aus dieser Welt.</div>
+        <div>Removes the given prefabricated system of bodies and joints from this world.</div>
       </td>
     </tr>
 <tr>
@@ -260,7 +260,7 @@
         <em><a href="../../sims/dynamics/World.html#-%3D%28sims.dynamics.Body%29" target="_self">-=</a></em>
         (<em>body</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Entfernt den gegebenen Koerper aus dieser Welt.</div>
+        <div>Removes the given body from this world.</div>
       </td>
     </tr>
 <tr>
@@ -271,7 +271,7 @@
         <em><a href="../../sims/dynamics/World.html#-%3D%28sims.dynamics.joints.Joint%29" target="_self">-=</a></em>
         (<em>joint</em> : <a href="../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Entfernt die gegebene Verbindung aus dieser Welt.</div>
+        <div>Removes the given joint from this world.</div>
       </td>
     </tr>
 <tr>
@@ -282,7 +282,7 @@
         <em><a href="../../sims/dynamics/World.html#clear%28%29" target="_self">clear</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Entfernt alle Koerper, Verbindungen und Ueberwachungsfunktionen dieser Welt.</div>
+        <div>Removes all bodies, joints and monitoring methods from this world.</div>
       </td>
     </tr>
 <tr>
@@ -293,7 +293,7 @@
         <em><a href="../../sims/dynamics/World.html#info" target="_self">info</a></em>
          : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
         
-        <div>Ergibt Informationen ueber diese Welt.</div>
+        <div>Returns information about this world.</div>
       </td>
     </tr>
 <tr>
@@ -304,7 +304,8 @@
         <em><a href="../../sims/dynamics/World.html#postStep%28%29" target="_self">postStep</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Wird nach jedem Zeitschritt ausgefuehrt.</div>
+        <div>Initially empty method that is executed after each time step. This method
+   may be overriden to create custom behaviour in a world.</div>
       </td>
     </tr>
 <tr>
@@ -315,7 +316,7 @@
         <em><a href="../../sims/dynamics/World.html#shapes" target="_self">shapes</a></em>
          : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>]
         
-        <div>Ergibt alle Formen aus allen Koerpern in dieser Welt.</div>
+        <div>Returns all shapes of all bodies in this world.</div>
       </td>
     </tr>
 <tr>
@@ -326,9 +327,7 @@
         <em><a href="../../sims/dynamics/World.html#step%28%29" target="_self">step</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
         
-        <div>Simuliert einen von <code>timeStep</code> angegebenen Zeitschritt.
-   Ihre Aufgabe ist es die Koerper dieser Welt so zu simulieren wie diese sich in einer Welt mit den gegebenen
-   Bedingungen verhalten wuerden.</div>
+        <div>Simulates a time step of the duration <code>timeStep</code>.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -361,7 +360,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Zeitschritt in dem diese Welt die Simulation vorranschreiten laesst.</dd></dl>
+      <dl><dd>Time intervals in which this world simulates.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="iterations"></a><dl>
@@ -373,7 +372,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Anzahl der Constraint-Korrekturen pro Zeitschritt.</dd></dl>
+      <dl><dd>Number of constraint corrections per time step.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="gravity"></a><dl>
@@ -385,7 +384,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Schwerkraft die in dieser Welt herrscht.</dd></dl>
+      <dl><dd>Gravity in this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="bodies"></a><dl>
@@ -397,7 +396,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Alle Koerper die diese Welt simuliert.</dd></dl>
+      <dl><dd>Bodies contained in this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="joints"></a><dl>
@@ -409,7 +408,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Alle Verbindungen die diese Welt simuliert.</dd></dl>
+      <dl><dd>Joints contained in this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="monitors"></a><dl>
@@ -421,9 +420,12 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ueberwachungsfunktionen fuer Koerper.
+      <dl><dd>Monitoring methods for bodies.
    <p>
-   Das erste Element des Tuples ist die Ueberschrift und das zweite Element, der Wert.</dd></dl>
+   The first element of the tuple is the method's title and the second the method.
+   Example usage: monitors += ("Y-Position", _.pos.y.toString)
+   This will calculate all bodies - whose <code>monitor</code> field is set to
+   <code>true</code> - second position components.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="detector"></a><dl>
@@ -435,7 +437,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Kollisionsdetektor dieser Welt.</dd></dl>
+      <dl><dd>Collsion detector who manages collision detection in this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="overCWarning"></a><dl>
@@ -447,7 +449,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Warnung wenn Koerper schneller als Lichtgeschwindigkeit.</dd></dl>
+      <dl><dd>Warning if a body's velocity exceeds the speed of light.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="enableCollisionDetection"></a><dl>
@@ -459,7 +461,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Kollisionerkennung.</dd></dl>
+      <dl><dd>Flag to enable collision detection.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="enablePositionCorrection"></a><dl>
@@ -471,7 +473,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Positionskorrekturen.</dd></dl>
+      <dl><dd>Flag to enable position correction for constraints.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="minLinearVelocity"></a><dl>
@@ -483,7 +485,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Die minimale, nicht als null geltende Geschwindigkeit.</dd></dl>
+      <dl><dd>Minimal, non-zero linear velocity.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="minAngularVelocity"></a><dl>
@@ -495,7 +497,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Die minimale, nicht als null geltende Winkelgeschwindigkeit.</dd></dl>
+      <dl><dd>Minimal, non-zero angular velocity.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="time"></a><dl>
@@ -507,7 +509,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Aktuelle Zeit in Sekunden dieser Welt. Nach jedem Zeitschritt wird die Zeit erhoeht.</dd></dl>
+      <dl><dd>Current time in this world.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 <table summary="" cellpadding="3" class="member-detail">
@@ -521,7 +523,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt alle Formen aus allen Koerpern in dieser Welt.</dd></dl>
+      <dl><dd>Returns all shapes of all bodies in this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="%2B%3D%28sims.dynamics.Body%29"></a><dl>
@@ -533,7 +535,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Fuegt dieser Welt einen Koerper hinzu.</dd></dl>
+      <dl><dd>Adds the given body to this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="%2B%3D%28sims.dynamics.joints.Joint%29"></a><dl>
@@ -545,7 +547,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Fuegt dieser Welt eine Verbindung hinzu.</dd></dl>
+      <dl><dd>Adds the given joint to this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="%2B%3D%28sims.prefabs.Prefab%29"></a><dl>
@@ -557,7 +559,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Fuegt dieser Welt ein vorangefertigtes System vaus Koerpern und Verbindungen hinzu.</dd></dl>
+      <dl><dd>Adds the given prefabricated system of bodies and joints to this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="%2B%2B%3D%28Seq%5Bsims.dynamics.Body%5D%29"></a><dl>
@@ -568,7 +570,10 @@
         <em>++=</em>(<em>bs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
       </dt>
       <dd></dd>
-    </dl><hr></hr>
+    </dl>
+      <dl><dd>Adds the given sequence of bodies to this world.</dd></dl>
+      <dl></dl>
+    <hr></hr>
 <a name="-%3D%28sims.dynamics.Body%29"></a><dl>
       <dt>
         
@@ -578,7 +583,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Entfernt den gegebenen Koerper aus dieser Welt.</dd></dl>
+      <dl><dd>Removes the given body from this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="-%3D%28sims.dynamics.joints.Joint%29"></a><dl>
@@ -590,7 +595,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Entfernt die gegebene Verbindung aus dieser Welt.</dd></dl>
+      <dl><dd>Removes the given joint from this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="-%3D%28sims.prefabs.Prefab%29"></a><dl>
@@ -602,7 +607,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Entfernt das gegebene System aus Koerpern und Verbindungen aus dieser Welt.</dd></dl>
+      <dl><dd>Removes the given prefabricated system of bodies and joints from this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="--%3D%28Seq%5Bsims.dynamics.Body%5D%29"></a><dl>
@@ -613,7 +618,10 @@
         <em>--=</em>(<em>bs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/dynamics/Body.html" target="_self">Body</a>]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
       </dt>
       <dd></dd>
-    </dl><hr></hr>
+    </dl>
+      <dl><dd>Removes the given sequence of bodies from this world.</dd></dl>
+      <dl></dl>
+    <hr></hr>
 <a name="clear%28%29"></a><dl>
       <dt>
         
@@ -623,7 +631,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Entfernt alle Koerper, Verbindungen und Ueberwachungsfunktionen dieser Welt.</dd></dl>
+      <dl><dd>Removes all bodies, joints and monitoring methods from this world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="step%28%29"></a><dl>
@@ -635,18 +643,16 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Simuliert einen von <code>timeStep</code> angegebenen Zeitschritt.
-   Ihre Aufgabe ist es die Koerper dieser Welt so zu simulieren wie diese sich in einer Welt mit den gegebenen
-   Bedingungen verhalten wuerden.
+      <dl><dd>Simulates a time step of the duration <code>timeStep</code>.
    <p>
-   Der Zeitschritt wird in folgenden Phasen ausgefuehrt:
+   The time step is simulated in the following phases:
    <ol>
-   <li>Kraefte wirken auf die Koerper (z.B Schwerkraft, andere Kraftfaehige Objekte).</li>
-   <li>Beschleunigungen werden integriert.</li>
-   <li>Geschwindigkeiten werden korrigiert.</li>
-   <li>Geschwindigkeiten werden integriert.</li>
-   <li>Positionen werden korrigiert.</li>
-   <li>Die Methode <code>postStep()</code> wird ausgefuehrt.</li>
+   <li>Forces are applied to bodies.</li>
+   <li>Accelerations are integrated.</li>
+   <li>Velocities are corrected.</li>
+   <li>Velocities are integrated.</li>
+   <li>Postions are corrected.</li>
+   <li>The method <code>postStep()</code> is executed.</li>
    </ol></dd></dl>
       <dl></dl>
     <hr></hr>
@@ -659,7 +665,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Wird nach jedem Zeitschritt ausgefuehrt.</dd></dl>
+      <dl><dd>Initially empty method that is executed after each time step. This method
+   may be overriden to create custom behaviour in a world.</dd></dl>
       <dl></dl>
     <hr></hr>
 <a name="info"></a><dl>
@@ -671,7 +678,7 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt Informationen ueber diese Welt.</dd></dl>
+      <dl><dd>Returns information about this world.</dd></dl>
       <dl></dl>
     <hr></hr></div>
 

@@ -9,7 +9,7 @@ package sims.collision
 import geometry._
 import dynamics._
 
-/**Kollision zwischen zwei Kreisen.*/
+/**Collision between two circles.*/
 case class CircleCollision(c1: Circle, c2: Circle) extends Collision {
   val shape1 = c1
   val shape2 = c2

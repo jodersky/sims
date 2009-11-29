@@ -9,7 +9,7 @@ package sims.collision
 import sims.dynamics._
 import sims.geometry._
 
-/**Kollision zwischen einem konvexen Polygon und einem Kreis.*/
+/**Collision between a convex polygon and a circle.*/
 case class PolyCircleCollision(p: ConvexPolygon, c: Circle) extends Collision {
   require(p.isInstanceOf[Shape])
   val shape1 = p.asInstanceOf[Shape]
@@ -33,6 +33,4 @@ case class PolyCircleCollision(p: ConvexPolygon, c: Circle) extends Collision {
   val points = List(
     c.pos - normal * c.radius
   )
-  
-
 }

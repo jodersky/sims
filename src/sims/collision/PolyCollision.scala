@@ -11,7 +11,7 @@ import sims.dynamics._
 import scala.collection.mutable.Map
 import scala.collection.mutable._
 
-/**Kollision zwischen zwei konvexen Polygonen.*/
+/**Collision between two convex polygons.*/
 case class PolyCollision(p1: ConvexPolygon, p2: ConvexPolygon) extends Collision {
   require(p1.isInstanceOf[Shape])
   require(p2.isInstanceOf[Shape])

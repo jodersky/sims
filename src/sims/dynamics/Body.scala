@@ -1,3 +1,4 @@
+
 /*
  * Simple Mechanics Simulator (SiMS)
  * copyright (c) 2009 Jakob Odersky
@@ -9,17 +10,17 @@ package sims.dynamics
 import sims.geometry._
 import sims.dynamics.joints._
 
-/**Ein 2-Dimensionaler Koerper besteht aus mehreren Formen. Im gegensatz zu letzteren, enthaelt ein Koerper dynamische Informationen (v, F, etc...).
- * @param shps zu dem Koerper gehoerende Formen.*/
+/**A two dimensional rigid body is made out of shapes.
+ * @param shps shapes that belong to this body.*/
 class Body(shps: Shape*){
   
-  /**Einzigartige Identifikationsnummer dieses Koerpers.*/
+  /**Unique identification number.*/
   val uid = Body.nextUid
   
-  /**Formen aus denen dieser Koerper besteht.*/
+  /**Shapes that belong to this body.*/
   val shapes: List[Shape] = shps.toList
   
-  //Formen werden bei Initialisierung eingefuegt
+  //Shapes are added during initialisation.
   for (s <- shapes) {
     s.body = this
     s.refLocalPos = s.pos - pos
@@ -28,41 +29,40 @@ class Body(shps: Shape*){
   
   private var isFixed: Boolean = false
   
-  /**Gibt an ob dieser Koerper fixiert ist.*/
+  /**Returns whether this body is fixed or not.*/
   def fixed = isFixed
   
-  /**Fixiert oder unfixiert diesen Koerper.*/
+  /**Fixes or frees this body. By fixing, linear and angular velocities are set to zero.*/
   def fixed_=(value: Boolean) = {
     if (value) {linearVelocity = Vector2D.Null; angularVelocity = 0.0}
     isFixed = value
   } 
   
-  /**Gibt an ob die Eigenschaften dieses Koerpers ueberwacht werden sollen.
+  /**Flag for a world to monitor the properties of this body.
    * @see World#monitors*/
   var monitor: Boolean = false
   
-  /**Ermittelt die Position dieses Koerpers. Die Position entspricht dem Schwerpunkt.
-   * @return Position dieses Koerpers*/
-  def pos: Vector2D = // Shwerpunkt = sum(pos*mass)/M
+  /**Returns the position of this body. The position is equivalent to the center of mass.
+   * @return position of this body*/
+  def pos: Vector2D = // COM = sum(pos*mass)/M
     (Vector2D.Null /: shapes)((v: Vector2D, s: Shape) => v + s.pos * s.mass) /
     (0.0 /: shapes)((i: Double, s: Shape) => i + s.mass)
   
-  /**Setzt die Position dieses Koerpers und verschiebt dadurch die Positionen seiner Formen.
-   * @param newPos neue Position*/
+  /**Sets the position of this body. By doing so all its shapes are translated.
+   * @param newPos new position*/
   def pos_=(newPos: Vector2D) = {
     val stepPos = pos
     shapes.foreach((s: Shape) => s.pos = s.pos - stepPos + newPos)
   }
   
-  /**Enthaelt die aktuelle Rotation dieses Koerpers.*/
-  private var _rotation: Double = 0.0 //shapes(0).rotation
+  /**Contains the current rotation of this body.*/
+  private var _rotation: Double = 0.0
   
-  /**Ergibt die aktuelle Rotation dieses Koerpers.
-   * @return aktuelle Rotation dieses Koerpers*/
+  /**Returns the current rotation of this body.*/
   def rotation: Double = _rotation
   
-  /**Setzt die Rotation dieses Koerpers. Dazu werden auch die Positionen und Rotationen seiner Formen entsprechend veraendert.
-   * @param r neue Rotation*/
+  /**Sets the rotation of this body. Position and rotation of shapes are modified accordingly.
+   * @param r new rotation*/
   def rotation_=(newRotation: Double) = {
     _rotation = newRotation
     val stepPos = pos
@@ -72,69 +72,67 @@ class Body(shps: Shape*){
     }  
   }
   
-  /**Lineargeschwindigkeit dieses Koerpers.*/
+  /**Linear velocity of this body.*/
   var linearVelocity: Vector2D = Vector2D.Null
   
-  /**Winkelgeschwindigkeit dieses Koerpers.*/
+  /**Angular velocity of this body.*/
   var angularVelocity: Double = 0
   
-  /**Lineargeschwindigkeit des gegebenen Punktes auf diesem Koerper. In Weltkoordinaten.*/
+  /**Linear velocity of the given point on this body (in world coordinates).*/
   def velocityOfPoint(point: Vector2D) = linearVelocity + ((point - pos).leftNormal * angularVelocity)
   
-  /**Resultierende Kraft auf den Schwerpunkt dieses Koerpers.*/
+  /**Resulting force on the COM of this body.*/
   var force: Vector2D = Vector2D.Null
   
-  /**Resultierender Drehmoment zu dem Schwerpunkt dieses Koerpers.*/
+  /**Resulting torque on this body.*/
   var torque: Double = 0
   
-  /**Ergibt die Masse dieses Koerpers. Die Masse ist gleich die Summe aller Massen seiner Formen.
-   * @return Masse des Koerpers*/
+  /**Returns the mass of this body. If the body is free, its mass is the sum of the masses of its shapes.
+   * If the body is fixed, its mass is infinite (<code>Double.PositiveInfinity</code>).
+   * @return this body's mass*/
   def mass: Double = if (fixed) Double.PositiveInfinity else (0.0 /: shapes)((i: Double, s: Shape) => i + s.mass)
   
-  /**Ergibt den Traegheitsmoment zu dem Schwerpunkt dieses Koerpers. Der Traegheitsmoment wird mit Hilfe des Steinerschen Satzes errechnet.
-   * @return Traegheitsmoment relativ zu dem Schwerpunkt dieses Koerpers*/
+  /**Returns the moment of inertia for rotations about the COM of this body.
+   * It is calculated using the moments of inertia of this body's shapes and the parallel axis theorem.
+   * If the body is fixed, its moment of inertia is infinite (<code>Double.PositiveInfinity</code>).
+   * @return moment of inertia for rotations about the COM of this body*/
   def I: Double = if (fixed) Double.PositiveInfinity else
     (0.0 /: (for (s <- shapes) yield (s.I + s.mass * ((s.pos - pos) dot (s.pos - pos)))))(_+_)
   
-  /**Wendet eine Kraft auf den Schwerpunkt dieses Koerpers an.
-   * @param force anzuwendender Kraftvektor*/
+  /**Applies a force to the COM of this body.
+   * @param force applied force*/
   def applyForce(force: Vector2D) = if (!fixed) this.force += force
   
-  /**Wendet eine Kraft auf einen Punkt dieses Koerpers an. Achtung: der gegebene Punkt wird nicht auf angehoerigkeit dieses
-   * Koerpers ueberprueft.
-   * @param force anzuwendender Kraftvektor
-   * @param point Ortsvektor des Punktes auf den die Kraft wirken soll (gegeben in Weltkoordinaten).*/
+  /**Applies a force to a point on this body. Warning: the point is considered to be contained within this body.
+   * @param force applied force
+   * @param point position vector of the point (in world coordinates)*/
   def applyForce(force: Vector2D, point: Vector2D) = if (!fixed) {this.force += force; torque += (point - pos) cross force}
   
-  /**Wendet einen Impuls auf den Schwerpunkt dieses Koerpers an.
-   * @param impulse anzuwendender Impulsvektor*/  
+  /**Applies an impulse to the COM of this body.
+   * @param impulse applied impulse*/  
   def applyImpulse(impulse: Vector2D) = if (!fixed) linearVelocity += impulse / mass
   
-  /**Wendet einen Impuls auf einen Punkt dieses Koerpers an. Achtung: der gegebene Punkt wird nicht auf angehoerigkeit dieses
-   * Koerpers ueberprueft.
-   * @param impulse anzuwendender Impulsvektor
-   * @param point Ortsvektor des Punktes auf den der Impuls wirken soll (gegeben in Weltkoordinaten).*/
+  /**Applies an impulse to a point on this body. Warning: the point is considered to be contained within this body.
+   * @param impulse applied impulse
+   * @param point position vector of the point (in world coordinates)*/
   def applyImpulse(impulse: Vector2D, point: Vector2D) = if (!fixed) {linearVelocity += impulse / mass; angularVelocity += ((point - pos) cross impulse) / I}
   
-  /**Ueberprueft ob der gegebene Punkt <code>point</code> sich in diesem Koerper befindet.*/
+  /**Checks if the point <code>point</code> is contained in this body.*/
   def contains(point: Vector2D) = shapes.exists(_.contains(point))
   
   override def toString: String = {
     "Body" + uid + "	" + shapes + "	fixed=" + fixed + "	m=" + mass + "	I=" + I + 	"	pos=" + pos + "	rot=" + rotation + "	v=" + linearVelocity + "	w=" + angularVelocity + "	F=" + force + "	tau=" + torque
   }
   
-  /**Erstellt einen neuen Koerper der zusaetzlich die Form <code>s</code> enthaelt.
-   * @param s zusaetzliche Form
-   * @return neuer Koerper*/
-  def ^(s: Shape) = new Body((s :: shapes): _*)
+  /**Creates a new body containing this body's shapes and the shape <code>s</code>.
+   * @param s new shape
+   * @return new body*/
+  def ~(s: Shape) = new Body((s :: shapes): _*)
   
-  /**Erstellt einen neuen Koerper der zusaetzlich die Formen von dem Koerper <code>b</code> enthaelt.
-   * @param b Koerper mit zusaetzlichen Formen
-   * @return neuer Koerper*/
-  def ^(b: Body) = {
-    val shapes = this.shapes ::: b.shapes
-    new Body(shapes: _*)
-  }
+  /**Creates a new body containing this body's shapes and the shapes of another body <code>b</code>.
+   * @param b body with extra shapes
+   * @return new body*/
+  def ~(b: Body) = new Body((this.shapes ::: b.shapes): _*)
 }
 
 object Body {

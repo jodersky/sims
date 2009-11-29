@@ -9,19 +9,19 @@ package sims.collision
 import dynamics._
 import geometry._
 
-/**Kollisionen zwischen zwei Formen enthalten Methoden zur Berrechnen der Kollisionsreaktion.*/
+/**Collision between two shapes. Contains methods to compute the collision response.*/
 abstract class Collision extends Constraint {
   
-  /**Erste Kollisionsform (Referenz).*/
+  /**First colliding shape (reference shape).*/
   val shape1: Shape
   
-  /**Zweite Kollisionsform (eindringend).*/
+  /**Second colliding shape (incident shape).*/
   val shape2: Shape
   
-  /**Kollisionspunkte.*/
+  /**Collision points.*/
   val points: Iterable[Vector2D]
   
-  /**Normalenvektor zu der Kollisionsebene.*/
+  /**Normal vector to the collision face.*/
   val normal: Vector2D
   
   /* C = delta
@@ -103,6 +103,6 @@ abstract class Collision extends Constraint {
 
 object Collision {
   
-  /**Erlaubte Ueberlappung.*/
+  /**Tolerated overlap. Collision response will only be applied if the overlap of two shapes exceeds the tolerated overlap.*/
   val ToleratedOverlap: Double = 0.01
 }

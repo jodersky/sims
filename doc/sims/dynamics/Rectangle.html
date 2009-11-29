@@ -33,9 +33,9 @@
       </dt>
       <dd><code> extends </code><a href="../../sims/dynamics/Shape.html" target="_self">Shape</a><code> with </code><a href="../../sims/geometry/ConvexPolygon.html" target="_self">ConvexPolygon</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
     </dl>
-      <dl><dd>Rechteck ist eine Art Polygon.</dd></dl>
+      <dl><dd>A rectangle is a polygon.</dd></dl>
       <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>halfWidth - </code>halbe Breite dieses Rechtecks</dd><dd><code>halfHeight - </code>halbe Hoehe dieses Rechtecks</dd><dd><code>density - </code>dichte dieses Rechtecks</dd></dl>
+        <b>Parameters</b></dt><dd><code>halfWidth - </code>this rectangle's half width</dd><dd><code>halfHeight - </code>this rectangle's half height</dd><dd><code>density - </code>density of this rectangle</dd></dl>
     <dl>
       <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
       <dd><a href="../../graphyx/graphics/GraphicalRectangle.html" target="_self">GraphicalRectangle</a></dd>
@@ -52,7 +52,7 @@
         <em><a href="../../sims/dynamics/Rectangle.html#I" target="_self">I</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.</div>
+        <div>Moment of inertia for a rotation about this shape's COM.</div>
       </td>
     </tr>
 <tr>
@@ -63,7 +63,8 @@
         <em><a href="../../sims/dynamics/Rectangle.html#volume" target="_self">volume</a></em>
          : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
         
-        <div>Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.</div>
+        <div>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   and is used with this shape's density to calculate its mass.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -71,7 +72,7 @@
           Values and Variables inherited from <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
         </td></tr>
         <tr><td class="signature" colspan="2">
-          <a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a>, <a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a>, <a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a>, <a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a>, <a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a>, <a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a>, <a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a>, <a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a>, <a href="../../sims/dynamics/Shape.html#body" target="_self">body</a>, <a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a>
+          <a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a>, <a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a>, <a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a>, <a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a>, <a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a>, <a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a>, <a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a>, <a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a>, <a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a>
         </td></tr>
       </table>
 <table summary="" cellpadding="3" class="member">
@@ -96,9 +97,9 @@
         <em><a href="../../sims/dynamics/Rectangle.html#halfDiags" target="_self">halfDiags</a></em>
          : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
         
-        <div>Ergibt Vektoren vom Zentrum dieses Rectecks bis zu den Ecken.
-   Erste Ecke entspricht der Ecke oben rechts bei einer Rotation von 0.
-   Folgende Ecken sind gegen den Uhrzeigersinn geordnet.</div>
+        <div>Returns the vectors from the center to the vertices of this rectangle.
+   The first vertex is the upper-right vertex at a rotation of 0.
+   Vertices are ordered counter-clockwise.</div>
       </td>
     </tr>
 <tr>
@@ -164,9 +165,9 @@
         <em><a href="../../sims/dynamics/Rectangle.html#vertices" target="_self">vertices</a></em>
          : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
         
-        <div>Ergibt die Ortsvektoren der Ecken dieses Rechtecks. 
-   Erste Ecke entspricht der Ecke oben rechts bei einer Rotation von 0.
-   Folgende Ecken sind gegen den Uhrzeigersinn geordnet.</div>
+        <div>Returns the position vectors of this rectangle's vertices.
+   The first vertex is the upper-right vertex at a rotation of 0.
+   Vertices are ordered counter-clockwise.</div>
       </td>
     </tr>
       </table><table summary="" cellpadding="3" class="inherited">
@@ -181,7 +182,7 @@
           Methods inherited from <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
         </td></tr>
         <tr><td class="signature" colspan="2">
-          <a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a>, <a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a>, <a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Shape%29" target="_self">^</a>, <a href="../../sims/dynamics/Shape.html#%5E%28sims.dynamics.Body%29" target="_self">^</a>
+          <a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a>, <a href="../../sims/dynamics/Shape.html#body" target="_self">body</a>, <a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a>, <a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Shape%29" target="_self">~</a>, <a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Body%29" target="_self">~</a>
         </td></tr>
       </table><table summary="" cellpadding="3" class="inherited">
         <tr><td class="title" colspan="2">
@@ -213,7 +214,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Volumen. Entspricht eigentlich der Flaeche dieser Form (in 2D) wird aber zum Errechnen der Masse verwendet.</dd></dl>
+      <dl><dd>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+   and is used with this shape's density to calculate its mass.</dd></dl>
       <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
@@ -232,9 +234,8 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Errechnet Traegheitsmoment zum Schwerpunkt dieser Form.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Traegheitsmoment zum Schwerpunkt</dd></dl>
+      <dl><dd>Moment of inertia for a rotation about this shape's COM.</dd></dl>
+      <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>
@@ -254,11 +255,10 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt Vektoren vom Zentrum dieses Rectecks bis zu den Ecken.
-   Erste Ecke entspricht der Ecke oben rechts bei einer Rotation von 0.
-   Folgende Ecken sind gegen den Uhrzeigersinn geordnet.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Vektoren vom Zentrum dieses Rectecks bis zu den Ecken</dd></dl>
+      <dl><dd>Returns the vectors from the center to the vertices of this rectangle.
+   The first vertex is the upper-right vertex at a rotation of 0.
+   Vertices are ordered counter-clockwise.</dd></dl>
+      <dl></dl>
     <hr></hr>
 <a name="vertices"></a><dl>
       <dt>
@@ -269,11 +269,10 @@
       </dt>
       <dd></dd>
     </dl>
-      <dl><dd>Ergibt die Ortsvektoren der Ecken dieses Rechtecks. 
-   Erste Ecke entspricht der Ecke oben rechts bei einer Rotation von 0.
-   Folgende Ecken sind gegen den Uhrzeigersinn geordnet.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>Ortsvektoren der Ecken dieses Rechtecks</dd></dl>
+      <dl><dd>Returns the position vectors of this rectangle's vertices.
+   The first vertex is the upper-right vertex at a rotation of 0.
+   Vertices are ordered counter-clockwise.</dd></dl>
+      <dl></dl>
     <dl>
         <dt style="margin:10px 0 0 20px;">
           <b>Overrides</b>

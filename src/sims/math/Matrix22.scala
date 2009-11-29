@@ -8,22 +8,20 @@ package sims.math
 
 import sims.geometry._
 
-/**Eine 2x2, quadratische Matrix.
- * @param c11 Komponente 1,1
- * @param c12 Komponente 1,2
- * @param c21 Komponente 2,1
- * @param c22 Komponente 2,2
+/**A 2x2 matrix.
+ * @param c11 component 1,1
+ * @param c12 component 1,2
+ * @param c21 component 2,1
+ * @param c22 component 2,2
  */
 case class Matrix22(c11: Double, c12: Double, c21: Double, c22: Double) {
   
-  /**Eine 2x2-dimensionale, quadratische Matrix kann auch mit zwei 2-dimensionalen
-   * Vektoren erstellt werden. In diesem Fall repraesentiert jeder Vektor eine Spalte.
-   * @param c1 erste Spalte
-   * @param c2 zweite Spalte*/
+  /**A 2x2 matrix can be created with two 2D vectors. In this case, each column is represented by a vector.
+   * @param c1 first column
+   * @param c2 second column*/
   def this(c1: Vector2D, c2: Vector2D) = this(c1.x, c2.x, c1.y, c2.y)
   
-  /**Ergibt die Determinante dieser Matrix.
-   * @return Determinante dieser Matrix*/
+  /**Determinant of this matrix.*/
   def det = c11 * c22 - c21 * c12
   
   /**Addition.*/
@@ -31,17 +29,17 @@ case class Matrix22(c11: Double, c12: Double, c21: Double, c22: Double) {
     new Matrix22(c11 + m.c11, c12 + m.c12,
                  c21 + m.c21, c22 + m.c22)
   
-  /**Multiplikation mit einem Skalar.*/
+  /**Scalar multiplication.*/
   def *(n: Double) = 
     new Matrix22(c11 * n, c12 * n,
                  c21 * n, c22 * n)
   
-  /**Multiplikation mit einer anderen 2x2-Matrix.*/
+  /**Matrix multiplication.*/
   def *(m: Matrix22) = 
     new Matrix22(c11 * m.c11 + c12 * m.c21, c11 * m.c12 + c12 * m.c22,
                  c21 * m.c11 + c22 * m.c21, c21 * m.c12 + c22 * m.c22)
   
-  /**Multiplikation mit einer 2x1-Matrix (2-dimensionaler Vektor).*/
+  /**Multiplikation with a 2D vector.*/
   def *(v: Vector2D) =
     new Vector2D(c11 * v.x + c12 * v.y,
                  c21 * v.x + c22 * v.y)
