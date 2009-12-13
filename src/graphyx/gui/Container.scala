@@ -6,11 +6,13 @@
 
 package graphyx.gui
 
-import graphyx.graphics._
 import sims.dynamics._
-
+import graphyx.graphics._
+import java.io._
 class Container {
   val mainFrame = new MainFrame(this)
+  
+  //val plotFrames = new ArrayBuffer[plot.PlotFrame[Body]]
   
   var scene: Scene = Scene(new World)
   
@@ -20,6 +22,7 @@ class Container {
   
   def update(s: Scene) = {
     scene = s
+    mainFrame.mainPanel.controlPanel.update()
     mainFrame.mainPanel.worldPanel.update()
     mainFrame.mainPanel.infoPanel.update()
     mainFrame.mainPanel.optionsPanel.update()
@@ -29,5 +32,6 @@ class Container {
   def exitGUI() = {
     mainFrame.dispose
     AboutHelpFrame.frame.dispose
+    //plotFrames.foreach(_.dispose)
   }
 }

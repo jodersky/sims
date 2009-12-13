@@ -6,6 +6,7 @@
 
 package sims.dynamics.joints
 
+import sims.dynamics._
 import sims.geometry._
 
 /** DistanceJoints keep their connection points at a constant distance.

@@ -1,502 +1,345 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
-        <head><title>class PrismaticJoint in sims.dynamics.joints.test</title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../../script.js"></script>
-        </head>
-        <body onload="init()">
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-        
-      <div class="entity">
-        <a href="../../../../sims/dynamics/joints/test$package.html" target="_self">sims.dynamics.joints.test</a>
-        <br></br>
-        <span class="entity">class  PrismaticJoint</span>
-      </div><hr></hr>
-      <div class="source">
-        [source: <a href="" class="sims/dynamics/joints/test/PrismaticJoint"><code>sims/dynamics/joints/test/PrismaticJoint.scala</code></a>]
-      </div><hr></hr>
-      <a name="PrismaticJoint"></a><dl>
-      <dt>
-        
-        <code>case</code>
-        <code>class</code>
-        <em>PrismaticJoint</em>(<code>val </code><em>node1</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>, <code>val </code><em>anchor1</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <code>val </code><em>node2</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>, <code>val </code><em>anchor2</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>)
-      </dt>
-      <dd><code> extends </code><a href="../../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
-    </dl>
-      <table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Additional Constructor Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#this%28sims.dynamics.Body%2Csims.dynamics.Body%29" target="_self">this</a></em>
-        (<em>node1</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>node2</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html" target="_self">PrismaticJoint</a>
-        
-        
-      </td>
-    </tr>
-      </table>
-
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Value Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#angle" target="_self">angle</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        
-      </td>
-    </tr>
-      </table>
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Method Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#connection1" target="_self">connection1</a></em>
-         : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#connection2" target="_self">connection2</a></em>
-         : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#correctAngular%28Double%29" target="_self">correctAngular</a></em>
-        (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#correctLinear%28Double%29" target="_self">correctLinear</a></em>
-        (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
-        (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        <div>Corrects the positions of this joint's associated bodies.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
-        (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        <div>Corrects the velocities of this joint's associated bodies.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#equals%28Any%29" target="_self">equals</a></em>
-        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-        
-        <div>This method is used to compare the receiver object (<code>this</code>)
-    with the argument object (<code>arg0</code>) for equivalence.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#hashCode%28%29" target="_self">hashCode</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-        
-        <div>Returns a hash code value for the object.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#productArity" target="_self">productArity</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#productElement%28Int%29" target="_self">productElement</a></em>
-        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#productPrefix" target="_self">productPrefix</a></em>
-         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#toString%28%29" target="_self">toString</a></em>
-         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
-        
-        <div>Returns a string representation of the object.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#v" target="_self">v</a></em>
-         : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html#x" target="_self">x</a></em>
-         : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-        
-        
-      </td>
-    </tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
-        </td></tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
-        </td></tr>
-      </table>
-
-
-      <table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Additional Constructor Details</td></tr>
-        </table><div><a name="this%28sims.dynamics.Body%2Csims.dynamics.Body%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>this</em>(<em>node1</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>, <em>node2</em> : <a href="../../../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../../../sims/dynamics/joints/test/PrismaticJoint.html" target="_self">PrismaticJoint</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr></div>
-
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Value Details</td></tr>
-        </table><div><a name="angle"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>angle</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr></div>
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Method Details</td></tr>
-        </table><div><a name="connection1"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>connection1</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="connection2"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>connection2</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="x"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>x</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="v"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>v</em> : <a href="../../../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="correctVelocity%28Double%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>correctVelocity</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Corrects the velocities of this joint's associated bodies.</dd></dl>
-      <dl></dl>
-    <dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="../../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../../sims/dynamics/joints/Joint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a>
-        </dd>
-      </dl><hr></hr>
-<a name="correctLinear%28Double%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>correctLinear</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="correctAngular%28Double%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>correctAngular</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="correctPosition%28Double%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>correctPosition</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Corrects the positions of this joint's associated bodies.</dd></dl>
-      <dl></dl>
-    <dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="../../../../sims/dynamics/joints/Joint.html" target="_self">Joint</a>.<a href="../../../../sims/dynamics/joints/Joint.html#correctPosition%28Double%29" target="_self">correctPosition</a>
-        </dd>
-      </dl><hr></hr>
-<a name="hashCode%28%29"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>hashCode</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns a hash code value for the object.  
-    <p>
-    The default hashing algorithm is platform dependent.  
-    Note that it is allowed for two objects to have identical hash
-    codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
-    equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
-    degenerate implementation could always return <code>0</code>.
-    However, it is required that if two objects are equal
-    (<code>o1.equals(o2)</code> returns <code>true</code>) that they
-    have identical hash codes
-    (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
-    overriding this method, be sure to verify that the behavior is
-    consistent with the <code>equals</code> method.
-    </p>
-    <p></dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>the hash code value for the object.      </p></dd></dl>
-    <hr></hr>
-<a name="toString%28%29"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>toString</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns a string representation of the object.  
-    <p>
-    The default representation is platform dependent.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>a string representation of the object.     </p></dd></dl>
-    <hr></hr>
-<a name="equals%28Any%29"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>equals</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>This method is used to compare the receiver object (<code>this</code>)
-    with the argument object (<code>arg0</code>) for equivalence.  
+        <head>
+          <title>Scaladoc for sims.dynamics.joints.test.PrismaticJoint</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
+          
+		  <style type="text/css">
+		    @import url(../../../../lib/template.css) screen;
+		  </style>
+		  <script type="text/javascript" src="../../../../lib/template.js"></script>
     
-    <p>
-    The default implementations of this method is an <a
-    href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
-    relation</a>:
-      <ul>
-      <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, 
-      <code>x.equals(x)</code> should return <code>true</code>.</li>
-      <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type 
-      <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only 
-      if <code>y.equals(x)</code> returns <code>true</code>.</li>
-      <li>It is transitive: for any instances 
-      <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
-      if <code>x.equals(y)</code> returns <code>true</code> and 
-      <code>y.equals(z)</code> returns 
-      <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
-    </ul>
-    </p>
-    <p>
-    If you override this method, you should verify that
-    your implementation remains an equivalence relation.
-    Additionally, when overriding this method it is often necessary to
-    override <code>hashCode</code> to ensure that objects that are
-    "equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
-    hash to the same <a href="Int.html"><code>Int</code></a>
-    (<code>o1.hashCode.equals(o2.hashCode)</code>).</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>arg0 - </code>the object to compare against this object for equality.</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.    </p></dd></dl>
-    <hr></hr>
-<a name="productPrefix"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>productPrefix</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
-      </dt>
-      <dd></dd>
-    </dl><dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productPrefix" target="contentFrame" class="scala/Product">scala.Product.productPrefix</a>
-        </dd>
-      </dl><hr></hr>
-<a name="productArity"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>productArity</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-      </dt>
-      <dd></dd>
-    </dl><dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productArity" target="contentFrame" class="scala/Product">scala.Product.productArity</a>
-        </dd>
-      </dl><hr></hr>
-<a name="productElement%28Int%29"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>productElement</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-      </dt>
-      <dd></dd>
-    </dl><dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productElement" target="contentFrame" class="scala/Product">scala.Product.productElement</a>
-        </dd>
-      </dl><hr></hr></div>
+        </head>
+        <body class="type">
+      
+      <p id="owner"><a href="../../../package.html">sims</a>.<a href="../../package.html">dynamics</a>.<a href="../package.html">joints</a>.<a href="package.html">test</a></p>
 
+      <div id="definition">
+        <img src="../../../../lib/class_big.png" />
+        <h1>PrismaticJoint</h1>
+      </div>
 
-    <hr></hr>
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-      </body>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">PrismaticJoint</span><span class="params">(<span name="node1">node1: <a href="../../Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>, <span name="anchor1">anchor1: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>, <span name="node2">node2: <a href="../../Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>, <span name="anchor2">anchor2: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>)</span><span class="result"> extends <a href="../Joint.html" class="extype" name="sims.dynamics.joints.Joint">Joint</a> with <span class="extype" name="scala.Product">Product</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment">
+      
+      
+      
+      
+      
+    </div>
+      
+      <div id="template">
+      
+        <div id="mbrsel">
+              <div id="ancestors">
+                <h3>Inherits</h3>
+                <ol><li class="in" name="scala.Product">Product</li><li class="in" name="scala.Equals">Equals</li><li class="in" name="sims.dynamics.joints.Joint">Joint</li><li class="in" name="sims.dynamics.Constraint">Constraint</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+            </div>
+        
+        
+        
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li name="sims.dynamics.joints.test.PrismaticJoint#anchor1">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">anchor1</span><span class="result">: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#anchor2">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">anchor2</span><span class="result">: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#angle">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">angle</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#canEqual">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">canEqual</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#connection1">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">connection1</span><span class="result">: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#connection2">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">connection2</span><span class="result">: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#correctAngular">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">correctAngular</span><span class="params">(<span name="h">h: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#correctLinear">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">correctLinear</span><span class="params">(<span name="h">h: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#correctPosition">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">correctPosition</span><span class="params">(<span name="h">h: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Corrects the positions of this joint's associated bodies</p><div class="fullcomment">
+      <div class="comment cmt"><p>Corrects the positions of this joint's associated bodies.@param h a time interval, used for converting forces and impulses</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#correctVelocity">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">correctVelocity</span><span class="params">(<span name="h">h: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Corrects the velocities of this joint's associated bodies</p><div class="fullcomment">
+      <div class="comment cmt"><p>Corrects the velocities of this joint's associated bodies.@param h a time interval, used for converting forces and impulses</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#equals">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence</p><div class="fullcomment">
+      <div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence.</p><p><p>
+The default implementations of this method is an <a
+href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+relation</a>:
+  <ul>
+ <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>,
+ <code>x.equals(x)</code> should return <code>true</code>.</li>
+ <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type
+ <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only
+ if <code>y.equals(x)</code> returns <code>true</code>.</li>
+ <li>It is transitive: for any instances
+ <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+ if <code>x.equals(y)</code> returns <code>true</code> and
+ <code>y.equals(z)</code> returns
+ <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+</ul>
+</p></p><p><p>
+If you override this method, you should verify that
+your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to
+override <code>hashCode</code> to ensure that objects that are
+"equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+hash to the same <a href="Int.html"><code>Int</code></a>
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div>
+      <dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.
+</p></p></dd></dl>
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#hashCode">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a hash code value for the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a hash code value for the object.</p><p><p>
+The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash
+codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal
+(<code>o1.equals(o2)</code> returns <code>true</code>) that they
+have identical hash codes
+(<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+overriding this method, be sure to verify that the behavior is
+consistent with the <code>equals</code> method.
+</p></p><p><p></p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#node1">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">node1</span><span class="result">: <a href="../../Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">First body of the joint</p><div class="fullcomment">
+      <div class="comment cmt"><p>First body of the joint.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#node2">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">node2</span><span class="result">: <a href="../../Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Second body of the joint</p><div class="fullcomment">
+      <div class="comment cmt"><p>Second body of the joint.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#productArity">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productArity</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#productElement">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productElement</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.Product#productElements">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productElements</span><span class="result">: <span class="extype" name="scala.collection.Iterator">Iterator</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.Product#productIterator">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productIterator</span><span class="result">: <span class="extype" name="scala.collection.Iterator">Iterator</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#productPrefix">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productPrefix</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#toString">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a string representation of the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a string representation of the object.
+<p>
+The default representation is platform dependent.
+</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#v">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">v</span><span class="result">: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#x">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">x</span><span class="result">: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+        
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li name="sims.dynamics.joints.test.PrismaticJoint#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">PrismaticJoint</span><span class="params">(<span name="node1">node1: <a href="../../Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>, <span name="node2">node2: <a href="../../Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>)</span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.test.PrismaticJoint#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">PrismaticJoint</span><span class="params">(<span name="node1">node1: <a href="../../Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>, <span name="anchor1">anchor1: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>, <span name="node2">node2: <a href="../../Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>, <span name="anchor2">anchor2: <a href="../../../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>)</span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.dynamics.joints.Joint#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">PrismaticJoint</span><span class="params">()</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+        
+      </div>
+      
+    </body>
       </html>

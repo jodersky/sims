@@ -6,8 +6,8 @@
 
 package sims.collision
 
-import geometry._
-import dynamics._
+import sims.geometry._
+import sims.dynamics._
 
 /**Collision between two circles.*/
 case class CircleCollision(c1: Circle, c2: Circle) extends Collision {

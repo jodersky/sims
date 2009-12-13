@@ -9,7 +9,6 @@ package sims.collision
 import sims.geometry._
 import sims.dynamics._
 import scala.collection.mutable.Map
-import scala.collection.mutable._
 
 /**Collision between two convex polygons.*/
 case class PolyCollision(p1: ConvexPolygon, p2: ConvexPolygon) extends Collision {

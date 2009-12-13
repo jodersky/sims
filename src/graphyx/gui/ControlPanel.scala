@@ -6,6 +6,7 @@
 
 package graphyx.gui
 
+import graphyx._
 import graphyx.actors._
 import graphyx.gui._
 import scala.swing._
@@ -33,4 +34,7 @@ class ControlPanel(container: Container) extends BoxPanel(Orientation.Horizontal
     case SelectionChanged(`cboTest`) => Graphyx.test = Graphyx.tests(cboTest.selection.index)
   }
   
+  def update() {
+   btnFire.enabled = Graphyx.test.enableEvent 
+  }
 }

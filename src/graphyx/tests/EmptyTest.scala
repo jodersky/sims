@@ -7,6 +7,7 @@
 package graphyx.tests
 
 import sims.dynamics._
+import sims.geometry._
 object EmptyTest extends Test{
   override val title = "Empty Test"
   val world = new World

@@ -22,10 +22,10 @@ object Graphyx{
     Atom,
     Chain,
     Wave,
+    Net,
     Stacking,
     BallStack,
     Cup,
-    Net,
     Friction,
     Friction2,
     Restitution,
@@ -33,6 +33,7 @@ object Graphyx{
     Carriage,
     General1,
     General2,
+    Cannon,
     EmptyTest
   )
   
@@ -48,10 +49,10 @@ object Graphyx{
   
   val physicsActor = new PhysicsActor
   val guiActor = new GUIActor
-  
+
   def main(args: Array[String]): Unit = {
     test.init()
-    physicsActor.world = test.world 
+    physicsActor.world = test.world
     guiActor.start()
     physicsActor.start()
   }

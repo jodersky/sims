@@ -1,439 +1,289 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
-        <head><title>class GraphicalWorld in graphyx.graphics</title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
-        </head>
-        <body onload="init()">
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-        
-      <div class="entity">
-        <a href="../../graphyx/graphics$package.html" target="_self">graphyx.graphics</a>
-        <br></br>
-        <span class="entity">class  GraphicalWorld</span>
-      </div><hr></hr>
-      <div class="source">
-        [source: <a href="" class="graphyx/graphics/GraphicalWorld"><code>graphyx/graphics/GraphicalWorld.scala</code></a>]
-      </div><hr></hr>
-      <a name="GraphicalWorld"></a><dl>
-      <dt>
-        
-        <code>case</code>
-        <code>class</code>
-        <em>GraphicalWorld</em>(<code>val </code><em>real</em> : <a href="../../sims/dynamics/World.html" target="_self">World</a>)
-      </dt>
-      <dd><code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
-    </dl>
-      
-
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Value Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#enableCollisionDetection" target="_self">enableCollisionDetection</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#enablePositionCorrection" target="_self">enablePositionCorrection</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#gravity" target="_self">gravity</a></em>
-         : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#iterations" target="_self">iterations</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#monitorResults" target="_self">monitorResults</a></em>
-         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#overCWarning" target="_self">overCWarning</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#time" target="_self">time</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#timeStep" target="_self">timeStep</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        
-      </td>
-    </tr>
-      </table>
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Method Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#equals%28Any%29" target="_self">equals</a></em>
-        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-        
-        <div>This method is used to compare the receiver object (<code>this</code>)
-    with the argument object (<code>arg0</code>) for equivalence.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#hashCode%28%29" target="_self">hashCode</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-        
-        <div>Returns a hash code value for the object.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#productArity" target="_self">productArity</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#productElement%28Int%29" target="_self">productElement</a></em>
-        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#productPrefix" target="_self">productPrefix</a></em>
-         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>override def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../graphyx/graphics/GraphicalWorld.html#toString%28%29" target="_self">toString</a></em>
-         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
-        
-        <div>Returns a string representation of the object.</div>
-      </td>
-    </tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
-        </td></tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
-        </td></tr>
-      </table>
-
-
-      
-
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Value Details</td></tr>
-        </table><div><a name="time"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>time</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="timeStep"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>timeStep</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="iterations"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>iterations</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="overCWarning"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>overCWarning</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="gravity"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>gravity</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="monitorResults"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>monitorResults</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="enableCollisionDetection"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>enableCollisionDetection</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="enablePositionCorrection"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>enablePositionCorrection</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr></div>
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Method Details</td></tr>
-        </table><div><a name="hashCode%28%29"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>hashCode</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns a hash code value for the object.  
-    <p>
-    The default hashing algorithm is platform dependent.  
-    Note that it is allowed for two objects to have identical hash
-    codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
-    equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
-    degenerate implementation could always return <code>0</code>.
-    However, it is required that if two objects are equal
-    (<code>o1.equals(o2)</code> returns <code>true</code>) that they
-    have identical hash codes
-    (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
-    overriding this method, be sure to verify that the behavior is
-    consistent with the <code>equals</code> method.
-    </p>
-    <p></dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>the hash code value for the object.      </p></dd></dl>
-    <hr></hr>
-<a name="toString%28%29"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>toString</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns a string representation of the object.  
-    <p>
-    The default representation is platform dependent.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>a string representation of the object.     </p></dd></dl>
-    <hr></hr>
-<a name="equals%28Any%29"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>equals</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>This method is used to compare the receiver object (<code>this</code>)
-    with the argument object (<code>arg0</code>) for equivalence.  
+        <head>
+          <title>Scaladoc for graphyx.graphics.GraphicalWorld</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../lib/jquery.js"></script>
+          
+		  <style type="text/css">
+		    @import url(../../lib/template.css) screen;
+		  </style>
+		  <script type="text/javascript" src="../../lib/template.js"></script>
     
-    <p>
-    The default implementations of this method is an <a
-    href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
-    relation</a>:
-      <ul>
-      <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, 
-      <code>x.equals(x)</code> should return <code>true</code>.</li>
-      <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type 
-      <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only 
-      if <code>y.equals(x)</code> returns <code>true</code>.</li>
-      <li>It is transitive: for any instances 
-      <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
-      if <code>x.equals(y)</code> returns <code>true</code> and 
-      <code>y.equals(z)</code> returns 
-      <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
-    </ul>
-    </p>
-    <p>
-    If you override this method, you should verify that
-    your implementation remains an equivalence relation.
-    Additionally, when overriding this method it is often necessary to
-    override <code>hashCode</code> to ensure that objects that are
-    "equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
-    hash to the same <a href="Int.html"><code>Int</code></a>
-    (<code>o1.hashCode.equals(o2.hashCode)</code>).</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>arg0 - </code>the object to compare against this object for equality.</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.    </p></dd></dl>
-    <hr></hr>
-<a name="productPrefix"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>productPrefix</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
-      </dt>
-      <dd></dd>
-    </dl><dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productPrefix" target="contentFrame" class="scala/Product">scala.Product.productPrefix</a>
-        </dd>
-      </dl><hr></hr>
-<a name="productArity"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>productArity</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-      </dt>
-      <dd></dd>
-    </dl><dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productArity" target="contentFrame" class="scala/Product">scala.Product.productArity</a>
-        </dd>
-      </dl><hr></hr>
-<a name="productElement%28Int%29"></a><dl>
-      <dt>
-        
-        <code>override</code>
-        <code>def</code>
-        <em>productElement</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-      </dt>
-      <dd></dd>
-    </dl><dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productElement" target="contentFrame" class="scala/Product">scala.Product.productElement</a>
-        </dd>
-      </dl><hr></hr></div>
+        </head>
+        <body class="type">
+      
+      <p id="owner"><a href="../package.html">graphyx</a>.<a href="package.html">graphics</a></p>
 
+      <div id="definition">
+        <img src="../../lib/class_big.png" />
+        <h1>GraphicalWorld</h1>
+      </div>
 
-    <hr></hr>
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-      </body>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">GraphicalWorld</span><span class="params">(<span name="real">real: <a href="../../sims/dynamics/World.html" class="extype" name="sims.dynamics.World">World</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment">
+      
+      
+      
+      
+      
+    </div>
+      
+      <div id="template">
+      
+        <div id="mbrsel">
+              <div id="ancestors">
+                <h3>Inherits</h3>
+                <ol><li class="in" name="scala.Product">Product</li><li class="in" name="scala.Equals">Equals</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+            </div>
+        
+        
+        
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li name="graphyx.graphics.GraphicalWorld#canEqual">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">canEqual</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#enableCollisionDetection">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">enableCollisionDetection</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#enablePositionCorrection">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">enablePositionCorrection</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#equals">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence</p><div class="fullcomment">
+      <div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence.</p><p><p>
+The default implementations of this method is an <a
+href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+relation</a>:
+  <ul>
+ <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>,
+ <code>x.equals(x)</code> should return <code>true</code>.</li>
+ <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type
+ <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only
+ if <code>y.equals(x)</code> returns <code>true</code>.</li>
+ <li>It is transitive: for any instances
+ <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+ if <code>x.equals(y)</code> returns <code>true</code> and
+ <code>y.equals(z)</code> returns
+ <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+</ul>
+</p></p><p><p>
+If you override this method, you should verify that
+your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to
+override <code>hashCode</code> to ensure that objects that are
+"equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+hash to the same <a href="Int.html"><code>Int</code></a>
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div>
+      <dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.
+</p></p></dd></dl>
+      
+      
+      
+    </div>
+    </li><li name="graphyx.graphics.GraphicalWorld#gravity">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">gravity</span><span class="result">: <a href="../../sims/geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#hashCode">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a hash code value for the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a hash code value for the object.</p><p><p>
+The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash
+codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal
+(<code>o1.equals(o2)</code> returns <code>true</code>) that they
+have identical hash codes
+(<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+overriding this method, be sure to verify that the behavior is
+consistent with the <code>equals</code> method.
+</p></p><p><p></p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="graphyx.graphics.GraphicalWorld#iterations">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">iterations</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#monitorFlatResults">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">monitorFlatResults</span><span class="result">: <span class="extype" name="scala.collection.mutable.ArrayBuffer">ArrayBuffer</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="java.lang.String">String</span>, <span class="extype" name="scala.Any">Any</span>)]</span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#monitorResults">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">monitorResults</span><span class="result">: <span class="extype" name="scala.collection.mutable.ArrayBuffer">ArrayBuffer</span>[<a href="MonitorResult.html" class="extype" name="graphyx.graphics.MonitorResult">MonitorResult</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#overCWarning">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">overCWarning</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#productArity">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productArity</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#productElement">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productElement</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.Product#productElements">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productElements</span><span class="result">: <span class="extype" name="scala.collection.Iterator">Iterator</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.Product#productIterator">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productIterator</span><span class="result">: <span class="extype" name="scala.collection.Iterator">Iterator</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#productPrefix">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productPrefix</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#real">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">real</span><span class="result">: <a href="../../sims/dynamics/World.html" class="extype" name="sims.dynamics.World">World</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#time">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">time</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#timeStep">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">timeStep</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="graphyx.graphics.GraphicalWorld#toString">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a string representation of the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a string representation of the object.
+<p>
+The default representation is platform dependent.
+</p></div>
+      
+      
+      
+      
+    </div>
+    </li></ol>
+            </div>
+        
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li name="graphyx.graphics.GraphicalWorld#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">GraphicalWorld</span><span class="params">(<span name="real">real: <a href="../../sims/dynamics/World.html" class="extype" name="sims.dynamics.World">World</a></span>)</span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.AnyRef#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">GraphicalWorld</span><span class="params">()</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+        
+      </div>
+      
+    </body>
       </html>

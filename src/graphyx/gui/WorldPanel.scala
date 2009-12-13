@@ -11,6 +11,8 @@ import sims.geometry._
 import sims.dynamics._
 import scala.swing._
 import scala.swing.event._
+import scala.collection.mutable.Map
+import scala.collection.mutable.Queue
 
 class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
   cursor = new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR)
@@ -44,8 +46,8 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
   var drawCollisions = false
   var trace = false
   
-  override def paintComponent(g: java.awt.Graphics) = {
-    var parts: Seq[graphyx.graphics.Drawable] = Seq()
+  override def paintComponent(g: java.awt.Graphics2D) = {
+    var parts: Seq[Drawable] = Seq()
     if (drawShapes) parts ++= scene.shapes
     if (drawJoints) parts ++= scene.joints
     if (drawAABBs) parts ++= scene.aabbs
@@ -60,7 +62,7 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
     g.translate(-offset.x.toInt, offset.y.toInt)
   }
   
-  def drawAxes(g: java.awt.Graphics): Unit = {
+  def drawAxes(g: java.awt.Graphics2D): Unit = {
     g.setColor(java.awt.Color.GRAY)
     g.drawLine(0, size.height - offset.y.toInt, size.width, size.height - offset.y.toInt)
     g.drawLine(offset.x.toInt, 0, offset.x.toInt, size.height)
@@ -72,7 +74,7 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
     */
   }
     
-  def drawParts(parts: Iterable[graphics.Drawable], g: java.awt.Graphics) = {
+  def drawParts(parts: Iterable[Drawable], g: java.awt.Graphics2D) = {
      for (p <- parts){
       p.g = g
       p.windowHeight = super.size.height
@@ -82,9 +84,8 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
     }
   }
   
-  import collection.mutable._
-  val prevPos: collection.mutable.Map[Int, collection.mutable.Queue[Vector2D]] = Map()
-  def trace(shapes: Iterable[graphics.GraphicalShape], g: java.awt.Graphics) = {
+  val prevPos: Map[Int, Queue[Vector2D]] = Map()
+  def trace(shapes: Iterable[GraphicalShape], g: java.awt.Graphics2D) = {
     for (s <- shapes) {
       s.g = g
       s.windowHeight = super.size.height

@@ -13,7 +13,16 @@ case class GraphicalWorld(real: World){
   val iterations = real.iterations
   val overCWarning = real.overCWarning
   val gravity = real.gravity
-  val monitorResults = for (b <- real.bodies; m <- real.monitors; if (b.monitor)) yield "b" + b.uid.toString + " " + m._1 + ": " + m._2(b)
+  val monitorResults = for (m <- real.monitors) yield
+    new MonitorResult(m,
+                      for (b <- real.bodies.toList; if (b.monitor)) yield (b.uid, m._1, m._2(b))
+    )
+  val monitorFlatResults = for (b <- real.bodies; m <- real.monitors; if (b.monitor)) yield (b.uid, m._1, m._2(b))
   val enableCollisionDetection = real.enableCollisionDetection
   val enablePositionCorrection = real.enablePositionCorrection
 }
+
+class MonitorResult (
+  val monitor: (String, Body => Any),
+  val results: List[(Int, String, Any)]
+)

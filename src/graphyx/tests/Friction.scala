@@ -47,6 +47,7 @@ object Friction extends Test{
     world += r3
   }
   
+  enableEvent = true
   override def fireEvent = {
     world -= r1
     world -= r2

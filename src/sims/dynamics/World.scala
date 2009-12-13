@@ -9,7 +9,7 @@ package sims.dynamics
 import sims.geometry._
 import sims.collision._
 import sims.dynamics.joints._
-import scala.collection.mutable._
+import scala.collection.mutable.ArrayBuffer
 
 /**A world contains and simulates a system of rigid bodies and joints.*/
 class World {
@@ -35,7 +35,7 @@ class World {
    * Example usage: monitors += ("Y-Position", _.pos.y.toString)
    * This will calculate all bodies - whose <code>monitor</code> field is set to
    * <code>true</code> - second position components.*/
-  val monitors = new ArrayBuffer[(String, Body => String)]
+  val monitors = new ArrayBuffer[(String, Body => Any)]
   
   /**Collsion detector who manages collision detection in this world.*/
   val detector: Detector = new GridDetector(this)
@@ -65,7 +65,7 @@ class World {
   def +=(joint: Joint): Unit = joints += joint
   
   /**Adds the given prefabricated system of bodies and joints to this world.*/
-  def +=(p: prefabs.Prefab): Unit = {
+  def +=(p: sims.prefabs.Prefab): Unit = {
     for (b <- p.bodies) this += b
     for (j <- p.joints) this += j
   }
@@ -80,7 +80,7 @@ class World {
   def -=(joint: Joint): Unit = joints -= joint
   
   /**Removes the given prefabricated system of bodies and joints from this world.*/
-  def -=(p: prefabs.Prefab): Unit = {
+  def -=(p: sims.prefabs.Prefab): Unit = {
     for (b <- p.bodies) this -= b
     for (j <- p.joints) this -= j
   }
@@ -113,12 +113,9 @@ class World {
     
     //integration of acclerations, yields velocities
     for (b <- bodies) {
-      val m = b.mass
       b.applyForce(gravity * b.mass)
-      val a = b.force / b.mass
-      val alpha = b.torque / b.I
-      b.linearVelocity = b.linearVelocity + a * timeStep
-      b.angularVelocity = b.angularVelocity + alpha * timeStep
+      b.linearVelocity = b.linearVelocity + (b.force / b.mass) * timeStep
+      b.angularVelocity = b.angularVelocity + (b.torque / b.I) * timeStep
     }
     
     //correction of velocities

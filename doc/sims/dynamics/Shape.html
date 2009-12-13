@@ -1,557 +1,458 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
-        <head><title>class Shape in sims.dynamics</title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        <head>
+          <title>Scaladoc for sims.dynamics.Shape</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../lib/jquery.js"></script>
+          
+		  <style type="text/css">
+		    @import url(../../lib/template.css) screen;
+		  </style>
+		  <script type="text/javascript" src="../../lib/template.js"></script>
+    
         </head>
-        <body onload="init()">
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-        
-      <div class="entity">
-        <a href="../../sims/dynamics$package.html" target="_self">sims.dynamics</a>
-        <br></br>
-        <span class="entity">class  Shape</span>
-      </div><hr></hr>
-      <div class="source">
-        [source: <a href="" class="sims/dynamics/Shape"><code>sims/dynamics/Shape.scala</code></a>]
-      </div><hr></hr>
-      <a name="Shape"></a><dl>
-      <dt>
-        
-        <code>abstract</code>
-        <code>class</code>
-        <em>Shape</em>
-      </dt>
-      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
-    </dl>
-      <dl><dd>An abstract shape.</dd></dl>
-      <dl></dl>
-    <dl>
-      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
-      <dd><a href="../../graphyx/graphics/GraphicalShape.html" target="_self">GraphicalShape</a>, <a href="../../sims/dynamics/Circle.html" target="_self">Circle</a>, <a href="../../sims/dynamics/Rectangle.html" target="_self">Rectangle</a>, <a href="../../sims/dynamics/RegularPolygon.html" target="_self">RegularPolygon</a></dd>
-      </dl><hr></hr>
+        <body class="type">
       
+      <p id="owner"><a href="../package.html">sims</a>.<a href="package.html">dynamics</a></p>
 
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Value Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#I" target="_self">I</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Moment of inertia for a rotation about this shape's COM.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#collidable" target="_self">collidable</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-        
-        <div>Flag determining this shapes ability to collide with other shapes.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#density" target="_self">density</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Density. (Mass per area)</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#friction" target="_self">friction</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Part of the coefficient of friction for a collision between this shape and another.
-   The coefficient of friction is calculated out of the product of this part and the other shape's part.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#pos" target="_self">pos</a></em>
-         : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-        
-        <div>Position of this shape's COM (in world coordinates).</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#refLocalPos" target="_self">refLocalPos</a></em>
-         : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-        
-        <div>Local position of this shape's body COM to its COM at a body rotation of zero.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#restitution" target="_self">restitution</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Part of the coefficient of restitution for a collision between this shape and another.
-   The coefficient of restitution is calculated out of the product of this part and the other shape's part.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#rotation" target="_self">rotation</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Rotation of this shape about its COM.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#rotation0" target="_self">rotation0</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Initial rotation. Rotation of this shape before it was added to a body.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#transientShapes" target="_self">transientShapes</a></em>
-         : <a href="" target="contentFrame" class="scala/collection/mutable/Set">scala.collection.mutable.Set</a>[<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>]
-        
-        <div>Shapes with which this shape cannot collide.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#uid" target="_self">uid</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-        
-        <div>Unique identification number.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#volume" target="_self">volume</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
-   and is used with this shape's density to calculate its mass.</div>
-      </td>
-    </tr>
-      </table>
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Method Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#AABB" target="_self">AABB</a></em>
-         : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>
-        
-        <div>Returns this shape's axis aligned bounding box.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#asBody" target="_self">asBody</a></em>
-         : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Creates a new body made out of tis shape.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#body" target="_self">body</a></em>
-         : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Returns this shape's containing body.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#contains%28sims.geometry.Vector2D%29" target="_self">contains</a></em>
-        (<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-        
-        <div>Checks if the point <code>point</code> is contained in this shape.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#mass" target="_self">mass</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Returns the mass of this shape. The mass is given by volume times density.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#project%28sims.geometry.Vector2D%29" target="_self">project</a></em>
-        (<em>axis</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>
-        
-        <div>Returns the projection of this shape onto the line given by the directional vector <code>axis</code>.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Body%29" target="_self">~</a></em>
-        (<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Creates a new body out of this shape and the shapes of body <code>b</code>.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/dynamics/Shape.html#%7E%28sims.dynamics.Shape%29" target="_self">~</a></em>
-        (<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-        
-        <div>Creates a new body out of this shape and the shape <code>s</code>.</div>
-      </td>
-    </tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
-        </td></tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
-        </td></tr>
-      </table>
+      <div id="definition">
+        <img src="../../lib/class_big.png" />
+        <h1>Shape</h1>
+      </div>
 
-
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Shape</span><span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment">
+      <div class="comment cmt"><p>An abstract shape.</p></div>
       
-
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Value Details</td></tr>
-        </table><div><a name="uid"></a><dl>
-      <dt>
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      <div class="block">
+                known subclasses: <a href="RegularPolygon.html">RegularPolygon</a>, <a href="Rectangle.html">Rectangle</a>, <a href="Circle.html">Circle</a>, <a href="../../graphyx/graphics/GraphicalShape.html">GraphicalShape</a>
+              </div>
+    </div>
+      
+      <div id="template">
+      
+        <div id="mbrsel">
+              <div id="ancestors">
+                <h3>Inherits</h3>
+                <ol><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+            </div>
         
-        <code></code>
-        <code>val</code>
-        <em>uid</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Unique identification number.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="collidable"></a><dl>
-      <dt>
         
-        <code></code>
-        <code>var</code>
-        <em>collidable</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Flag determining this shapes ability to collide with other shapes.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="restitution"></a><dl>
-      <dt>
         
-        <code></code>
-        <code>var</code>
-        <em>restitution</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Part of the coefficient of restitution for a collision between this shape and another.
-   The coefficient of restitution is calculated out of the product of this part and the other shape's part.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="friction"></a><dl>
-      <dt>
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li name="sims.dynamics.Shape#AABB">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">AABB</span><span class="result">: <a href="../collision/AABB.html" class="extype" name="sims.collision.AABB">AABB</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns this shape's axis aligned bounding box</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns this shape's axis aligned bounding box.</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#I">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">I</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Moment of inertia for a rotation about this shape's COM</p><div class="fullcomment">
+      <div class="comment cmt"><p>Moment of inertia for a rotation about this shape's COM.</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#asBody">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asBody</span><span class="result">: <a href="Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates a new body made out of tis shape</p><div class="fullcomment">
+      <div class="comment cmt"><p>Creates a new body made out of tis shape.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#body">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">body</span><span class="result">: <a href="Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns this shape's containing body</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns this shape's containing body.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#collidable">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">collidable</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Flag determining this shapes ability to collide with other shapes</p><div class="fullcomment">
+      <div class="comment cmt"><p>Flag determining this shapes ability to collide with other shapes.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#contains">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">contains</span><span class="params">(<span name="point">point: <a href="../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Checks if the point <code>point</code> is contained in this shape</p><div class="fullcomment">
+      <div class="comment cmt"><p>Checks if the point <code>point</code> is contained in this shape.</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#density">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">density</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Density</p><div class="fullcomment">
+      <div class="comment cmt"><p>Density. (Mass per area)</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="scala.AnyRef#equals">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence</p><div class="fullcomment">
+      <div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence.</p><p><p>
+The default implementations of this method is an <a
+href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+relation</a>:
+  <ul>
+ <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>,
+ <code>x.equals(x)</code> should return <code>true</code>.</li>
+ <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type
+ <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only
+ if <code>y.equals(x)</code> returns <code>true</code>.</li>
+ <li>It is transitive: for any instances
+ <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+ if <code>x.equals(y)</code> returns <code>true</code> and
+ <code>y.equals(z)</code> returns
+ <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+</ul>
+</p></p><p><p>
+If you override this method, you should verify that
+your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to
+override <code>hashCode</code> to ensure that objects that are
+"equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+hash to the same <a href="Int.html"><code>Int</code></a>
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div>
+      <dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.
+</p></p></dd></dl>
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#friction">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">friction</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Part of the coefficient of friction for a collision between this shape and another</p><div class="fullcomment">
+      <div class="comment cmt"><p>Part of the coefficient of friction for a collision between this shape and another.
+The coefficient of friction is calculated out of the product of this part and the other shape's part.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="scala.AnyRef#hashCode">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a hash code value for the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a hash code value for the object.</p><p><p>
+The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash
+codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal
+(<code>o1.equals(o2)</code> returns <code>true</code>) that they
+have identical hash codes
+(<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+overriding this method, be sure to verify that the behavior is
+consistent with the <code>equals</code> method.
+</p></p><p><p></p></div>
+      
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#mass">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">mass</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the mass of this shape</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns the mass of this shape. The mass is given by volume times density.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#pos">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">pos</span><span class="result">: <a href="../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Position of this shape's COM (in world coordinates)</p><div class="fullcomment">
+      <div class="comment cmt"><p>Position of this shape's COM (in world coordinates).</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#project">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">project</span><span class="params">(<span name="axis">axis: <a href="../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>)</span><span class="result">: <a href="../geometry/Projection.html" class="extype" name="sims.geometry.Projection">Projection</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the projection of this shape onto the line given by the directional vector <code>axis</code></p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns the projection of this shape onto the line given by the directional vector <code>axis</code>.</p></div>
+      <dl class="paramcmts block"><dt class="param">axis</dt><dd class="cmt"><p>directional vector of the line</p></dd><dt>returns</dt><dd class="cmt"><p>projection of this shape</p></dd></dl>
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#refLocalPos">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">refLocalPos</span><span class="result">: <a href="../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Local position of this shape's body COM to its COM at a body rotation of zero</p><div class="fullcomment">
+      <div class="comment cmt"><p>Local position of this shape's body COM to its COM at a body rotation of zero.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#restitution">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">restitution</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Part of the coefficient of restitution for a collision between this shape and another</p><div class="fullcomment">
+      <div class="comment cmt"><p>Part of the coefficient of restitution for a collision between this shape and another.
+The coefficient of restitution is calculated out of the product of this part and the other shape's part.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#rotation">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">rotation</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Rotation of this shape about its COM</p><div class="fullcomment">
+      <div class="comment cmt"><p>Rotation of this shape about its COM.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#rotation0">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">rotation0</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Initial rotation</p><div class="fullcomment">
+      <div class="comment cmt"><p>Initial rotation. Rotation of this shape before it was added to a body.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="scala.AnyRef#toString">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a string representation of the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a string representation of the object.
+<p>
+The default representation is platform dependent.
+</p></div>
+      
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#transientShapes">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">transientShapes</span><span class="result">: <span class="extype" name="scala.collection.mutable.Set">Set</span>[<a href="" class="extype" name="sims.dynamics.Shape">Shape</a>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Shapes with which this shape cannot collide</p><div class="fullcomment">
+      <div class="comment cmt"><p>Shapes with which this shape cannot collide.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#uid">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">uid</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Unique identification number</p><div class="fullcomment">
+      <div class="comment cmt"><p>Unique identification number.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#volume">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">volume</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Volume</p><div class="fullcomment">
+      <div class="comment cmt"><p>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
+and is used with this shape's density to calculate its mass.</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#~">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">~</span><span class="params">(<span name="b">b: <a href="Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>)</span><span class="result">: <a href="Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates a new body out of this shape and the shapes of body <code>b</code></p><div class="fullcomment">
+      <div class="comment cmt"><p>Creates a new body out of this shape and the shapes of body <code>b</code>.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.dynamics.Shape#~">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">~</span><span class="params">(<span name="s">s: <a href="" class="extype" name="sims.dynamics.Shape">Shape</a></span>)</span><span class="result">: <a href="Body.html" class="extype" name="sims.dynamics.Body">Body</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates a new body out of this shape and the shape <code>s</code></p><div class="fullcomment">
+      <div class="comment cmt"><p>Creates a new body out of this shape and the shape <code>s</code>.</p></div>
+      
+      
+      
+      
+    </div>
+    </li></ol>
+            </div>
         
-        <code></code>
-        <code>var</code>
-        <em>friction</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Part of the coefficient of friction for a collision between this shape and another.
-   The coefficient of friction is calculated out of the product of this part and the other shape's part.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="pos"></a><dl>
-      <dt>
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li name="sims.dynamics.Shape#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">Shape</span><span class="params">()</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
         
-        <code></code>
-        <code>var</code>
-        <em>pos</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Position of this shape's COM (in world coordinates).</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="rotation"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>var</code>
-        <em>rotation</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Rotation of this shape about its COM.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="rotation0"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>var</code>
-        <em>rotation0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Initial rotation. Rotation of this shape before it was added to a body.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="refLocalPos"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>var</code>
-        <em>refLocalPos</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Local position of this shape's body COM to its COM at a body rotation of zero.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="density"></a><dl>
-      <dt>
-        
-        <code>abstract</code>
-        <code>val</code>
-        <em>density</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Density. (Mass per area)</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="volume"></a><dl>
-      <dt>
-        
-        <code>abstract</code>
-        <code>val</code>
-        <em>volume</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Volume. The volume is actually equivalent to this shape's area (SiMS is in 2D)
-   and is used with this shape's density to calculate its mass.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="I"></a><dl>
-      <dt>
-        
-        <code>abstract</code>
-        <code>val</code>
-        <em>I</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Moment of inertia for a rotation about this shape's COM.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="transientShapes"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>val</code>
-        <em>transientShapes</em> : <a href="" target="contentFrame" class="scala/collection/mutable/Set">scala.collection.mutable.Set</a>[<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>]
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Shapes with which this shape cannot collide.</dd></dl>
-      <dl></dl>
-    <hr></hr></div>
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Method Details</td></tr>
-        </table><div><a name="mass"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>mass</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns the mass of this shape. The mass is given by volume times density.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>mass of this shape</dd></dl>
-    <hr></hr>
-<a name="body"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>body</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns this shape's containing body.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="AABB"></a><dl>
-      <dt>
-        
-        <code>abstract</code>
-        <code>def</code>
-        <em>AABB</em> : <a href="../../sims/collision/AABB.html" target="_self">AABB</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns this shape's axis aligned bounding box.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="project%28sims.geometry.Vector2D%29"></a><dl>
-      <dt>
-        
-        <code>abstract</code>
-        <code>def</code>
-        <em>project</em>(<em>axis</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="../../sims/geometry/Projection.html" target="_self">Projection</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns the projection of this shape onto the line given by the directional vector <code>axis</code>.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>axis - </code>directional vector of the line</dd><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>projection of this shape</dd></dl>
-    <hr></hr>
-<a name="contains%28sims.geometry.Vector2D%29"></a><dl>
-      <dt>
-        
-        <code>abstract</code>
-        <code>def</code>
-        <em>contains</em>(<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Checks if the point <code>point</code> is contained in this shape.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="asBody"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>asBody</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Creates a new body made out of tis shape.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Returns</b></dt><dd>a body made out of tis shape</dd></dl>
-    <hr></hr>
-<a name="%7E%28sims.dynamics.Shape%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>~</em>(<em>s</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Creates a new body out of this shape and the shape <code>s</code>.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="%7E%28sims.dynamics.Body%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>~</em>(<em>b</em> : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>) : <a href="../../sims/dynamics/Body.html" target="_self">Body</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Creates a new body out of this shape and the shapes of body <code>b</code>.</dd></dl>
-      <dl></dl>
-    <hr></hr></div>
-
-
-    <hr></hr>
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-      </body>
+      </div>
+      
+    </body>
       </html>

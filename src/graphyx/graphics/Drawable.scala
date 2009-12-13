@@ -13,7 +13,7 @@ import sims.geometry._
 trait Drawable {
   
   /**Java Graphics Objekt zur graphischen Darstellung*/
-  var g: java.awt.Graphics = _
+  var g: java.awt.Graphics2D = _
   
   /**Anzahl von Pixeln pro Meter.*/
   var ppm: Double = 39.37007874015748 * 96 //ppm = i/m * p/i

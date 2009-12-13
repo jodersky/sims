@@ -7,6 +7,7 @@
 package sims.dynamics.joints.test
 
 import sims.dynamics._
+import sims.dynamics.joints._
 import sims.geometry._
 
 class UnitCircleJoint(body: Body, anchor: Vector2D) extends Joint{

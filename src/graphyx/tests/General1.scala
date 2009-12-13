@@ -106,6 +106,7 @@ object General1 extends Test{
     world += (new Circle(0.1,1) {pos = Vector2D(2,2)}) ~ (new Circle(0.1,1) {pos = Vector2D(2,2.2)}) 
   }
   
+  enableEvent = true
   override def fireEvent() = blastBomb
   
   def blastBomb() = {

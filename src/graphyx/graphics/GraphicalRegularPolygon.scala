@@ -16,5 +16,4 @@ case class GraphicalRegularPolygon(real: RegularPolygon) extends RegularPolygon(
     g.setColor(java.awt.Color.BLACK)
     drawPolygon(vertices)
   }
-
 }

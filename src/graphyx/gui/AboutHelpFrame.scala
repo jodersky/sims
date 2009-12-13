@@ -9,11 +9,13 @@ class AboutHelpFrame extends Frame {
   title = "About"
   contents = new TextArea(
      """|Graphyx, testing and visualization tool for SiMS.
-     	|
+    	|
      	|copyright (c) 2009 Jakob Odersky
      	|SiMS and Graphyx are made available under the MIT License
      	|
-     	|http://sourceforge.net/projects/simplemechanics/""".stripMargin
+     	|http://sourceforge.net/projects/simplemechanics/
+     	|
+     	|Version 1.1""".stripMargin
   ) {editable = false}
 }
 

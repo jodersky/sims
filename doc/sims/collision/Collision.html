@@ -1,261 +1,263 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
-        <head><title>class Collision in sims.collision</title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        <head>
+          <title>Scaladoc for sims.collision.Collision</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../lib/jquery.js"></script>
+          
+		  <style type="text/css">
+		    @import url(../../lib/template.css) screen;
+		  </style>
+		  <script type="text/javascript" src="../../lib/template.js"></script>
+    
         </head>
-        <body onload="init()">
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-        
-      <div class="entity">
-        <a href="../../sims/collision$package.html" target="_self">sims.collision</a>
-        <br></br>
-        <span class="entity">class  Collision</span>
-      </div><hr></hr>
-      <div class="source">
-        [source: <a href="" class="sims/collision/Collision"><code>sims/collision/Collision.scala</code></a>]
-      </div><hr></hr>
-      <a name="Collision"></a><dl>
-      <dt>
-        
-        <code>abstract</code>
-        <code>class</code>
-        <em>Collision</em>
-      </dt>
-      <dd><code> extends </code><a href="../../sims/dynamics/Constraint.html" target="_self">Constraint</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
-    </dl>
-      <dl><dd>Collision between two shapes. Contains methods to compute the collision response.</dd></dl>
-      <dl></dl>
-    <dl>
-      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
-      <dd><a href="../../sims/collision/CircleCollision.html" target="_self">CircleCollision</a>, <a href="../../sims/collision/PolyCircleCollision.html" target="_self">PolyCircleCollision</a>, <a href="../../sims/collision/PolyCollision.html" target="_self">PolyCollision</a></dd>
-      </dl><hr></hr>
+        <body class="type">
       
+      <p id="owner"><a href="../package.html">sims</a>.<a href="package.html">collision</a></p>
 
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Value Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/Collision.html#normal" target="_self">normal</a></em>
-         : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-        
-        <div>Normal vector to the collision face.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/Collision.html#points" target="_self">points</a></em>
-         : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
-        
-        <div>Collision points.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/Collision.html#shape1" target="_self">shape1</a></em>
-         : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
-        
-        <div>First colliding shape (reference shape).</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code>abstract val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/Collision.html#shape2" target="_self">shape2</a></em>
-         : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
-        
-        <div>Second colliding shape (incident shape).</div>
-      </td>
-    </tr>
-      </table>
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Method Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/Collision.html#correctFriction%28sims.geometry.Vector2D%2CDouble%2CDouble%29" target="_self">correctFriction</a></em>
-        (<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <em>normalForce</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/Collision.html#correctPosition%28Double%29" target="_self">correctPosition</a></em>
-        (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        <div>Corrects the positions of bodies according to this constraint.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/Collision.html#correctVelocity%28Double%29" target="_self">correctVelocity</a></em>
-        (<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-        
-        <div>Corrects the velocities of bodies according to this constraint.</div>
-      </td>
-    </tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
-        </td></tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
-        </td></tr>
-      </table>
+      <div id="definition">
+        <img src="../../lib/class_big.png" />
+        <h1>Collision</h1>
+      </div>
 
-
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Collision</span><span class="result"> extends <a href="../dynamics/Constraint.html" class="extype" name="sims.dynamics.Constraint">Constraint</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment">
+      <div class="comment cmt"><p>Collision between two shapes. Contains methods to compute the collision response.</p></div>
       
-
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Value Details</td></tr>
-        </table><div><a name="shape1"></a><dl>
-      <dt>
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      <div class="block">
+                known subclasses: <a href="PolyCollision.html">PolyCollision</a>, <a href="PolyCircleCollision.html">PolyCircleCollision</a>, <a href="CircleCollision.html">CircleCollision</a>
+              </div>
+    </div>
+      
+      <div id="template">
+      
+        <div id="mbrsel">
+              <div id="ancestors">
+                <h3>Inherits</h3>
+                <ol><li class="in" name="sims.dynamics.Constraint">Constraint</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+            </div>
         
-        <code>abstract</code>
-        <code>val</code>
-        <em>shape1</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>First colliding shape (reference shape).</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="shape2"></a><dl>
-      <dt>
         
-        <code>abstract</code>
-        <code>val</code>
-        <em>shape2</em> : <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Second colliding shape (incident shape).</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="points"></a><dl>
-      <dt>
         
-        <code>abstract</code>
-        <code>val</code>
-        <em>points</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>]
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Collision points.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="normal"></a><dl>
-      <dt>
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li name="sims.collision.Collision#correctFriction">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">correctFriction</span><span class="params">(<span name="point">point: <a href="../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>, <span name="normalForce">normalForce: <span class="extype" name="scala.Double">Double</span></span>, <span name="h">h: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.collision.Collision#correctPosition">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">correctPosition</span><span class="params">(<span name="h">h: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Corrects the positions of bodies according to this constraint</p><div class="fullcomment">
+      <div class="comment cmt"><p>Corrects the positions of bodies according to this constraint.</p></div>
+      <dl class="paramcmts block"><dt class="param">h</dt><dd class="cmt"><p>a time interval, used for converting forces and impulses</p></dd></dl>
+      
+      
+      
+    </div>
+    </li><li name="sims.collision.Collision#correctVelocity">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">correctVelocity</span><span class="params">(<span name="h">h: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Corrects the velocities of bodies according to this constraint</p><div class="fullcomment">
+      <div class="comment cmt"><p>Corrects the velocities of bodies according to this constraint.</p></div>
+      <dl class="paramcmts block"><dt class="param">h</dt><dd class="cmt"><p>a time interval, used for converting forces and impulses</p></dd></dl>
+      
+      
+      
+    </div>
+    </li><li name="scala.AnyRef#equals">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence</p><div class="fullcomment">
+      <div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence.</p><p><p>
+The default implementations of this method is an <a
+href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+relation</a>:
+  <ul>
+ <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>,
+ <code>x.equals(x)</code> should return <code>true</code>.</li>
+ <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type
+ <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only
+ if <code>y.equals(x)</code> returns <code>true</code>.</li>
+ <li>It is transitive: for any instances
+ <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+ if <code>x.equals(y)</code> returns <code>true</code> and
+ <code>y.equals(z)</code> returns
+ <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+</ul>
+</p></p><p><p>
+If you override this method, you should verify that
+your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to
+override <code>hashCode</code> to ensure that objects that are
+"equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+hash to the same <a href="Int.html"><code>Int</code></a>
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div>
+      <dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.
+</p></p></dd></dl>
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li><li name="scala.AnyRef#hashCode">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a hash code value for the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a hash code value for the object.</p><p><p>
+The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash
+codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal
+(<code>o1.equals(o2)</code> returns <code>true</code>) that they
+have identical hash codes
+(<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+overriding this method, be sure to verify that the behavior is
+consistent with the <code>equals</code> method.
+</p></p><p><p></p></div>
+      
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li><li name="sims.collision.Collision#normal">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">normal</span><span class="result">: <a href="../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Normal vector to the collision face</p><div class="fullcomment">
+      <div class="comment cmt"><p>Normal vector to the collision face.</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="sims.collision.Collision#points">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">points</span><span class="result">: <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="../geometry/Vector2D.html" class="extype" name="sims.geometry.Vector2D">Vector2D</a>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Collision points</p><div class="fullcomment">
+      <div class="comment cmt"><p>Collision points.</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="sims.collision.Collision#shape1">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">shape1</span><span class="result">: <a href="../dynamics/Shape.html" class="extype" name="sims.dynamics.Shape">Shape</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">First colliding shape (reference shape)</p><div class="fullcomment">
+      <div class="comment cmt"><p>First colliding shape (reference shape).</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="sims.collision.Collision#shape2">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">shape2</span><span class="result">: <a href="../dynamics/Shape.html" class="extype" name="sims.dynamics.Shape">Shape</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Second colliding shape (incident shape)</p><div class="fullcomment">
+      <div class="comment cmt"><p>Second colliding shape (incident shape).</p></div>
+      
+      <div class="block">
+            attributes: abstract 
+          </div>
+      
+      
+    </div>
+    </li><li name="scala.AnyRef#toString">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a string representation of the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a string representation of the object.
+<p>
+The default representation is platform dependent.
+</p></div>
+      
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li></ol>
+            </div>
         
-        <code>abstract</code>
-        <code>val</code>
-        <em>normal</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Normal vector to the collision face.</dd></dl>
-      <dl></dl>
-    <hr></hr></div>
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Method Details</td></tr>
-        </table><div><a name="correctVelocity%28Double%29"></a><dl>
-      <dt>
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li name="sims.collision.Collision#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">Collision</span><span class="params">()</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
         
-        <code></code>
-        <code>def</code>
-        <em>correctVelocity</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Corrects the velocities of bodies according to this constraint.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>h - </code>a time interval, used for converting forces and impulses</dd></dl>
-    <dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="../../sims/dynamics/Constraint.html" target="_self">Constraint</a>.<a href="../../sims/dynamics/Constraint.html#correctVelocity%28Double%29" target="_self">correctVelocity</a>
-        </dd>
-      </dl><hr></hr>
-<a name="correctFriction%28sims.geometry.Vector2D%2CDouble%2CDouble%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>correctFriction</em>(<em>point</em> : <a href="../../sims/geometry/Vector2D.html" target="_self">Vector2D</a>, <em>normalForce</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>, <em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-      </dt>
-      <dd></dd>
-    </dl><hr></hr>
-<a name="correctPosition%28Double%29"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>correctPosition</em>(<em>h</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Corrects the positions of bodies according to this constraint.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>h - </code>a time interval, used for converting forces and impulses</dd></dl>
-    <dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="../../sims/dynamics/Constraint.html" target="_self">Constraint</a>.<a href="../../sims/dynamics/Constraint.html#correctPosition%28Double%29" target="_self">correctPosition</a>
-        </dd>
-      </dl><hr></hr></div>
-
-
-    <hr></hr>
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-      </body>
+      </div>
+      
+    </body>
       </html>

@@ -6,6 +6,7 @@
 
 package graphyx.gui
 
+import graphyx._
 import sims._
 import scala.swing._
 

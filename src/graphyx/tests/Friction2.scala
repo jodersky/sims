@@ -20,10 +20,10 @@ object Friction2 extends Test{
       friction = (i * 1.0 / 10)
       restitution = 0
     })
-    val ground = new Body(shapes: _*) //Rectangle(100, 0.1, 1).asBody
+    val ground = new Body(shapes: _*)
     ground.pos = Vector2D(0,0)
     ground.fixed = true
-    ground.rotation = -0.2
+    ground.rotation = -Math.Pi / 5
     world += ground
     
     val b: Body = (new Circle(0.1,10)) ~ (new Circle(0.1,10) {pos = Vector2D(0.2,0)}) ~ (new Circle(0.1,10) {pos = Vector2D(0.4,0)})

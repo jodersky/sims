@@ -6,7 +6,7 @@
 
 package sims.collision
 
-import geometry._
+import sims.geometry._
 
 /**
  * Axis Aligned Bounding Boxes (AABBs) are rectangles that frame a shape.

@@ -22,6 +22,7 @@ object Atom extends Test{
     connections = Nil
   }
   
+  enableEvent = true
   override def fireEvent = {
     val e = (new Circle(0.1, 10) {pos = Vector2D(0, -1)}).asBody
     e.linearVelocity = Vector2D(-50,100)

@@ -9,8 +9,6 @@ package sims.collision
 
 import sims.geometry._
 import sims.dynamics._
-import scala.collection._
-import scala.collection.mutable._
 
 /**A world detects its collisions through concrete implementations of this class.*/
 abstract class Detector {

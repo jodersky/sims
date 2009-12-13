@@ -11,6 +11,7 @@ trait Test {
   val world: World
   val title: String
   def init(): Unit
+  var enableEvent: Boolean = false
   def fireEvent(): Unit = println("No custom event method defined.")
   override def toString() = title
 }

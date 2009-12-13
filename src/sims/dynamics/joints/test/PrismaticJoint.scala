@@ -1,5 +1,7 @@
 package sims.dynamics.joints.test
 
+import sims.dynamics._
+import sims.dynamics.joints._
 import sims.geometry._
 
 case class PrismaticJoint(node1: Body, anchor1: Vector2D, node2: Body, anchor2: Vector2D) extends Joint{

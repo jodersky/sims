@@ -9,7 +9,8 @@ package sims.collision
 import sims.dynamics._
 import sims.geometry._
 import scala.collection._
-import scala.collection.mutable._
+import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.HashMap
 
 /**A conrete implementation of <code>Detector</code>. <code>GridDetector</code> divides the world into a grid
  * for faster collision detection.*/

@@ -6,6 +6,7 @@
 
 package graphyx.actors
 
+import graphyx._
 import graphyx.graphics._
 import sims.dynamics._
 import scala.actors._
@@ -30,8 +31,9 @@ class PhysicsActor extends Actor{
       
       Graphyx.guiActor ! new Scene(world) {override val fps = _fps}
       
-      while (mailboxSize > 0) {
-        receive {
+        receiveWithin(0) {
+          case TIMEOUT => () 
+            
           case Stop => {
             simulate = false
             println("Simulation stopped.")
@@ -49,7 +51,6 @@ class PhysicsActor extends Actor{
           
           case other => println("Engine received unknown command: '" + other + "'")
      	}
-      }
       
       val h = (System.nanoTime - t0) / 1000000
       val f = 60

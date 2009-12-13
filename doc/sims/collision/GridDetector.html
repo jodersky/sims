@@ -1,311 +1,317 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
-        <head><title>class GridDetector in sims.collision</title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
-        </head>
-        <body onload="init()">
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-        
-      <div class="entity">
-        <a href="../../sims/collision$package.html" target="_self">sims.collision</a>
-        <br></br>
-        <span class="entity">class  GridDetector</span>
-      </div><hr></hr>
-      <div class="source">
-        [source: <a href="" class="sims/collision/GridDetector"><code>sims/collision/GridDetector.scala</code></a>]
-      </div><hr></hr>
-      <a name="GridDetector"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>class</code>
-        <em>GridDetector</em>(<code>val override </code><em>world</em> : <a href="../../sims/dynamics/World.html" target="_self">World</a>)
-      </dt>
-      <dd><code> extends </code><a href="../../sims/collision/Detector.html" target="_self">Detector</a></dd>
-    </dl>
-      <dl><dd>A conrete implementation of <code>Detector</code>. <code>GridDetector</code> divides the world into a grid
- for faster collision detection.</dd></dl>
-      <dl></dl>
+        <head>
+          <title>Scaladoc for sims.collision.GridDetector</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../lib/jquery.js"></script>
+          
+		  <style type="text/css">
+		    @import url(../../lib/template.css) screen;
+		  </style>
+		  <script type="text/javascript" src="../../lib/template.js"></script>
     
+        </head>
+        <body class="type">
       
+      <p id="owner"><a href="../package.html">sims</a>.<a href="package.html">collision</a></p>
 
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Value Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#collisionMethods" target="_self">collisionMethods</a></em>
-         : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="../../sims/collision/Collision.html" target="_self">Collision</a>]]
-        
-        <div>Array of methods returning collisions. It is assumed that both shapes are colliding.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> val</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#detectionMethods" target="_self">detectionMethods</a></em>
-         : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>]]
-        
-        <div>Array of collision detection methods. These methods return <code>true</code> if two shapes are colliding.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> var</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#gridSide" target="_self">gridSide</a></em>
-         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-        
-        <div>Width and height of a grid cell.</div>
-      </td>
-    </tr>
-      </table>
-<table summary="" cellpadding="3" class="member">
-      <tr><td class="title" colspan="2">Method Summary</td></tr>
-      <tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#colliding%28sims.collision.Pair%29" target="_self">colliding</a></em>
-        (<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-        
-        <div>Checks the pair of shapes <code>p</code> for collision.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#collidingPairs" target="_self">collidingPairs</a></em>
-         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
-        
-        <div>Returns all colliding pairs.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#collision%28sims.collision.Pair%29" target="_self">collision</a></em>
-        (<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="../../sims/collision/Collision.html" target="_self">Collision</a>
-        
-        <div>Returns the collision between both shapes of the pair <code>p</code>.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#collisions" target="_self">collisions</a></em>
-         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Collision.html" target="_self">Collision</a>]
-        
-        <div>Returns all collisions.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#getPairs" target="_self">getPairs</a></em>
-         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
-        
-        <div>Returns potential colliding pairs of shapes of the world <code>world</code>.</div>
-      </td>
-    </tr>
-<tr>
-      <td class="modifiers" valign="top"> 
-        <code> def</code>
-      </td>
-      <td class="signature">
-        <em><a href="../../sims/collision/GridDetector.html#pairs" target="_self">pairs</a></em>
-         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
-        
-        <div>All potential colliding pairs of the world.</div>
-      </td>
-    </tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
-        </td></tr>
-      </table><table summary="" cellpadding="3" class="inherited">
-        <tr><td class="title" colspan="2">
-          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
-        </td></tr>
-        <tr><td class="signature" colspan="2">
-          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
-        </td></tr>
-      </table>
+      <div id="definition">
+        <img src="../../lib/class_big.png" />
+        <h1>GridDetector</h1>
+      </div>
 
-
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">GridDetector</span><span class="result"> extends <a href="Detector.html" class="extype" name="sims.collision.Detector">Detector</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment">
+      <div class="comment cmt"><p>A conrete implementation of <code>Detector</code>. <code>GridDetector</code> divides the world into a grid
+for faster collision detection.</p></div>
       
-
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Value Details</td></tr>
-        </table><div><a name="detectionMethods"></a><dl>
-      <dt>
+      
+      
+      
+    </div>
+      
+      <div id="template">
+      
+        <div id="mbrsel">
+              <div id="ancestors">
+                <h3>Inherits</h3>
+                <ol><li class="in" name="sims.collision.Detector">Detector</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+            </div>
         
-        <code></code>
-        <code>val</code>
-        <em>detectionMethods</em> : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>]]
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Array of collision detection methods. These methods return <code>true</code> if two shapes are colliding.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="collisionMethods"></a><dl>
-      <dt>
         
-        <code></code>
-        <code>val</code>
-        <em>collisionMethods</em> : <a href="" target="contentFrame" class="scala/collection/mutable/ArrayBuffer">scala.collection.mutable.ArrayBuffer</a>[<a href="" target="contentFrame" class="scala/PartialFunction">scala.PartialFunction</a>[(<a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>, <a href="../../sims/dynamics/Shape.html" target="_self">Shape</a>), <a href="../../sims/collision/Collision.html" target="_self">Collision</a>]]
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Array of methods returning collisions. It is assumed that both shapes are colliding.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="gridSide"></a><dl>
-      <dt>
         
-        <code></code>
-        <code>var</code>
-        <em>gridSide</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Width and height of a grid cell.</dd></dl>
-      <dl></dl>
-    <hr></hr></div>
-<table summary="" cellpadding="3" class="member-detail">
-          <tr><td class="title">Method Details</td></tr>
-        </table><div><a name="colliding%28sims.collision.Pair%29"></a><dl>
-      <dt>
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li name="sims.collision.GridDetector#colliding">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">colliding</span><span class="params">(<span name="p">p: <a href="Pair.html" class="extype" name="sims.collision.Pair">Pair</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Checks the pair of shapes <code>p</code> for collision</p><div class="fullcomment">
+      <div class="comment cmt"><p>Checks the pair of shapes <code>p</code> for collision.</p></div>
+      <dl class="paramcmts block"><dt class="param">p</dt><dd class="cmt"><p>Pair of shapes.</p></dd></dl>
+      
+      
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#collidingPairs">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">collidingPairs</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Pair.html" class="extype" name="sims.collision.Pair">Pair</a>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns all colliding pairs</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns all colliding pairs.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#collision">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">collision</span><span class="params">(<span name="p">p: <a href="Pair.html" class="extype" name="sims.collision.Pair">Pair</a></span>)</span><span class="result">: <a href="Collision.html" class="extype" name="sims.collision.Collision">Collision</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the collision between both shapes of the pair <code>p</code></p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns the collision between both shapes of the pair <code>p</code>.</p></div>
+      <dl class="paramcmts block"><dt class="param">p</dt><dd class="cmt"><p>Pair of shapes.</p></dd></dl>
+      
+      
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#collisionMethods">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">collisionMethods</span><span class="result">: <span class="extype" name="scala.collection.mutable.ArrayBuffer">ArrayBuffer</span>[<span class="extype" name="scala.PartialFunction">PartialFunction</span>[(<a href="../dynamics/Shape.html" class="extype" name="sims.dynamics.Shape">Shape</a>, <a href="../dynamics/Shape.html" class="extype" name="sims.dynamics.Shape">Shape</a>), <a href="Collision.html" class="extype" name="sims.collision.Collision">Collision</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Array of methods returning collisions</p><div class="fullcomment">
+      <div class="comment cmt"><p>Array of methods returning collisions. It is assumed that both shapes are colliding.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#collisions">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">collisions</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Collision.html" class="extype" name="sims.collision.Collision">Collision</a>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns all collisions</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns all collisions.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#detectionMethods">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">detectionMethods</span><span class="result">: <span class="extype" name="scala.collection.mutable.ArrayBuffer">ArrayBuffer</span>[<span class="extype" name="scala.PartialFunction">PartialFunction</span>[(<a href="../dynamics/Shape.html" class="extype" name="sims.dynamics.Shape">Shape</a>, <a href="../dynamics/Shape.html" class="extype" name="sims.dynamics.Shape">Shape</a>), <span class="extype" name="scala.Boolean">Boolean</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Array of collision detection methods</p><div class="fullcomment">
+      <div class="comment cmt"><p>Array of collision detection methods. These methods return <code>true</code> if two shapes are colliding.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="scala.AnyRef#equals">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence</p><div class="fullcomment">
+      <div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>)
+with the argument object (<code>arg0</code>) for equivalence.</p><p><p>
+The default implementations of this method is an <a
+href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+relation</a>:
+  <ul>
+ <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>,
+ <code>x.equals(x)</code> should return <code>true</code>.</li>
+ <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type
+ <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only
+ if <code>y.equals(x)</code> returns <code>true</code>.</li>
+ <li>It is transitive: for any instances
+ <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+ if <code>x.equals(y)</code> returns <code>true</code> and
+ <code>y.equals(z)</code> returns
+ <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+</ul>
+</p></p><p><p>
+If you override this method, you should verify that
+your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to
+override <code>hashCode</code> to ensure that objects that are
+"equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+hash to the same <a href="Int.html"><code>Int</code></a>
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div>
+      <dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.
+</p></p></dd></dl>
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#getPairs">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getPairs</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Pair.html" class="extype" name="sims.collision.Pair">Pair</a>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns potential colliding pairs of shapes of the world <code>world</code></p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns potential colliding pairs of shapes of the world <code>world</code>.
+<p>
+A potential colliding pair is a pair of two shapes that comply with the following criteria:
+<ul>
+<li>The shapes are situated in the same grid cell.</li>
+<li>Their AABBs overlap.</li>
+<li>The shapes do not belong to the same body.</li>
+<li>At least one shape is not fixed.</li>
+<li>Both shapes are {@link dynamics.Shape#collidable}.</li>
+</ul></p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#gridSide">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">gridSide</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Width and height of a grid cell</p><div class="fullcomment">
+      <div class="comment cmt"><p>Width and height of a grid cell.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="scala.AnyRef#hashCode">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a hash code value for the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a hash code value for the object.</p><p><p>
+The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash
+codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal
+(<code>o1.equals(o2)</code> returns <code>true</code>) that they
+have identical hash codes
+(<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+overriding this method, be sure to verify that the behavior is
+consistent with the <code>equals</code> method.
+</p></p><p><p></p></div>
+      
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#pairs">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">pairs</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Pair.html" class="extype" name="sims.collision.Pair">Pair</a>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">All potential colliding pairs of the world</p><div class="fullcomment">
+      <div class="comment cmt"><p>All potential colliding pairs of the world.</p></div>
+      
+      
+      
+      
+    </div>
+    </li><li name="scala.AnyRef#toString">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a string representation of the object</p><div class="fullcomment">
+      <div class="comment cmt"><p>Returns a string representation of the object.
+<p>
+The default representation is platform dependent.
+</p></div>
+      
+      
+      <div class="block">
+            definition classes: AnyRef ⇐ Any
+          </div>
+      
+    </div>
+    </li><li name="sims.collision.GridDetector#world">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">world</span><span class="result">: <a href="../dynamics/World.html" class="extype" name="sims.dynamics.World">World</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The world whose shapes are to be checked for collisions</p><div class="fullcomment">
+      <div class="comment cmt"><p>The world whose shapes are to be checked for collisions.</p></div>
+      
+      
+      
+      
+    </div>
+    </li></ol>
+            </div>
         
-        <code></code>
-        <code>def</code>
-        <em>colliding</em>(<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Checks the pair of shapes <code>p</code> for collision.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>p - </code>Pair of shapes.</dd></dl>
-    <hr></hr>
-<a name="collision%28sims.collision.Pair%29"></a><dl>
-      <dt>
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li name="sims.collision.GridDetector#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">GridDetector</span><span class="params">(<span name="world">world: <a href="../dynamics/World.html" class="extype" name="sims.dynamics.World">World</a></span>)</span>
+      </span>
+      </h4>
+      
+    </li><li name="sims.collision.Detector#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">GridDetector</span><span class="params">()</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
         
-        <code></code>
-        <code>def</code>
-        <em>collision</em>(<em>p</em> : <a href="../../sims/collision/Pair.html" target="_self">Pair</a>) : <a href="../../sims/collision/Collision.html" target="_self">Collision</a>
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns the collision between both shapes of the pair <code>p</code>.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>Parameters</b></dt><dd><code>p - </code>Pair of shapes.</dd></dl>
-    <hr></hr>
-<a name="getPairs"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>getPairs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns potential colliding pairs of shapes of the world <code>world</code>.
-   <p>
-   A potential colliding pair is a pair of two shapes that comply with the following criteria:
-   <ul>
-   <li>The shapes are situated in the same grid cell.</li>
-   <li>Their AABBs overlap.</li>
-   <li>The shapes do not belong to the same body.</li>
-   <li>At least one shape is not fixed.</li>
-   <li>Both shapes are {@link dynamics.Shape#collidable}.</li>
-   </ul></dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="pairs"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>pairs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>All potential colliding pairs of the world.</dd></dl>
-      <dl><dt style="margin:10px 0 0 20px;">
-        <b>See Also</b></dt><dd>getPairs</dd></dl>
-    <hr></hr>
-<a name="collidingPairs"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>collidingPairs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Pair.html" target="_self">Pair</a>]
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns all colliding pairs.</dd></dl>
-      <dl></dl>
-    <hr></hr>
-<a name="collisions"></a><dl>
-      <dt>
-        
-        <code></code>
-        <code>def</code>
-        <em>collisions</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../sims/collision/Collision.html" target="_self">Collision</a>]
-      </dt>
-      <dd></dd>
-    </dl>
-      <dl><dd>Returns all collisions.</dd></dl>
-      <dl></dl>
-    <dl>
-        <dt style="margin:10px 0 0 20px;">
-          <b>Overrides</b>
-        </dt>
-        <dd>
-        <a href="../../sims/collision/Detector.html" target="_self">Detector</a>.<a href="../../sims/collision/Detector.html#collisions" target="_self">collisions</a>
-        </dd>
-      </dl><hr></hr></div>
-
-
-    <hr></hr>
-        <table summary="" class="navigation">
-        <tr>
-          <td class="navigation-links" valign="top">
-            <!-- <table><tr></tr></table> -->
-          </td>
-          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
-            <div class="doctitle-larger">SiMS</div>
-          </td>
-        </tr>
-        <tr><td></td></tr>
-      </table>
-      </body>
+      </div>
+      
+    </body>
       </html>

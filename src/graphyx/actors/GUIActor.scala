@@ -7,11 +7,10 @@
 package graphyx.actors
 
 import graphyx.graphics._
-import graphyx.gui._
 import scala.actors._
 
 class GUIActor extends Actor{
-  val container = new Container
+  val container = new graphyx.gui.Container
   
   var continue = true
 

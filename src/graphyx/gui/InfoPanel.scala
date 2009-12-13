@@ -23,6 +23,6 @@ class InfoPanel(container: Container) extends BoxPanel(Orientation.Vertical){
       out.text += "Warning: some bodies passed the speed of light! Simulation may be highly incorrect.\n"
     }
     else out.foreground = java.awt.Color.black
-    for (r <- container.scene.world.monitorResults) out.text += r + "\n"
+    for (r <- container.scene.world.monitorFlatResults) out.text += "b" + r._1 + " " + r._2 + ": " + r._3 + "\n"
   }
 }

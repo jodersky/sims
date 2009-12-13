@@ -6,8 +6,8 @@
 
 package sims.collision
 
-import dynamics._
-import geometry._
+import sims.dynamics._
+import sims.geometry._
 
 /**Collision between two shapes. Contains methods to compute the collision response.*/
 abstract class Collision extends Constraint {
