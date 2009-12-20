@@ -13,7 +13,8 @@ import scala.swing._
 class MainFrame(container: Container) extends Frame{
   super.background = java.awt.Color.WHITE
   title = "graphyx"
-  preferredSize = (1000,800)
+  preferredSize = new java.awt.Dimension(1000,800)
+  
   reactions += {
     case event.WindowClosing(w) => Graphyx.exit()
   }

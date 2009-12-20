@@ -35,7 +35,7 @@ object Cannon extends Test{
         ) {fixed = (i == 0)}
     }
     world += cannon
-    world ++= List.flatten(stack)
+    world ++= stack.flatten
     
   }
   

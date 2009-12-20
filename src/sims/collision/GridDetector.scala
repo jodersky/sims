@@ -12,14 +12,14 @@ import scala.collection._
 import scala.collection.mutable.ArrayBuffer
 import scala.collection.mutable.HashMap
 
-/**A conrete implementation of <code>Detector</code>. <code>GridDetector</code> divides the world into a grid
+/**A concrete implementation of <code>Detector</code>. <code>GridDetector</code> divides the world into a grid
  * for faster collision detection.*/
 class GridDetector(override val world: World) extends Detector {
   
   /**Array of collision detection methods. These methods return <code>true</code> if two shapes are colliding.*/
   val detectionMethods = new ArrayBuffer[PartialFunction[(Shape, Shape), Boolean]]
   detectionMethods += {
-    case (c1: Circle, c2: Circle) => {	//Kollision wenn Distanz <= Summe der Radien
+    case (c1: Circle, c2: Circle) => {	//collision if distance <= sum of radiuses
       val d = (c1.pos - c2.pos).length
       val rSum = c1.radius + c2.radius
       d - rSum <= 0
@@ -31,12 +31,12 @@ class GridDetector(override val world: World) extends Detector {
       axes.forall((a: Vector2D) => p1.project(a) overlaps p2.project(a))
     }
     
-    case (p: ConvexPolygon, c: Circle) => {	//Distanz von Zentrum zu Seiten oder Eckpunkten
+    case (p: ConvexPolygon, c: Circle) => {	//distance form center to sides or vertices
       val distances = for (s <- p.sides) yield (s distance c.pos)
       distances.exists(_ - c.radius <= 0) || (p contains c.pos)
       }
     
-    case (c: Circle, p: ConvexPolygon) => {	//Distanz von Zentrum zu Seiten oder Eckpunkten
+    case (c: Circle, p: ConvexPolygon) => {	//distance form center to sides or vertices
       val distances = for (s <- p.sides) yield (s distance c.pos)
       distances.exists(_ - c.radius <= 0) || (p contains c.pos)
       }
@@ -97,7 +97,7 @@ class GridDetector(override val world: World) extends Detector {
       }
     for(s <- world.shapes) addToGrid(s)
     var ps: List[Pair] = Nil
-    for(cell <- grid.values) {
+    for(cell <- grid.valuesIterator) {
       ps = ps ::: (for (s1: Shape <- cell; s2: Shape <- cell;
                     if (s1 ne s2);                       
            			if (s1.body ne s2.body);

@@ -9,6 +9,6 @@ package sims.dynamics.joints
 /**A joint which can apply a force to its anchor bodies, thus adding or removing energy to the system.*/
 trait ForceJoint {
   
-  /**Applies a force on the achor bodies.*/
+  /**Applies a force on the anchor bodies.*/
   def applyForce(): Unit
 }

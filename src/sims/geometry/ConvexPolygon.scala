@@ -36,8 +36,8 @@ trait ConvexPolygon {
   def AABB = {
     val xs = vertices map (_.x)
     val ys = vertices map (_.y)
-    new AABB(Vector2D(Iterable.min(xs), Iterable.min(ys)),
-             Vector2D(Iterable.max(xs), Iterable.max(ys)))
+    new AABB(Vector2D(xs.min, ys.min),
+             Vector2D(xs.max, ys.max))
   }
   
   /**Checks if the point <code>point</code> is contained in this polygon.

@@ -9,7 +9,7 @@ package graphyx.graphics
 import sims._
 import geometry._
 import dynamics._
-case class GraphicalCircle(real: Circle) extends Circle(real.radius, real.density) with GraphicalShape{
+class GraphicalCircle(val real: Circle) extends Circle(real.radius, real.density) with GraphicalShape{
   override def draw() = {
     //val b = Math.min(density / 100 * 255, 255)
     //g.setColor(new java.awt.Color(0,0,255, b.toInt))

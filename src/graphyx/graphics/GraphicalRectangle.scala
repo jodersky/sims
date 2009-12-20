@@ -8,7 +8,7 @@ package graphyx.graphics
 
 import sims._
 import sims.dynamics._
-case class GraphicalRectangle(real: Rectangle) extends Rectangle(real.halfWidth, real.halfHeight, real.density) with GraphicalShape {
+class GraphicalRectangle(val real: Rectangle) extends Rectangle(real.halfWidth, real.halfHeight, real.density) with GraphicalShape {
   override def draw() = {
     g.setColor(java.awt.Color.red)
     fillPolygon(vertices)

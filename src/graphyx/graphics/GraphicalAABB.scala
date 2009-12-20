@@ -7,7 +7,7 @@
 package graphyx.graphics
 
 import sims.collision._
-case class GraphicalAABB(real: AABB) extends AABB(real.minVertex, real.maxVertex) with GraphicalObject {
+class GraphicalAABB(val real: AABB) extends AABB(real.minVertex, real.maxVertex) with GraphicalObject {
    override def draw() = {
     g.setColor(java.awt.Color.BLACK)
     g.drawRect((minVertex.x * scale * ppm).toInt,

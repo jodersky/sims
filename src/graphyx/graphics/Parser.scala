@@ -14,22 +14,22 @@ object Parser {
   val throwOnUnknown = false
   
   def toGraphical(real: Shape) = real match {
-    case c: Circle => GraphicalCircle(c)
-    case r: Rectangle => GraphicalRectangle(r)
-    case p: RegularPolygon => GraphicalRegularPolygon(p)
+    case c: Circle => new GraphicalCircle(c)
+    case r: Rectangle => new GraphicalRectangle(r)
+    case p: RegularPolygon => new GraphicalRegularPolygon(p)
     case _ => throw new IllegalArgumentException("Cannot cast '" + real.getClass + "' to a graphical object.")
   }
   
   def toGraphical(real: Joint) = real match {
-    case j: DistanceJoint => GraphicalDistanceJoint(j)
-    case j: SpringJoint => GraphicalSpringJoint(j)
-    case j: RevoluteJoint => GraphicalRevoluteJoint(j)
+    case j: DistanceJoint => new GraphicalDistanceJoint(j)
+    case j: SpringJoint => new GraphicalSpringJoint(j)
+    case j: RevoluteJoint => new GraphicalRevoluteJoint(j)
     case j: Joint => if (!throwOnUnknown) new GraphicalJoint{override val real = j; def draw = ()}
                      else throw new IllegalArgumentException("Cannot cast '" + real.getClass + "' to a graphical object.")
   }
   
-  def toGraphical(real: Collision) = GraphicalCollision(real)
-  def toGraphical(real: Pair) = GraphicalPair(real)
-  def toGraphical(real: AABB) = GraphicalAABB(real)
-  def toGraphical(real: Body) = GraphicalBody(real)
+  def toGraphical(real: Collision) = new GraphicalCollision(real)
+  def toGraphical(real: Pair) = new GraphicalPair(real)
+  def toGraphical(real: AABB) = new GraphicalAABB(real)
+  def toGraphical(real: Body) = new GraphicalBody(real)
 }

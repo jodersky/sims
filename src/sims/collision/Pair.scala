@@ -9,8 +9,7 @@ package sims.collision
 import sims.dynamics._
 
 /**Pair of shapes.*/
-case class Pair(s1: Shape, s2: Shape) extends Tuple2(s1, s2){
-  def this(t: Tuple2[Shape, Shape]) = this(t._1, t._2)
+case class Pair(s1: Shape, s2: Shape){
   
   override def equals(other: Any) = { //overriden to prevent removal during "GridDetector.getPairs" 
     other match {
@@ -18,4 +17,8 @@ case class Pair(s1: Shape, s2: Shape) extends Tuple2(s1, s2){
       case _ => false
     }
   }
+}
+
+object Pair {
+	implicit def pair2Tuple(x: Pair) = (x.s1, x.s2)
 }

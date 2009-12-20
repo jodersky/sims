@@ -128,7 +128,7 @@ class WorldPanel(container: Container) extends BoxPanel(Orientation.Vertical){
     grabbedBody = None
   }
   
-  listenTo(Mouse.clicks, Mouse.moves, Mouse.wheel)
+  listenTo(mouse.clicks, mouse.moves, mouse.wheel)
   reactions += {
     case MousePressed(c,p,x,y,b) => {
       mousePressed = true; startPoint = p; endPoint = p

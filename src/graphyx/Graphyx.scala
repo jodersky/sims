@@ -13,7 +13,6 @@ import sims.geometry._
 import sims.dynamics._
 
 object Graphyx{
-  
   val tests: List[graphyx.tests.Test] = List(
     CompositeShape,
     Joints1,

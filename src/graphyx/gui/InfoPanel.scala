@@ -7,9 +7,11 @@
 package graphyx.gui
 
 import scala.swing._
+import scala.swing._
+
 class InfoPanel(container: Container) extends BoxPanel(Orientation.Vertical){
-  preferredSize = (200, 50)
-  
+	preferredSize = new java.awt.Dimension(200, 50)
+	
   val out = new TextArea
   out.editable = false
   contents += out
