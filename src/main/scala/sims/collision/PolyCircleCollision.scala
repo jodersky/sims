@@ -19,11 +19,11 @@ case class PolyCircleCollision(p: ConvexPolygon, c: Circle) extends Collision {
     //minimum overlap
     var min = (p.sides(0) distance c.pos) - c.radius
     var axis = p.sides(0).n0
-    for (s <- p.sides; val delta = (s distance c.pos) - c.radius) if (delta <= 0 && delta < min) {
+    for (s <- p.sides; delta = (s distance c.pos) - c.radius) if (delta <= 0 && delta < min) {
       min = delta
       axis = s.n0
     }
-    for (v <- p.vertices; val delta = (v - c.pos).length - c.radius) if (delta <= 0 && delta <= min){
+    for (v <- p.vertices; delta = (v - c.pos).length - c.radius) if (delta <= 0 && delta <= min){
       min = delta
       axis = (c.pos - v).unit
     }

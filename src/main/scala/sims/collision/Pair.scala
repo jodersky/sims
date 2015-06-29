@@ -6,6 +6,8 @@
 
 package sims.collision
 
+import scala.language.implicitConversions
+
 import sims.dynamics._
 
 /**Pair of shapes.*/

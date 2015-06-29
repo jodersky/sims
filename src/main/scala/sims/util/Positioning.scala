@@ -6,6 +6,8 @@
 
 package sims.util
 
+import scala.language.implicitConversions
+
 import sims.geometry._
 import sims.dynamics._
 
